@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="MVP de aprendizaje adaptativo para métricas de Operaciones." />
+    <title>Metricamente · Operaciones</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="site-header">
+        <button class="brand" id="home-button" type="button" aria-label="Ir al inicio">
+          <span class="brand-mark">M</span>
+          <span>metricamente</span>
+        </button>
+        <p class="header-context">Ruta de aprendizaje <strong>· Operaciones</strong></p>
+      </header>
+
+      <section id="view-home" class="view active" aria-labelledby="home-title">
+        <div class="hero">
+          <p class="eyebrow">MVP · Aprendizaje adaptativo</p>
+          <h1 id="home-title">Entendé las métricas que mueven la operación.</h1>
+          <p class="hero-copy">Estudiá un concepto, comprobá lo aprendido y recibí una recomendación concreta para continuar.</p>
+        </div>
+        <section class="overview-card" aria-label="Tu avance en Operaciones">
+          <div>
+            <p class="section-label">Tu ruta</p>
+            <h2 id="route-progress">0 de 5 conceptos estudiados</h2>
+          </div>
+          <div class="progress-track" aria-hidden="true"><span id="route-progress-bar"></span></div>
+        </section>
+        <section aria-labelledby="concepts-title">
+          <div class="section-heading">
+            <div>
+              <p class="section-label">Conceptos</p>
+              <h2 id="concepts-title">Elegí por dónde empezar</h2>
+            </div>
+            <span class="topic-count">5 métricas clave</span>
+          </div>
+          <div id="topic-grid" class="topic-grid"></div>
+        </section>
+      </section>
+
+      <section id="view-study" class="view" aria-labelledby="study-title">
+        <button class="back-link" data-go-home type="button">← Volver a conceptos</button>
+        <div class="study-heading">
+          <p class="eyebrow" id="study-category">Operaciones</p>
+          <h1 id="study-title"></h1>
+          <p id="study-intro"></p>
+        </div>
+        <div id="card-progress" class="step-indicator"></div>
+        <article id="study-card" class="study-card"></article>
+        <div class="study-actions">
+          <button id="previous-card" class="button secondary" type="button">Anterior</button>
+          <button id="next-card" class="button primary" type="button">Siguiente</button>
+        </div>
+      </section>
+
+      <section id="view-quiz" class="view" aria-labelledby="quiz-title">
+        <button class="back-link" id="back-to-study" type="button">← Repasar fichas</button>
+        <div class="quiz-heading">
+          <p class="eyebrow">Comprobación de conocimiento</p>
+          <h1 id="quiz-title"></h1>
+          <p>Elegí la respuesta más adecuada. Verás la explicación al terminar.</p>
+        </div>
+        <div class="quiz-meta"><span id="question-counter"></span><div class="mini-progress"><span id="quiz-progress"></span></div></div>
+        <form id="quiz-form" class="question-card"></form>
+      </section>
+
+      <section id="view-result" class="view" aria-labelledby="result-title">
+        <p class="eyebrow">Resultado del quiz</p>
+        <div class="result-hero">
+          <div class="score-ring" id="score-ring"><span id="score-value">0%</span></div>
+          <div>
+            <h1 id="result-title">Tu resultado</h1>
+            <p id="result-summary"></p>
+            <span id="level-badge" class="level-badge"></span>
+          </div>
+        </div>
+        <section class="feedback-card" aria-labelledby="feedback-title">
+          <p class="section-label">Feedback adaptativo</p>
+          <h2 id="feedback-title">Tu próximo mejor paso</h2>
+          <div id="feedback-content"></div>
+        </section>
+        <section class="review-section" aria-labelledby="review-title">
+          <div class="section-heading"><div><p class="section-label">Corrección</p><h2 id="review-title">Revisá tus respuestas</h2></div></div>
+          <div id="answer-review" class="answer-review"></div>
+        </section>
+        <div class="result-actions">
+          <button id="retry-quiz" class="button secondary" type="button">Intentar otro quiz</button>
+          <button id="continue-route" class="button primary" type="button">Ver conceptos</button>
+        </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
