@@ -1,5 +1,13 @@
-# Metricamente — entrega final
+# Repositorio de entregas
 
-El proyecto ejecutable está en [metricamente/](metricamente/README.md). Desde esa carpeta, seguir sus instrucciones de configuración y ejecutar `npm ci` y `npm start`.
+## Trabajo Final - Metricamente
 
-Los anexos históricos y las evidencias son parte de esta entrega; consultar [ENTREGA.md](ENTREGA.md) para su ubicación y alcance.
+El Trabajo Final se encuentra en:
+
+[Trabajo Final - Metricamente](Trabajo%20Final%20-%20Metricamente/README.md)
+
+El proyecto ejecutable, la documentacion, las corridas y los anexos de evidencia estan contenidos dentro de esa carpeta.
+
+## Entrega anterior
+
+La carpeta [Entrega 2. System-User Prompt](Entrega%202.%20System-User%20Prompt/) corresponde a una entrega academica anterior e independiente. No forma parte del Trabajo Final Metricamente.
