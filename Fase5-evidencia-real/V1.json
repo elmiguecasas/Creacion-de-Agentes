@@ -1,0 +1,20 @@
+{
+  "name": "models/gemini-2.5-flash",
+  "displayName": "Gemini 2.5 Flash",
+  "description": "Stable version of Gemini 2.5 Flash, our mid-size multimodal model that supports up to 1 million tokens, released in June of 2025.",
+  "version": "001",
+  "tunedModelInfo": {},
+  "inputTokenLimit": 1048576,
+  "outputTokenLimit": 65536,
+  "supportedActions": [
+    "generateContent",
+    "countTokens",
+    "createCachedContent",
+    "batchGenerateContent"
+  ],
+  "temperature": 1,
+  "maxTemperature": 2,
+  "topP": 0.95,
+  "topK": 64,
+  "thinking": true
+}

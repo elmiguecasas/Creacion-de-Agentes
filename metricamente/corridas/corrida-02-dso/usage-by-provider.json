@@ -1,0 +1,126 @@
+{
+  "gemini": [
+    {
+      "run_id": "174e8ae2-dad9-4196-9ed2-40b46a00bb96",
+      "stage": "progress",
+      "usageMetadata": {
+        "promptTokenCount": 1615,
+        "candidatesTokenCount": 66,
+        "totalTokenCount": 1681,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1615
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "174e8ae2-dad9-4196-9ed2-40b46a00bb96",
+      "stage": "structured",
+      "usageMetadata": {
+        "promptTokenCount": 1668,
+        "candidatesTokenCount": 70,
+        "totalTokenCount": 1738,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1668
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "532bd536-dbbc-432a-b7d3-07e3a8b00485",
+      "stage": "progress",
+      "usageMetadata": {
+        "promptTokenCount": 1656,
+        "candidatesTokenCount": 60,
+        "totalTokenCount": 1716,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1656
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "532bd536-dbbc-432a-b7d3-07e3a8b00485",
+      "stage": "search",
+      "usageMetadata": {
+        "promptTokenCount": 1773,
+        "candidatesTokenCount": 26,
+        "totalTokenCount": 1799,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1773
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "532bd536-dbbc-432a-b7d3-07e3a8b00485",
+      "stage": "structured",
+      "usageMetadata": {
+        "promptTokenCount": 3384,
+        "candidatesTokenCount": 639,
+        "totalTokenCount": 4023,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 3384
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "554b5e17-1185-4cc6-9949-782ee07c5840",
+      "stage": "progress",
+      "usageMetadata": {
+        "promptTokenCount": 2170,
+        "candidatesTokenCount": 73,
+        "totalTokenCount": 2243,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 2170
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "554b5e17-1185-4cc6-9949-782ee07c5840",
+      "stage": "structured",
+      "usageMetadata": {
+        "promptTokenCount": 2230,
+        "candidatesTokenCount": 1232,
+        "totalTokenCount": 3462,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 2230
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "tavily": [
+    {
+      "run_id": "532bd536-dbbc-432a-b7d3-07e3a8b00485",
+      "query": "DSO Days Sales Outstanding definition formula finance operations",
+      "usage": {
+        "credits": 1
+      },
+      "response_time": 1.39
+    }
+  ]
+}

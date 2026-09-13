@@ -1,0 +1,74 @@
+[
+  {
+    "file": "README.md",
+    "sha256": "f224fd1d3b9d12d6d21a8dbcf849ac5c2aa15ddb00730c0b2d24717cc50bd802"
+  },
+  {
+    "file": "http-01.json",
+    "sha256": "68af8d452b9c60d22cc628a3ce4bb145ba0d945c0953a23a5fffe7835a8c0134"
+  },
+  {
+    "file": "http-02.json",
+    "sha256": "6f04ea77c5f082871cd3389726909a186618ed05521fcb33abb9cd7e42cd96ec"
+  },
+  {
+    "file": "http-03.json",
+    "sha256": "5348f103cc7ebb6b8462b274bcb56f3e9e088a887f29b4cc273341e78eefaef2"
+  },
+  {
+    "file": "input.json",
+    "sha256": "6d1b53e5764ef7b76772d846c637f3caf178e3c5fb87d68e2da3d15bf61bf25f"
+  },
+  {
+    "file": "interpret.json",
+    "sha256": "180d0da3905fa7ea7b3af48f3a2802ac9ffef0717fb379aef5e0600ddc187889"
+  },
+  {
+    "file": "metadata.json",
+    "sha256": "d24054eb42215caf2ef508a9e4033d28b9689934c1f41b1cb38d83349006393f"
+  },
+  {
+    "file": "module.json",
+    "sha256": "21ef8d6b4bb974c4aed958bb7bec02f02e83d624342002676b64087604738bb4"
+  },
+  {
+    "file": "pedagogical-review.json",
+    "sha256": "b1ea323e63e2944e76f3834b5bae8b93cc3cf1ea0db1a4f459184fb8d69a8790"
+  },
+  {
+    "file": "quiz.json",
+    "sha256": "1742a8f5cdf61daae505340483de19575fc39fd1699da3d9364c80ed4cdd3380"
+  },
+  {
+    "file": "snapshot-final.json",
+    "sha256": "26d65c141042c74d5fb7ea5e7d83a0292a833bf588415188b8cf15e7259d3c1f"
+  },
+  {
+    "file": "snapshot-init-1789240133817.json",
+    "sha256": "331c25a9c6633db6d50561658b35288b94022aa6c57ea1921a79c72cc9ad374c"
+  },
+  {
+    "file": "snapshot-module-1789240141726.json",
+    "sha256": "7cc2cfe672195fd99fb3b42f02db4b2ce9eb9b468598624387c789135262161e"
+  },
+  {
+    "file": "snapshot-quiz-1789240161777.json",
+    "sha256": "2fc6868224895a728a43a1fd7f2d79746764973091bb3032e21748cec0114b7f"
+  },
+  {
+    "file": "sources.json",
+    "sha256": "a323558ae404c4ad8f93d8e5d38c37519da7a5fbd17e08e81c966ec969846085"
+  },
+  {
+    "file": "tool_calls.json",
+    "sha256": "38b2c9aca8df0ca17475c5729bb175df979a6c4d7a6f4c9a5c17d0306b378833"
+  },
+  {
+    "file": "usage.json",
+    "sha256": "6e73fe18bd56cb1e9abbeeb59ba5e49e718193d06bd96dab38f19ae196da48f7"
+  },
+  {
+    "file": "verification.json",
+    "sha256": "91b92917496ea65845ee7d180d564cdf1a2ad472c0ab9d9b23942c048dd6e4a1"
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-09-13T01:36:34.429Z",
+  "endpoint": "/api/learning/module",
+  "method": "POST",
+  "body": {
+    "intent": "Quiero aprender DSO"
+  },
+  "status": 201,
+  "response": {
+    "data": {
+      "module_id": "f102433b-eff7-4929-b294-5c5597fd9639",
+      "version": 1,
+      "area": "Finanzas y Operaciones",
+      "metric": "DSO",
+      "title": "Módulo de Aprendizaje: Days Sales Outstanding (DSO)",
+      "definition": "Days Sales Outstanding (DSO) es un indicador financiero que mide el número promedio de días que tarda una empresa en cobrar las cuentas por cobrar después de realizarse una venta a crédito.",
+      "business_value": "Permite evaluar la eficiencia en la gestión del capital de trabajo y de las cuentas por cobrar, determinando la rapidez con la que las ventas se convierten en efectivo y protegiendo la liquidez de la organización.",
+      "formula": "DSO = (Accounts Receivable / Total Credit Sales) * Number of Days",
+      "interpretation": "Un DSO más bajo indica una conversión más rápida de las facturas en efectivo y una gestión de cobranza más eficiente. Un incremento sostenido puede señalar problemas de liquidez o deterioro en las políticas de crédito.",
+      "example": "Si una empresa tiene cuentas por cobrar de $150,000 y ventas netas anuales a crédito de $1,200,000 considerando un periodo de 365 días, el cálculo es: ($150,000 / $1,200,000) * 365 = 45.6 días, lo que significa que las facturas tardan aproximadamente 46 días en cobrarse.",
+      "common_mistake": "Utilizar la totalidad de los ingresos totales (incluyendo ventas al contado) en el denominador en lugar de considerar únicamente las ventas a crédito, lo que distorsiona la precisión del indicador.",
+      "sources": [
+        {
+          "source_id": "src_creditpulse_01",
+          "url": "https://www.creditpulse.com/blog/days-sales-outstanding-dso-formula-and-calculation-guide",
+          "title": "Days Sales Outstanding (DSO): Formula and Calculation Guide",
+          "tier": 2,
+          "authority_reason": "Sitio especializado en análisis de crédito y finanzas corporativas con guías detalladas de métricas de capital de trabajo."
+        },
+        {
+          "source_id": "src_billtrust_02",
+          "url": "https://www.billtrust.com/resources/blog/how-to-calculate-days-sales-outstanding-on-accounts-receivables",
+          "title": "Days Sales Outstanding (DSO): Formula and Importance | Billtrust",
+          "tier": 2,
+          "authority_reason": "Empresa especializada reconocida en automatización de cuentas por cobrar y análisis financiero de liquidez."
+        }
+      ]
+    },
+    "run_id": "8a44686a-e7af-4d4a-b650-e1ad38633ae3"
+  }
+}

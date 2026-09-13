@@ -1,0 +1,10 @@
+{
+  "data": {
+    "mode": "metric",
+    "area": "Finanzas y Crecimiento",
+    "metric": "CAC",
+    "intent": "Quiero aprender CAC",
+    "clarification": null
+  },
+  "run_id": "23bee159-10a9-43ca-88c9-4bd76c95461b"
+}

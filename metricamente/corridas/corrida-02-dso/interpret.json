@@ -1,0 +1,10 @@
+{
+  "data": {
+    "mode": "metric",
+    "area": "Finanzas",
+    "metric": "DSO",
+    "intent": "Quiero aprender DSO",
+    "clarification": null
+  },
+  "run_id": "174e8ae2-dad9-4196-9ed2-40b46a00bb96"
+}

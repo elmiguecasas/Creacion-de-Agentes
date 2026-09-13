@@ -1,0 +1,327 @@
+SEGUNDA MISIÓN DE WORK — IMPLEMENTACIÓN DE METRICAMENTE
+Fecha de cierre: 12 de septiembre de 2026
+Clasificación: PARCIAL — implementación local comprobada; integración externa pendiente de verificación real.
+
+A. RESUMEN EJECUTIVO
+
+Se implementó la evolución aprobada sobre Entrega 1, manteniendo HTML, CSS, JavaScript, identidad visual y el recorrido estudio → quiz → resultado → feedback. Se añadieron Node.js/Express, SQLite, identidad ligera por UUID, historial inmutable por intento, progreso básico, contratos JSON Schema, prompts, integración de un único agente con OpenAI Responses API, herramienta propia de progreso y Web Search alojado.
+
+La corrección oficial se ejecuta en código de servidor contra el quiz congelado. Se mezclan las opciones antes de presentar y se conserva la nueva posición correcta. Los intentos no se sobrescriben. El frontend representa datos externos mediante textContent/nodos DOM, sin innerHTML.
+
+Evidencia local: 21 tests automáticos PASS, cuatro escenarios de navegador PASS y arranque del entrypoint real PASS. Los escenarios agénticos de los tests utilizan dobles explícitos, no respuestas reales de OpenAI.
+
+No había OPENAI_API_KEY disponible. El smoke test real informó PENDIENTE DE VERIFICACIÓN REAL y terminó con código 2, sin simular una corrida. No se generaron las tres corridas académicas finales. Tampoco se inventaron costos, nivel L0–L4 ni resultados del modelo.
+
+La carpeta «Entrega 2. System-User Prompt» quedó fuera del checkout mediante sparse-checkout y no fue consultada ni utilizada. README.txt y .gitattributes permanecen sin cambios.
+
+Ubicación del código:
+C:\Users\migue\Documents\Codex\2026-09-10\referenced-chatgpt-conversation-this-is-an\outputs\metricamente
+
+B. ARCHIVOS
+
+archivo | creado/modificado | función
+app.js | modificado | Reutiliza el flujo/vistas; sustituye datos hardcodeados y persistencia local por API; render seguro, identidad, progreso y decisiones.
+index.html | modificado | Conserva vistas originales; agrega intención, selección de modo, ruta propuesta, tabla de progreso y acciones de recomendación.
+styles.css | modificado | Conserva diseño; agrega estilos de formularios, tabla, fuentes, estados y foco accesible.
+README.md | creado | Instalación, arquitectura, API, datos, pruebas, límites, economía y supervisión.
+DECISIONES.md | creado | Decisiones reales, correcciones, ajustes menores e impedimentos pendientes.
+.env.example | creado | Configuración sin secretos; gpt-5.6-luna inicial configurable.
+.gitignore | creado | Excluye .env, dependencias, SQLite, logs y snapshots locales.
+package.json | creado | Dependencias mínimas y comandos start/test/smoke/export.
+package-lock.json | creado | Versiones concretas resueltas de dependencias.
+data/seeds.json | creado | Cinco módulos iniciales y 30 preguntas adaptados de Entrega 1.
+prompts/system_prompt.md | creado | Contrato del agente con seis piezas y política de fuentes/supervisión.
+prompts/user_prompt.md | creado | Plantilla real de solicitud con seis piezas y datos de la operación.
+schemas/module.schema.json | creado | Módulo estructurado y fuentes.
+schemas/quiz.schema.json | creado | Cinco preguntas, cuatro opciones, clave, explicación y referencias.
+schemas/route.schema.json | creado | Ruta propuesta, posición, métrica, razón y fuentes.
+schemas/feedback.schema.json | creado | Diagnóstico, fortalezas, debilidades y acción review/retry/continue.
+schemas/interpret.schema.json | creado | Interpretación metric/area/clarify y aclaración.
+shared/scoring.js | creado | Cálculo determinístico compartido entre navegador y servidor.
+server/index.js | creado | Configuración y arranque del servidor.
+server/app.js | creado | Endpoints, validación, identidad vinculada, servicio de archivos permitidos y errores.
+server/database.js | creado | Tablas SQLite, constraints, claves e inmutabilidad.
+server/store.js | creado | Persistencia, idempotencia, agregados, historial, logs y snapshots.
+server/quizzes.js | creado | Selección seed, mezcla de preguntas/opciones, instancia congelada y comprobación de alternativa.
+server/validation.js | creado | AJV, validaciones adicionales y trazabilidad de fuentes.
+server/agent.js | creado | Responses API, function calling de progreso, búsqueda, generación estructurada y trazas.
+server/errors.js | creado | Errores de aplicación con código HTTP y estado explícito.
+scripts/export-run.js | creado | Exportación nueva, sin sobrescritura, de evidencia del usuario con SHA-256.
+scripts/smoke-agent.js | creado | Smoke real condicionado a credenciales; no crea éxito ficticio.
+corridas/README.md | creado | Procedimiento de exportación; distinción entre reconstrucción, rerun y corridas académicas.
+tests/helpers.js | creado | Infraestructura de pruebas y doble OpenAI identificado como fixture.
+tests/core.test.js | creado | Scoring, schemas, persistencia, inmutabilidad, errores, separación y exportación.
+tests/agent.test.js | creado | Integración controlada del agente, herramientas, fuentes, reintentos y fallos.
+README.txt | conservado sin cambios | Antecedente histórico.
+.gitattributes | conservado sin cambios | Normalización de texto.
+
+C. ARQUITECTURA REAL RESULTANTE
+
+Navegador HTML/CSS/JS → API Express → servicios → SQLite.
+API Express → un agente Responses → get_learning_progress → servicio de lectura → SQLite.
+Agente Responses → Web Search alojado → evidencia recuperada → JSON Schema → AJV → artefacto persistido.
+
+Módulo nuevo: intención → interpretación → progreso real → búsqueda → módulo validado/guardado → fichas → quiz congelado → respuestas → score oficial → intento persistido → feedback → decisión humana.
+Ruta: intención → interpretación → progreso/búsqueda → propuesta guardada → usuario elige → módulo. Proponer una ruta no crea intentos ni completitud.
+Seed: módulo existente → quiz del banco adaptado → mismo scoring/persistencia; la falta de API key no impide guardar ese intento y se informa si falla feedback.
+
+Se usa un solo agente con fases acotadas, sin LangChain/LangGraph ni múltiples agentes. Las fases no son agentes diferentes. Los cinco módulos iniciales no restringen los temas que se pueden solicitar.
+
+D. DEPENDENCIAS
+
+Instaladas y fijadas en package-lock.json:
+- express 5.2.1: servidor HTTP.
+- openai 6.49.0: cliente de Responses API.
+- dotenv 17.4.2: configuración privada del servidor.
+- better-sqlite3 12.11.1: persistencia SQLite.
+- ajv 8.20.0: validación JSON Schema.
+
+Sin dependencias adicionales de producto. Sin framework frontend, ORM, vector DB ni Docker.
+Node por defecto del equipo: 18.14.2. Para esta implementación se utilizó el runtime disponible Node 24.19.0. package.json requiere Node >=22. No se reemplazó Node globalmente. El componente nativo de SQLite debe instalarse con el runtime que ejecutará la aplicación.
+
+La instalación informó 110 paquetes añadidos, 111 auditados y cero vulnerabilidades en ese momento. También informó deprecación de prebuild-install, dependencia transitiva de instalación; no impidió instalar o ejecutar SQLite.
+Para QA se usaron Playwright ya disponible y Chrome instalado en modo headless. No se añadieron al producto.
+
+E. BASE DE DATOS
+
+users:
+  user_id TEXT PK; created_at TEXT NOT NULL.
+
+modules:
+  module_id TEXT; version INTEGER >0; user_id TEXT nullable FK users;
+  area TEXT; metric TEXT; content_json TEXT con json_valid;
+  sources_json TEXT con json_valid; run_id TEXT nullable; created_at TEXT.
+  PK(module_id, version). user_id null identifica contenido seed compartido.
+
+quizzes:
+  quiz_id TEXT PK; module_id TEXT; module_version INTEGER;
+  user_id TEXT FK users; version INTEGER >0;
+  quiz_json TEXT con json_valid; run_id TEXT nullable; created_at TEXT.
+  FK(module_id,module_version) → modules.
+
+attempts:
+  attempt_id TEXT PK; user_id TEXT FK users; quiz_id TEXT FK quizzes;
+  answers_json TEXT; results_json TEXT; ambos con json_valid;
+  score INTEGER 0..100; correct_count INTEGER 0..5; created_at TEXT.
+  UNIQUE(user_id,quiz_id).
+
+agent_runs:
+  run_id TEXT PK; user_id TEXT FK users; operation TEXT; model TEXT;
+  prompt_version TEXT; input_json TEXT; tool_calls_json TEXT;
+  output_json TEXT; JSON validado por SQLite; status TEXT; error TEXT nullable;
+  created_at TEXT.
+
+routes:
+  route_id TEXT PK; user_id TEXT FK users; route_json TEXT con json_valid;
+  run_id TEXT; created_at TEXT.
+
+decisions:
+  decision_id TEXT PK; user_id TEXT FK users; run_id TEXT FK agent_runs;
+  decision TEXT restringido a accept/reject; created_at TEXT.
+
+Hay índice de intentos por usuario/fecha. Foreign keys habilitadas y modo WAL.
+Triggers rechazan UPDATE/DELETE de módulos, quizzes, intentos, rutas y decisiones. agent_runs permite finalizar un registro running una vez; un run terminal no se modifica ni elimina.
+
+El quiz congelado contiene el orden exacto de preguntas/opciones y el índice correcto después de mezclar. results_json conserva el resultado por pregunta. Su unión con modules permite recuperar versión, contenido y fuentes.
+
+Intentos, último score y mejor score son agregados derivados. El resumen legacy se mantiene bajo su clave anterior del navegador, sin convertirlo en supuestos intentos. Eliminar storage pierde la asociación local al UUID, no borra por sí mismo SQLite.
+
+F. AGENTE
+
+Modelo configurado: OPENAI_MODEL=gpt-5.6-luna, modificable por entorno. Se preservó el modelo solicitado. La documentación oficial consultada declara soporte de Web Search; no prueba acceso real de esta cuenta.
+
+Prompts: system_prompt.md y user_prompt.md realmente leídos por el servidor. Incluyen Rol, Contexto, Tarea, Restricciones, Formato y Ejemplos. Cada run guarda textos y un hash SHA-256 de prompts/schemas para reconstrucción.
+
+Schemas: los cinco archivos descritos. Salida final en sobre status/data/reason. status ok requiere datos válidos; insufficient_sources requiere data null y razón. Quiz exige cinco preguntas, cuatro opciones, índices 0..3, IDs distintos, enunciados distintos y opciones no duplicadas. Las referencias se contrastan con el módulo.
+
+Herramienta de progreso: el modelo emite una function_call real cuando se usa el cliente real. El dispatcher valida nombre/argumentos y vincula user_id a la petición; solo consulta store.progress. No hay herramienta SQL ni de escritura. La integración fue ejercitada con dobles y SQLite real; la emisión por el modelo vivo está pendiente.
+
+Búsqueda: Responses con herramienta web_search y elección requerida para módulos/rutas, antes de la etapa estructurada. Se conservan output items, fuentes y anotaciones. No se sustituye una búsqueda fallida con conocimiento interno.
+
+Política de fuentes: prompt con niveles 1/2/3 aprobados. El código exige que las URLs finales hayan sido recuperadas y que exista alguna fuente clasificada 1 o 2. El modelo clasifica autoridad y justifica la elección; no hay un verificador automático de verdad semántica. Las preguntas nuevas se apoyan en módulos/fuentes persistidos. Los seeds sin fuentes están explícitamente señalados.
+
+Límites: timeout de 60 segundos por petición, maxRetries=0 en SDK, un solo reintento de salida por error estructural, hasta tres tool calls de búsqueda en su fase. Rechazo, búsqueda fallida o insuficiencia de fuentes no activan loops automáticos. Una petición agéntica por UUID a la vez dentro del proceso.
+
+Logs: solicitudes exactas copiadas antes de extender contexto, respuestas, outputs de herramientas, modelo, uso si la API lo reporta, artefactos y errores. Los errores conservan código/detalle disponible con redacción de patrones de claves. No se escriben headers de autorización en las trazas.
+
+G. FRONTEND
+
+Reutilizado: marca, paleta, tipografía, tarjetas, controles de fichas, vista de quiz, anillo de score, revisión y acciones de continuación.
+Añadido: intención libre, selector concepto/ruta, propuesta de ruta, fuentes clicables, tabla de progreso y aceptación/rechazo de recomendación.
+Adaptado: app.js consume backend, representa contenido con nodos seguros y conserva navegación. El cálculo compartido corre también en navegador; servidor decide y persiste el score oficial. No hay API key ni cliente OpenAI en frontend.
+
+La etiqueta del inicio se basa en el último score; el mejor se muestra separado. Las fichas no cuentan como intento. Si falla guardado, las respuestas permanecen en memoria de la pantalla y se permite reenviar; si se guardó pero se perdió la respuesta HTTP, el reenvío idempotente no duplica el intento. Si falla feedback, se muestra que el resultado fue guardado.
+
+H. PRUEBAS REALIZADAS
+
+Convención: PASS local no significa éxito real del servicio OpenAI. «Fixture» identifica datos simulados exclusivamente para probar integración.
+
+acción/input → esperado → observado → estado
+
+1. Importar/inicializar servidor con SQLite → cinco seeds y schemas válidos → cinco módulos cargados → PASS.
+2. Ejecutar server/index.js en puerto 3199 → iniciar y responder health → status ok, agent_configured false → PASS.
+3. GET / y /api/modules → servir frontend y cinco seeds → HTTP 200 y catálogo correcto → PASS.
+4. Solicitar .env/.git/servidor/DB/node_modules/prompts por HTTP → no exponerlos → HTTP 404 → PASS.
+5. Validar seeds y quizzes malformados → aceptar seeds; rechazar dimensiones/índice/campos inválidos → validaciones correctas → PASS.
+6. Cero a cinco aciertos → scores 0,20,40,60,80,100 reproducibles → todos coinciden → PASS.
+7. Mezclar opciones → conservar respuesta correcta textual sin mutar banco → correspondencia comprobada → PASS.
+8. Segundo quiz seed → incluir pregunta no vista en el anterior → al menos una distinta → PASS.
+9. Enviar tres aciertos y score cliente 100 → servidor calcula 60 → 60 guardado → PASS.
+10. Reenviar mismas respuestas → mismo intento → mismo attempt_id, no duplicación → PASS.
+11. Cambiar respuestas después de guardar → rechazo → HTTP 409 → PASS.
+12. UPDATE intento / DELETE quiz → impedir cambios → triggers immutable evidence → PASS.
+13. Acceder a quiz/progreso con otro UUID o body distinto → rechazo de alcance → HTTP 404/403 → PASS.
+14. Enviar respuestas incompletas → rechazo sin intento → HTTP 400 → PASS.
+15. Feedback sin clave después de guardar → fallo explícito y resultado conservado → configuration_required, un intento intacto → PASS.
+16. Poner DB query_only e intentar guardar → no confirmar éxito → HTTP 503 database_error, cero intentos → PASS.
+17. Cerrar/reabrir SQLite → recuperar artefacto exacto → quiz/respuestas y score 100 reconstruidos → PASS.
+18. Exportar dos veces → dos archivos nuevos y score reconstruible → dos snapshots, sin sobrescritura → PASS.
+19. Fixture módulo con herramienta/progreso/búsqueda → secuencia real de servicios locales y validación → requests, resultado del servicio y artefacto guardados → PASS CONTROLADO.
+20. Fixture ruta → propuesta sin progreso ficticio y rechazo humano registrado → cero intentos y decisión reject → PASS CONTROLADO.
+21. Fixture módulo/quiz/intento/feedback → feedback recibe score real → recibe 100 desde SQLite pese a score 0 enviado por cliente → PASS CONTROLADO.
+22. Fixture JSON inválido una vez → un reintento y log del fallo → salida válida, dos intentos estructurados → PASS CONTROLADO.
+23. Fixture JSON inválido reiterado → fallar después de dos salidas → invalid_output, sin tercer retry ni módulo publicado → PASS CONTROLADO.
+24. Fixture búsqueda fallida → no fallback → search_failed y sin módulo → PASS CONTROLADO.
+25. Fixture búsqueda sin fuentes → insuficiencia explícita → insufficient_sources → PASS CONTROLADO.
+26. Fixture URL inventada → rechazo → insufficient_sources, sin publicación → PASS CONTROLADO.
+27. Fixture llamada con otro usuario → impedir consulta → tool_scope_error → PASS CONTROLADO.
+28. Fixture negativa del modelo → error explícito → model_refusal → PASS CONTROLADO.
+29. Navegador: seed → fichas → cinco respuestas → resultado → reload → persistencia y mensaje de feedback fallido → correctos, sin errores JS → PASS.
+30. Navegador: reintento → nueva instancia sin alterar primera → dos quizzes y evidencia previa intacta → PASS.
+31. Navegador: módulo/quiz/feedback con fixture → acciones humanas visibles; rechazo guardado → correcto → PASS CONTROLADO.
+32. Navegador: ruta con fixture → no auto-completar; clic inicia módulo → correcto → PASS CONTROLADO.
+33. Navegador: título con img/onerror → mostrar texto, no ejecutar → cero nodos img inyectados y sin efecto → PASS.
+34. Vista móvil 390 px y escritorio 1280 px → contenido usable sin desborde de página → comprobado; tabla tiene desplazamiento horizontal propio → PASS.
+35. git diff --check → sin errores de whitespace → correcto; advertencias de normalización CRLF del entorno → PASS.
+36. npm run smoke:agent sin API key → no simular éxito → PENDIENTE DE VERIFICACIÓN REAL, código 2 → PARTIAL para integración externa.
+
+La suite automatizada contiene 21 casos (varios agrupan acciones de esta tabla): 21 PASS, 0 FAIL. Los cuatro escenarios de navegador finalizaron PASS y sin pageerror. Se inspeccionaron capturas de escritorio y móvil. Las pruebas con SQLite temporal y fixtures no se guardaron como las tres corridas académicas.
+
+I. ERRORES ENCONTRADOS
+
+error → diagnóstico → corrección → resultado
+
+Sesgo histórico 26/30 respuestas en primera opción → posición predecible y orden fijo → mezcla Fisher–Yates, actualización de índice y congelación → test de correspondencia PASS; no se ocultó la falla original.
+Sintaxis en declaración de herramienta → llave faltante → corregida → importación del servidor PASS.
+Sintaxis en helper de test → llave faltante → corregida → suite ejecutable.
+database_error en corridas de test → INSERT agent_runs tenía un placeholder extra → 11 placeholders para 11 columnas → tests de agente y logs PASS.
+Riesgo de mutación retrospectiva del request log → referencia compartida al array de mensajes → structuredClone al crear request → test de snapshot exacto PASS.
+Chromium de Playwright ausente → runtime sin navegador descargado → usar Chrome instalado headless → cuatro escenarios PASS.
+Node global 18 incompatible con entorno elegido → runtime por defecto antiguo → ejecución con Node 24 disponible y requisito documentado → instalación/SQLite/tests PASS.
+API key ausente → no se puede verificar OpenAI real → error explícito y procedimiento smoke preparado → PENDIENTE DE VERIFICACIÓN REAL.
+
+J. DESVIACIONES DE ARQUITECTURA
+
+Desviaciones arquitectónicas mayores: NINGUNA.
+
+Ajustes menores permitidos y documentados:
+- interpret.schema.json adicional para estructurar la interpretación.
+- Tablas routes y decisions para preservar propuestas y elección humana.
+- Campos user_id/module_version/run_id adicionales para vinculación y reconstrucción.
+- Endpoints health/modules/decisions auxiliares.
+- Quiz generado y quiz presentado con IDs distintos, vinculados por run_id: permite conservar output original y permutación sin editar evidencia.
+- Progreso legacy separado en navegador, opción explícitamente autorizada.
+- Node 24 del entorno para cumplir el runtime necesario; mismo stack aprobado.
+
+No se añadieron funciones del roadmap ni dependencias de producto adicionales.
+
+K. ELEMENTOS PENDIENTES Y LIMITACIONES
+
+1. Configurar OPENAI_API_KEY en .env del servidor. Verificar acceso efectivo a gpt-5.6-luna.
+2. Ejecutar smoke real de Responses, Web Search y function calling. Los tests con fixture no cubren comportamiento real del proveedor ni calidad del modelo.
+3. Evaluar pedagógicamente módulos y quizzes generados: fuente trazable/JSON válido no garantiza verdad, pertinencia o clave correcta.
+4. Ejecutar las tres corridas académicas en la fase prevista, exportar evidencia y revisar qué snapshots compartir.
+5. Obtener definiciones oficiales L0–L4; etiqueta pendiente. El comportamiento de supervisión sí está implementado.
+6. Completar análisis económico con usage real, precios aplicables y costo de herramientas. No hay costos medidos en esta misión.
+7. UUID no es autenticación. Si se comparte como servicio público, revisar exposición y abuso antes de desplegar. La aplicación arranca en loopback y no se publicó.
+8. Las claves de quiz llegan al navegador para el cálculo compartido: no es una evaluación protegida contra inspección de respuestas. El score persistido sí se calcula en servidor.
+9. Historial y prompts crecen con el uso; no se implementó paginación/contexto resumido para gran escala. Mantener el alcance de esta etapa.
+10. El banco seed tiene seis preguntas: el segundo quiz puede repetir cuatro. El contenido generado se comprueba por enunciado, no por equivalencia semántica automática.
+11. Los triggers protegen de operaciones normales; alguien con acceso administrativo al archivo SQLite podría alterar su esquema. No se declara evidencia criptográficamente inviolable.
+12. Borrar storage pierde la asociación local. No se añadió login ni recuperación de perfil.
+
+L. GIT
+
+Repositorio base: https://github.com/elmiguecasas/Creacion-de-Agentes
+Commit base: 378c88ef70ee5828a19abaf15a19a2a87662220d
+Rama local: work/metricamente-implementation
+Commits creados: 0.
+Pushes: 0. PRs: 0. GitHub no fue modificado.
+
+Estado final del árbol: cambios locales sin commit. Modificados app.js, index.html y styles.css. Los archivos clasificados «creado» en B permanecen sin seguimiento/commit. README.txt y .gitattributes sin cambios. Dependencias instaladas e ignoradas. No se incluyó .env ni una API key.
+
+La carpeta excluida no está materializada en el checkout. El estado de sparse-checkout es local; no se eliminaron sus archivos del repositorio remoto.
+
+M. CONCLUSIÓN
+
+PARCIAL.
+
+La arquitectura aprobada quedó implementada en código local y sus componentes determinísticos, persistencia, flujo de frontend y controles de integración fueron comprobados. No se declaró terminado el sistema agéntico en funcionamiento real: faltan credenciales y verificación en vivo de Responses/Web Search con el modelo solicitado.
+
+No hay un impedimento detectado que requiera volver a Chat para cambiar el stack. La Fase 4 puede revisar el código real contra la especificación, usando esta lista explícita de pendientes. El nivel L0–L4 requiere definición de la materia; la economía y corridas finales requieren evidencia posterior.
+
+Para instalar y arrancar: seleccionar Node >=22 (probado 24.19.0), ejecutar npm ci dentro de metricamente, copiar .env.example a .env, completar la clave de servidor y ejecutar npm start. Sin clave se puede comprobar el recorrido seed y el guardado; las funciones de IA mostrarán un error explícito.
+
+REFERENCIAS OFICIALES CONSULTADAS PARA INTEGRACIÓN
+https://developers.openai.com/api/docs/models/gpt-5.6-luna
+https://developers.openai.com/api/docs/guides/tools-web-search
+https://developers.openai.com/api/docs/guides/structured-outputs
+https://developers.openai.com/api/docs/guides/function-calling
+
+Fin del informe. No se atribuye a estas pruebas aprobación académica ni se sustituyen las corridas finales.
+
+ANEXO — SALIDA REAL DE PRUEBAS LOCALES (NO CORRIDAS ACADÉMICAS)
+
+✔ Fixture-only: actual dispatcher reads SQLite, calls search, validates module and records exact requests (155.1062ms)
+✔ Fixture-only: route is proposal, no attempts created; human decision recorded (41.4351ms)
+✔ Fixture-only: new module -> generated frozen quiz -> attempt -> feedback uses official score (84.665ms)
+✔ Fixture-only: structural error retries exactly once and retains bad output (15.663ms)
+✔ Fixture-only: second invalid structure fails without third retry (11.1768ms)
+✔ Fixture-only: search failure is explicit, no content published (7.6678ms)
+✔ Fixture-only: empty search is explicit, no content published (8.9293ms)
+✔ Fixture-only: fabricated URL is explicit, no content published (13.614ms)
+✔ Fixture-only: tool identity mismatch is explicit, no content published (8.6551ms)
+✔ Fixture-only: model refusal is explicit, no content published (8.5173ms)
+✔ Schemas validate all seed modules and reject invalid quiz dimensions/keys (15.9159ms)
+✔ Scores reproducibly cover 0,20,40,60,80,100; invalid answers rejected (1.8486ms)
+✔ Option shuffle preserves correct answer text and does not mutate input (0.8324ms)
+✔ Seed second quiz includes unused question, never repeats full previous set (0.5185ms)
+✔ Server starts; frontend served; secrets and internal files never served (194.0614ms)
+✔ Attempt persisted, server ignores supplied score, repeat submit idempotent, edit denied (55.4487ms)
+✔ No cross-user attempt, module or progress access; rejects mismatching identity (22.2614ms)
+✔ Explicit validation, missing key and failed feedback preserve saved attempt (41.4119ms)
+✔ Database write failure never reports saved result (10.8384ms)
+✔ SQLite survives close/reopen; snapshot reconstructs frozen artifacts (24.7916ms)
+✔ Export command creates separate snapshots with reconstructible scores; no overwrite (508.1894ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1640.8904
+
+ESCENARIOS DE NAVEGADOR:
+[
+  {
+    "name": "Seed UI, saved result despite absent API, reload, retry, mobile",
+    "status": "PASS",
+    "pageErrors": []
+  },
+  {
+    "name": "Fixture-only dynamic module, quiz, feedback, human rejection",
+    "status": "PASS",
+    "pageErrors": []
+  },
+  {
+    "name": "Fixture-only route remains proposal, explicit choice opens module",
+    "status": "PASS",
+    "pageErrors": []
+  },
+  {
+    "name": "Untrusted content rendered as text, not executed",
+    "status": "PASS",
+    "pageErrors": []
+  }
+]

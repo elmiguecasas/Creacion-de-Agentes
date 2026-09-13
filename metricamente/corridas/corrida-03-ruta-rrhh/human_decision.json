@@ -1,0 +1,13 @@
+{
+  "run_id": "105ad5af-188e-485a-959a-13dce7b4e4ce",
+  "decision": "accept",
+  "result": {
+    "status": "recorded"
+  },
+  "authorization": "Usuario ordenó ACCEPT en misión Fase 6",
+  "timestamp": "2026-09-13T01:43:59.462Z",
+  "attempts_before": 0,
+  "attempts_after": 0,
+  "modules_before": 5,
+  "modules_after": 5
+}

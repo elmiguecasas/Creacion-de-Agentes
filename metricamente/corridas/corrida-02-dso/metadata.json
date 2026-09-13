@@ -1,0 +1,46 @@
+{
+  "run_type": "academic_final_run",
+  "timestamp": "2026-09-12T19:08:50.780Z",
+  "sealed_at": "2026-09-12T19:12:21.453Z",
+  "provider": "Gemini API",
+  "model": "gemini-3.5-flash-lite",
+  "search_provider": "Tavily",
+  "search_provider_configured": "Tavily",
+  "user_id": "9076827e-eaba-4785-a5bd-9f472c3264b1",
+  "status": "BLOCKED_PEDAGOGICAL_ISSUE",
+  "supervision": {
+    "level": "L2",
+    "label": "Autonomía supervisada",
+    "basis": "Convención adoptada por el proyecto ante ausencia de definiciones oficiales publicadas L0–L4; autorizada en misión Fase 6"
+  },
+  "run_ids": [
+    {
+      "operation": "interpret",
+      "run_id": "174e8ae2-dad9-4196-9ed2-40b46a00bb96",
+      "status": "completed",
+      "prompt_version": "1e30aab865469c93826f08bcabf4384e919d61dc52e682a303a5323adcc8da14",
+      "system_prompt_sha256": "35b8bf813106a2f44823f11caf7f526152617d043d8f87ec995ebd947bcf5d15",
+      "user_prompt_template_sha256": "179cfda9ca16b01832e80ebec7e1c04c6e9d36343eee3bd2445a8ff5d1f4852a"
+    },
+    {
+      "operation": "module",
+      "run_id": "532bd536-dbbc-432a-b7d3-07e3a8b00485",
+      "status": "completed",
+      "prompt_version": "1e30aab865469c93826f08bcabf4384e919d61dc52e682a303a5323adcc8da14",
+      "system_prompt_sha256": "35b8bf813106a2f44823f11caf7f526152617d043d8f87ec995ebd947bcf5d15",
+      "user_prompt_template_sha256": "179cfda9ca16b01832e80ebec7e1c04c6e9d36343eee3bd2445a8ff5d1f4852a"
+    },
+    {
+      "operation": "quiz",
+      "run_id": "554b5e17-1185-4cc6-9949-782ee07c5840",
+      "status": "completed",
+      "prompt_version": "1e30aab865469c93826f08bcabf4384e919d61dc52e682a303a5323adcc8da14",
+      "system_prompt_sha256": "35b8bf813106a2f44823f11caf7f526152617d043d8f87ec995ebd947bcf5d15",
+      "user_prompt_template_sha256": "179cfda9ca16b01832e80ebec7e1c04c6e9d36343eee3bd2445a8ff5d1f4852a"
+    }
+  ],
+  "application_outputs_unedited": true,
+  "remaining": [
+    "Respuestas/intento/score/feedback/decisión no ejecutados por defecto pedagógico material"
+  ]
+}

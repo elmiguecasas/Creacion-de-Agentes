@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-09-13T01:37:04.923Z",
+  "endpoint": "/api/learning/quiz",
+  "method": "POST",
+  "body": {
+    "module_id": "f102433b-eff7-4929-b294-5c5597fd9639",
+    "version": 1
+  },
+  "status": 201,
+  "response": {
+    "data": {
+      "quiz_id": "cc908792-7e83-4f5b-8258-5d75a975775c",
+      "version": 1,
+      "module_id": "f102433b-eff7-4929-b294-5c5597fd9639",
+      "questions": [
+        {
+          "question_id": "q_dso_02",
+          "question": "¿Cuál es la fórmula estándar aplicada para calcular el Days Sales Outstanding (DSO)?",
+          "options": [
+            "DSO = (Net Income / Accounts Receivable) * Number of Days",
+            "DSO = (Total Credit Sales / Accounts Receivable) * Number of Days",
+            "DSO = (Accounts Payable / Total Purchases) * Number of Days",
+            "DSO = (Accounts Receivable / Total Credit Sales) * Number of Days"
+          ],
+          "correct_option": 3,
+          "explanation": "La fórmula correcta divide las cuentas por cobrar (Accounts Receivable) entre las ventas totales a crédito (Total Credit Sales), multiplicando el resultado por el número de días del periodo considerado.",
+          "source_refs": [
+            "src_creditpulse_01",
+            "src_billtrust_02"
+          ]
+        },
+        {
+          "question_id": "q_dso_03",
+          "question": "¿Qué interpretación empresarial se le otorga a un incremento sostenido en el indicador DSO?",
+          "options": [
+            "Una mejora significativa en la liquidez y en la solidez financiera de la organización.",
+            "Una conversión más rápida de las facturas en efectivo y mayor eficiencia comercial.",
+            "Un proceso de cobranza altamente automatizado y un menor riesgo de incobrabilidad.",
+            "Problemas potenciales de liquidez o un posible deterioro en las políticas y gestión de crédito."
+          ],
+          "correct_option": 3,
+          "explanation": "Un incremento sostenido en el DSO indica que la empresa está tardando más tiempo en cobrar, lo que puede señalar problemas de liquidez o deficiencias en las políticas de crédito y cobranza.",
+          "source_refs": [
+            "src_creditpulse_01",
+            "src_billtrust_02"
+          ]
+        },
+        {
+          "question_id": "q_dso_05",
+          "question": "¿Qué rol cumple el indicador DSO en la gestión financiera y de operaciones de una empresa?",
+          "options": [
+            "Calcular la proporción exacta de pasivos corrientes cubiertos por activos líquidos disponibles.",
+            "Evaluar exclusivamente el volumen de producción mensual requerido para satisfacer la demanda del mercado.",
+            "Medir la eficiencia en la gestión del capital de trabajo y de las cuentas por cobrar, protegiendo la liquidez.",
+            "Determinar el margen bruto de utilidad obtenido por cada línea de producto comercializada a crédito."
+          ],
+          "correct_option": 2,
+          "explanation": "El DSO permite evaluar la eficiencia en la gestión del capital de trabajo y de las cuentas por cobrar, determinando la rapidez con la que las ventas se transforman en efectivo para proteger la liquidez.",
+          "source_refs": [
+            "src_creditpulse_01",
+            "src_billtrust_02"
+          ]
+        },
+        {
+          "question_id": "q_dso_01",
+          "question": "¿Qué mide específicamente el indicador Days Sales Outstanding (DSO) en una organización?",
+          "options": [
+            "El porcentaje de clientes que pagan sus facturas antes de la fecha de vencimiento.",
+            "El tiempo total que transcurre desde la adquisición de inventario hasta la venta final al contado.",
+            "El costo operativo total asociado exclusivamente a la gestión del departamento de cobranzas.",
+            "El número promedio de días que tarda una empresa en cobrar las cuentas por cobrar después de una venta a crédito."
+          ],
+          "correct_option": 3,
+          "explanation": "El DSO mide el número promedio de días que tarda una empresa en cobrar las cuentas por cobrar tras realizarse una venta a crédito, reflejando la eficiencia en la conversión de ventas en efectivo.",
+          "source_refs": [
+            "src_creditpulse_01",
+            "src_billtrust_02"
+          ]
+        },
+        {
+          "question_id": "q_dso_04",
+          "question": "¿Cuál de las siguientes prácticas constituye un error común al calcular el indicador DSO?",
+          "options": [
+            "Separar adecuadamente las cuentas por cobrar comerciales de otras cuentas por cobrar no operativas.",
+            "Utilizar únicamente el saldo de las cuentas por cobrar al final del periodo analizado.",
+            "Considerar la totalidad de los ingresos totales incluyendo ventas al contado en lugar de usar solo las ventas a crédito en el denominador.",
+            "Multiplicar el cociente resultante por el número exacto de días transcurridos en el periodo contable."
+          ],
+          "correct_option": 2,
+          "explanation": "Un error común y que distorsiona la precisión del DSO es incluir las ventas al contado en el denominador en lugar de limitar dicho valor exclusivamente a las ventas netas a crédito.",
+          "source_refs": [
+            "src_creditpulse_01",
+            "src_billtrust_02"
+          ]
+        }
+      ]
+    },
+    "run_id": "7c0b940a-4e7e-4b6b-b360-8642856d2f12"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "data": {
+    "route_id": "a3c8fa2b-6b5d-486a-ba8b-7db59fc187be",
+    "area": "Recursos Humanos",
+    "title": "Recorrido de Aprendizaje en Métricas de Recursos Humanos",
+    "rationale": "Una ruta estructurada para comprender, calcular y alinear los principales indicadores de Recursos Humanos con los objetivos organizacionales, basada en estándares de la industria y marcos estratégicos.",
+    "modules": [
+      {
+        "position": 1,
+        "metric": "Costo por Contratación (Cost per Hire)",
+        "reason": "Permite medir la inversión financiera total requerida para incorporar un nuevo colaborador, integrando costos internos y externos."
+      },
+      {
+        "position": 2,
+        "metric": "Tasa de Rotación de Nuevos Contratados (New-Hire Turnover)",
+        "reason": "Evalúa cuántos empleados abandonan la organización en sus primeros meses, reflejando la efectividad del proceso de selección y el onboarding."
+      },
+      {
+        "position": 3,
+        "metric": "Tasa de Promoción Interna (Internal Promotion Rate)",
+        "reason": "Mide el desarrollo del talento interno y el impacto de las iniciativas de movilidad y crecimiento profesional dentro de la organización."
+      }
+    ],
+    "sources": [
+      {
+        "source_id": "shrm_extensis",
+        "url": "https://extensishr.com/resource/blogs/14-hr-metrics-and-how-to-calculate-them",
+        "title": "14 Key HR Metrics to Track: Definitions and Formulas",
+        "tier": 2,
+        "authority_reason": "Publicación especializada basada en marcos y benchmarks de la Society for Human Resource Management (SHRM)."
+      },
+      {
+        "source_id": "aihr_kpis",
+        "url": "https://www.aihr.com/blog/human-resources-key-performance-indicators-hr-kpis",
+        "title": "HR KPIs: Guide, 20 Examples & Free Template",
+        "tier": 2,
+        "authority_reason": "Fuente especializada en analítica de personas e indicadores estratégicos de gestión humana."
+      }
+    ]
+  },
+  "run_id": "e4ba116e-492c-42af-8ddb-3bb3ef767374"
+}

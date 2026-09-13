@@ -1,0 +1,45 @@
+{
+  "kind": "integration_test_NOT_academic",
+  "checked_at": "2026-09-12T14:15:44.595Z",
+  "secret_scan": "PASS",
+  "user_id": "f0442452-456a-4d49-96ac-2c461fb8287d",
+  "attempts": 0,
+  "generated_modules": 0,
+  "routes": 0,
+  "runs": [
+    {
+      "run_id": "4a8a214a-9336-4cd9-b45e-fb8183c7edca",
+      "operation": "module",
+      "status": "failed",
+      "created_at": "2026-09-12T14:14:23.104Z",
+      "errors": [
+        {
+          "stage": "progress",
+          "error": {
+            "code": "api_error",
+            "status": 404,
+            "message": "{\"error\":{\"code\":404,\"message\":\"This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.\",\"status\":\"NOT_FOUND\"}}"
+          }
+        }
+      ],
+      "usage": []
+    },
+    {
+      "run_id": "0668c590-1c59-4e8d-8da3-548a4bf465c4",
+      "operation": "route",
+      "status": "failed",
+      "created_at": "2026-09-12T14:14:54.503Z",
+      "errors": [
+        {
+          "stage": "progress",
+          "error": {
+            "code": "api_error",
+            "status": 404,
+            "message": "{\"error\":{\"code\":404,\"message\":\"This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.6-flash for the latest features and improvements. We recommend you to use the Interactions API.\",\"status\":\"NOT_FOUND\"}}"
+          }
+        }
+      ],
+      "usage": []
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+FASE 5 — CIERRE DE INTEGRACIÓN GEMINI + TAVILY
+Metricamente — 12 de septiembre de 2026
+
+A. ESTADO
+
+PASS. V1–V11 completadas con evidencia real y retests documentados. READY técnico para Fase 6; Fase 6 NO ejecutada.
+No equivale a aprobación académica ni a garantía de calidad de cualquier futura generación. La muestra contiene un módulo CAC, dos quizzes (el inicial con defecto pedagógico conservado y el corregido), un intento de 60/100, feedback real y una ruta RRHH aceptada por validación pero rechazada explícitamente por el test para verificar supervisión.
+
+B. ARQUITECTURA FINAL EFECTIVA
+
+gemini-3.5-flash-lite mediante @google/genai/models.generateContent
++ search_metric_sources respaldada por Tavily HTTP API
++ get_learning_progress sobre SQLite real
++ Structured Outputs con schemas originales y AJV.
+
+Un solo agente. Secuencia de módulo/ruta: function call de progreso → resultado SQLite → function call de búsqueda → Tavily → evidencia normalizada → JSON estructurado → validación → persistencia. Quiz/feedback/interpret no hacen búsquedas nuevas. Gemini no recibe claves ni acceso SQL o herramientas arbitrarias de escritura. No se migró a Interactions API.
+El modelo local configurado se verificó como gemini-3.5-flash-lite; ya estaba indicado por el usuario y no se reescribió .env. El valor predeterminado y .env.example se actualizaron permanentemente. Google Search dejó de ser dependencia operativa; no fue invocado en estas pruebas.
+
+Historia conservada: OpenAI fue el proveedor inicial; se migró a Gemini por costo. Gemini 2.5 Flash/Flash-Lite rechazaron acceso para usuarios nuevos. Gemini 3.5 Flash-Lite respondió en inferencia real; su Search Grounding no cubría API Free Tier. Tavily fue probado y adoptado tras aprobación explícita. Los errores previos se conservan en el informe anterior y sus archivos de evidencia, sin presentarlos como estado vigente.
+
+C. CAMBIOS REALIZADOS
+
+Comparación SHA-256 contra metricamente-gemini-fase5-verificacion-real.zip: 7 archivos cambiados / 27 idénticos (34 comparados).
+Archivo → cambio → razón
+server/agent.js → modelo predeterminado 3.5 Flash-Lite; declaración/despacho de search_metric_sources; Tavily basic; normalización; timestamps; selección de fuentes; uso separado; redacción de ambas claves → reemplazar únicamente integración externa.
+.env.example → modelo aprobado y TAVILY_API_KEY vacía → configuración sin secretos.
+tests/helpers.js → doble explícito de búsqueda Tavily y function call → mantener fixtures identificadas y evitar solicitudes externas en regresión.
+tests/agent.test.js → aserciones de query, contenido, uso, respuesta de herramienta y redacción de ambas claves → conservar cobertura provider-specific.
+prompts/system_prompt.md → una instrucción para evitar varias opciones correctas en preguntas sobre errores → defecto pedagógico real de V7; hash del prompt actualizado automáticamente.
+README.md → instrucciones y arquitectura vigente, tratamiento de claves, búsqueda y evidencia → documentación operativa.
+DECISIONES.md → decisión actual y antecedentes conservados → historia y gobierno verificables.
+
+Sin cambios: frontend, SQLite/database/store, scoring, UUID, persistencia, historial, exportador, cinco schemas, AJV, quizzes/shuffle, decisiones humanas y get_learning_progress. No se añadieron dependencias. Respecto de la Segunda Misión OpenAI, el total acumulado de Fase 5 es 11 archivos cambiados y 23 idénticos; no confundir con los 7 de esta adopción Tavily.
+Scripts de QA e informes están fuera del proyecto, en work/ y outputs/. La carpeta excluida no se consultó ni se utilizó.
+
+D. V1–V11
+
+ID | Esperado | Observado | Evidencia | Estado
+V1 | Inferencia real con modelo aprobado | gemini-3.5-flash-lite respondió OK; modelVersion coincide | V1.json (metadatos), V2.json (inferencia) | PASS
+V2 | Request y usageMetadata reales | Respuesta real y 6 tokens prompt, 1 candidate, 7 total; SDK no expone código HTTP en respuesta exitosa | V2.json | PASS
+V3 | Búsqueda desde Metricamente | Gemini emitió search_metric_sources; Tavily HTTP 200, cinco resultados y un crédito por petición | snapshot-final.json, verification.json.tavily | PASS
+V4 | JSON real + schema + AJV | Interpret, módulo, ambos quizzes, feedback y ruta final pasan parseEnvelope/AJV completo | Requests responseJsonSchema y respuestas en snapshot-final.json; verificador técnico | PASS
+V5 | Gemini → progreso → SQLite → Gemini | Function calls reales, user_id vinculado; functionResponse utilizado en siguiente request | tool_result get_learning_progress y contents posteriores en snapshot-final.json | PASS
+V6 | Interpretar CAC, buscar y persistir módulo | Interpretación real; módulo Marketing/CAC con dos URLs recuperadas y fuentes nivel 2 | interpret.json, module.json, snapshot-module-* | PASS
+V7 | Cinco preguntas, cuatro opciones, claves/referencias, shuffle, congelación y revisión | Quiz inicial con ambigüedad; instrucción mínima corregida; quiz nuevo aceptable, mismas claves textuales tras shuffle y artefacto persistido intacto | quiz-initial-pedagogical-issue.json, quiz.json, pedagogical-review.json, verification.json | PASS tras corrección
+V8 | Scoring oficial, persistencia e inmutabilidad | Respuestas [3,3,0,0,1], tres aciertos; score 60; repetición idempotente; UPDATE rechazado; reconstrucción idéntica | attempt.json, attempt-checks.json, verification.json | PASS
+V9 | Feedback sobre historial real | Primer intento/60 puntos; identifica errores de cálculo y cociente; recomienda review, sin modificar score | feedback.json y trace de progreso del run | PASS
+V10 | Ruta real, fuentes, control humano, sin auto-completar | Primera ruta rechazada por fuentes insuficientes; segunda ruta con tres pasos y fuentes nivel 2; decisión reject registrada vía endpoint; intentos permanecen en uno | route-error-*, route.json, route-control.json, snapshot-final.json | PASS tras nueva ejecución controlada
+V11 | Metadata, queries, fuentes, calls, outputs y snapshots sin claves | Uso Gemini y Tavily separado, evidencia real sellada por SHA-256, escaneo de ambas claves PASS | verification.json, snapshot-final.json, manifest.json | PASS
+
+Cada estado PASS describe el resultado final observado, no borra las incidencias anteriores. Los tests se identifican integration_test_NOT_academic. No son Corrida 1/2/3.
+
+E. TAVILY
+
+Configuración de la búsqueda: basic, max_results=5, auto_parameters=false, include_usage=true, sin answer generado ni raw_content. Timeout 60 s; sin retries. Una llamada por ejecución de módulo/ruta.
+Queries y uso exacto:
+- Customer Acquisition Cost CAC formula definition marketing metrics
+  run 42e71c91-5e8c-47e1-8e50-c2a1ec9addea; HTTP 200; 5 resultados; usage {"credits":1}; response_time 2.71; run completed.
+- HR metrics human resources indicators SHRM analytics definition formula
+  run f8ef70aa-4db7-4144-8c93-dfcc1e6177de; HTTP 200; 5 resultados; usage {"credits":1}; response_time 2.88; run failed.
+- Human Resources metrics KPIs SHRM metrics and formulas
+  run e4ba116e-492c-42af-8ddb-3bb3ef767374; HTTP 200; 5 resultados; usage {"credits":1}; response_time 1.09; run completed.
+
+Total observado de esta integración: tres búsquedas, tres créditos, incluyendo la ruta rechazada. No incluye el test aislado previo de Tavily. No se calcula costo monetario ni se presupone que créditos consumidos certifican un plan gratuito.
+Módulo: DiGGrowth y Hyperbots, URLs exactas en module.json. Ruta final: ExtensisHR y AIHR, URLs exactas en route.json. Wikipedia no fue utilizada como fuente final. Son fuentes empresariales/formativas especializadas, no se presentan como organismos oficiales ni como un estándar normativo.
+Se preserva respuesta nativa exacta, incluido request_id si aparece, y un resultado normalizado. title/url/content/score/response_time/usage están disponibles en evidencia. El modelo solo recibe el contrato normalizado; las claves no forman parte de requests registrados ni del contexto.
+Errores: 402 → paid_tier_required; 429/432/433 → quota_exceeded; otros errores HTTP/transporte → search_failed; clave ausente → configuration_required. Búsqueda vacía o selección sin nivel 1/2 → insufficient_sources. No se habilita pago ni se hace fallback. Los errores de cuota/pago no aparecieron en las llamadas reales realizadas; no se afirman como validación externa de esas ramas.
+
+F. GEMINI
+
+Modelo efectivo: gemini-3.5-flash-lite en respuestas. Structured Outputs usa responseMimeType application/json y responseJsonSchema=envelope(operation); se mantienen module/quiz/route/feedback/interpret originales. Ninguna incompatibilidad de schema fue observada y no se retiraron keywords. Máximo un retry estructural; los tests verifican ese límite.
+get_learning_progress y search_metric_sources se invocaron con functionCall real. Se conservaron args, respuesta de lectura, partes del modelo y thoughtSignature si fue entregada. El resultado de progreso del feedback contiene el intento real de 60 puntos. El modelo no calcula el score oficial.
+
+Uso observado por ejecución (suma de sus etapas; datos exactos de cada respuesta en verification.json):
+Operación | run_id | promptTokenCount | candidatesTokenCount | totalTokenCount
+interpret | 23bee159-10a9-43ca-88c9-4bd76c95461b | 3139 | 116 | 3255
+module | 42e71c91-5e8c-47e1-8e50-c2a1ec9addea | 6767 | 680 | 7447
+quiz | 21a4a7b3-1bce-4e86-b876-7f6cdf8d77b1 | 4149 | 1189 | 5338
+quiz | 2debe5bd-fa18-4a87-b45d-4d6f0b9ce2c8 | 5965 | 1039 | 7004
+feedback | 5bf06b4e-59f1-4521-8d37-a7c4b587c9ff | 8251 | 443 | 8694
+route | e4ba116e-492c-42af-8ddb-3bb3ef767374 | 6890 | 648 | 7538
+route | f8ef70aa-4db7-4144-8c93-dfcc1e6177de | 6800 | 856 | 7656
+
+Suma de las 17 respuestas de aplicación: {"promptTokenCount":41961,"candidatesTokenCount":4971,"totalTokenCount":46932}.
+Request mínimo adicional: {"promptTokenCount":6,"candidatesTokenCount":1,"totalTokenCount":7,"promptTokensDetails":[{"modality":"TEXT","tokenCount":6}],"serviceTier":"standard"}.
+Se conserva promptTokensDetails y serviceTier=standard donde fueron entregados. thoughtsTokenCount y toolUsePromptTokenCount no fueron entregados en esta muestra: NO se convierten en cero. La llamada mínima fallida por argumento inválido no devolvió usageMetadata; no se agrega un consumo supuesto.
+
+G. VALIDACIÓN PEDAGÓGICA
+
+Resultado final V6/V7: PEDAGOGICALLY ACCEPTABLE para la muestra introductoria revisada.
+Definición y fórmula CAC: costos de adquisición atribuibles / clientes nuevos del mismo período. Ejemplo 10000/100=100 correcto. Valor de negocio vinculado al valor del cliente. Interpretación aceptable junto con ese contexto; un CAC bajo por sí solo no demuestra rentabilidad. Error común: costos ajenos a adquisición o ventanas incongruentes. El tratamiento de onboarding atribuible puede depender de convención y no debe confundirse con soporte posterior ajeno a adquisición.
+Fuentes revisadas: content exacto Tavily de DiGGrowth y Hyperbots; además se abrió la página Hyperbots. DiGGrowth no estuvo disponible en la apertura web adicional, por lo que su revisión se limita al content preservado, no al documento completo.
+La pregunta inicial q4_cac_common_mistake tenía otros errores válidos entre distractores. El quiz nuevo a0785d84-e862-41a0-a542-928bf017489c ofrece solo un error y tres prácticas correctas. Se revisaron manualmente las cinco preguntas, sus opciones, claves, explicaciones y source_refs. Claves finales base cero: [3,3,1,0,0]. No se retocó el quiz persistido: se generó uno nuevo y el anterior quedó sin intento.
+La ruta fue contrastada con la evidencia recuperada; AIHR se abrió adicionalmente. El rechazo explícito sirve para probar supervisión y no expresa un diagnóstico negativo de la ruta. ExtensisHR/AIHR son fuentes nivel 2 bajo juicio humano; citar SHRM dentro de una página no la convierte en una fuente oficial de SHRM.
+Alcance: revisión manual de una muestra, no evaluación automática universal de contenido. Ver pedagogical-review.json.
+
+H. CORRECCIONES E INCIDENCIAS
+
+Problema → diagnóstico → cambio mínimo → retest
+Request mínimo INVALID_ARGUMENT → configuración heredada del harness (maxOutputTokens 128 y thinkingBudget 0); no se aisló una keyword específica → eliminar config opcional solo de la llamada mínima del script → OK con usage real. Sin cambio a aplicación ni schemas.
+Quiz con varias respuestas defendibles → instrucción genérica no evitó distractores que también eran errores → una instrucción adicional en system_prompt.md → 21 tests PASS y nuevo quiz real PEDAGOGICALLY ACCEPTABLE.
+Primera ruta con fuentes seleccionadas solo nivel 3 → validateSources impidió publicación, comportamiento esperado → ningún cambio a código/política → segunda ejecución explícita del mismo pedido, con query diferente generada por Gemini, obtuvo fuentes nivel 2 y pasó. No se añadió retry automático.
+
+I. REGRESIÓN
+
+21 tests automáticos PASS / 0 FAIL, incluyendo validación, scoring, inmutabilidad, controles de usuario, fallos de búsqueda y redacción. Cuatro escenarios de navegador PASS / 0 pageerror. Startup real server/index.js PASS, health ok y agent_configured=true. git diff --check PASS; solo avisos heredados de normalización LF/CRLF.
+Se repitió la suite tras el ajuste del prompt; el navegador y startup se verificaron nuevamente al cierre. No se repitieron generaciones ya válidas de módulo/interpretación por ese ajuste específico del quiz.
+
+J. EVIDENCIA
+
+Directorio entregable: outputs/Fase5-evidencia-Tavily/.
+Snapshot completo: snapshot-final.json. Incluye siete runs (seis completed, uno failed), dos quizzes, un intento, una ruta y decisión explícita. Los cinco módulos seed conservan su identidad; existe un módulo dinámico adicional.
+Usuario técnico: fe56b74e-64db-4836-a13f-d05f8309bc43.
+Identificadores principales:
+- interpret: 23bee159-10a9-43ca-88c9-4bd76c95461b
+- module: 42e71c91-5e8c-47e1-8e50-c2a1ec9addea
+- quiz: 21a4a7b3-1bce-4e86-b876-7f6cdf8d77b1
+- quiz: 2debe5bd-fa18-4a87-b45d-4d6f0b9ce2c8
+- feedback: 5bf06b4e-59f1-4521-8d37-a7c4b587c9ff
+- route: e4ba116e-492c-42af-8ddb-3bb3ef767374
+- intento: 93803e62-6156-4eec-b43c-54bfc9e28853.
+Logs reales: agent_runs[].tool_calls_json dentro de cada snapshot. Los archivos V2.json, interpret/module/quiz/attempt/feedback/route.json conservan respuestas. manifest.json sella por SHA-256 cada JSON, incluidos errores y snapshots anteriores. verification.json reconstruye score, fuentes, roundtrips, AJV y ausencia de claves.
+Base de integración local: work/tavily-live/integration.db; no se distribuye ni se usa la base personal de la aplicación. No se guardó esta evidencia en corridas/ ni se ejecutó el exportador académico. El paquete excluye .env, node_modules, .git y bases SQLite. Las dos claves se comprobaron sin imprimirlas y no se copiaron a evidencia.
+
+K. GAPS RESTANTES
+
+No quedan bloqueos técnicos observados para iniciar la Fase 6 cuando sea autorizada.
+1. Calidad y clasificación de fuentes siguen dependiendo de revisión humana. La ambigüedad inicial y la diferencia de clasificación entre rutas muestran variabilidad real; la corrección reduce el caso observado, no garantiza ausencia futura de errores.
+2. Tavily informa créditos pero no certifica el plan; no se consultó configuración de facturación ni se habilitó billing. Gemini se utilizó bajo la confirmación del usuario de proyecto sin billing. No se informa costo cero como medición económica.
+3. Tres corridas académicas, análisis económico completo y definición oficial de supervisión L0–L4 continúan pendientes de sus etapas. No se inventó una etiqueta.
+4. Los snapshots permiten reconstruir la evidencia guardada; una nueva llamada LLM/búsqueda no garantiza texto idéntico. La identidad UUID local conserva sus límites ya documentados y no es autenticación multiusuario.
+
+L. GIT
+
+Rama local: work/metricamente-implementation. Base: 378c88ef70ee5828a19abaf15a19a2a87662220d. No se crearon commits, push, PR ni merge.
+El árbol incluye cambios sin commit heredados de Segunda Misión. Que app.js/index.html/styles.css aparezcan modificados frente a la base no implica modificación en esta fase: sus hashes siguen idénticos a ambos paquetes de referencia. .env está excluido de Git; credenciales únicamente locales. El estado continúa local hasta nueva instrucción.
+
+M. CONCLUSIÓN
+
+READY para FASE 6 — TRES CORRIDAS REALES, como preparación técnica de esta muestra.
+La arquitectura aprobada funciona con Gemini 3.5 Flash-Lite, Tavily, progreso real, Structured Outputs/AJV y scoring/persistencia determinísticos. Se preservan errores y retests; no se ocultan fallos previos ni se convierten fixtures en evidencia externa.
+FASE 6 NO EJECUTADA. La decisión de iniciarla vuelve a Chat.

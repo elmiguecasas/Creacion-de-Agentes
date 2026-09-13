@@ -1,0 +1,97 @@
+{
+  "type": "object",
+  "properties": {
+    "route_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "area": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "position": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "metric": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "position",
+          "metric",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 12
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "tier": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3
+          },
+          "authority_reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "source_id",
+          "url",
+          "title",
+          "tier",
+          "authority_reason"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "maxItems": 30
+    }
+  },
+  "required": [
+    "route_id",
+    "area",
+    "title",
+    "rationale",
+    "modules",
+    "sources"
+  ],
+  "additionalProperties": false
+}

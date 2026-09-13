@@ -1,0 +1,75 @@
+{
+  "data": {
+    "quiz_id": "8959972e-016f-48a6-ac53-7750b559da46",
+    "version": 1,
+    "module_id": "sla",
+    "questions": [
+      {
+        "question_id": "sla-5",
+        "question": "¿Qué debe indicarse al reportar cumplimiento de SLA?",
+        "options": [
+          "Solo el promedio de tiempos",
+          "Solo el color del indicador",
+          "Solo el nombre del área",
+          "Período, población y condición de cumplimiento"
+        ],
+        "correct_option": 3,
+        "explanation": "Sin población, período y regla no se puede interpretar correctamente el porcentaje.",
+        "source_refs": []
+      },
+      {
+        "question_id": "sla-2",
+        "question": "¿Cómo se calcula usualmente el porcentaje de cumplimiento de SLA?",
+        "options": [
+          "Horas activas / personas × 100",
+          "Lead time / cycle time × 100",
+          "Ítems dentro de SLA / ítems elegibles × 100",
+          "Ítems abiertos / ítems cerrados × 100"
+        ],
+        "correct_option": 2,
+        "explanation": "Se compara la cantidad de casos que cumplieron con el total al que aplicaba el acuerdo.",
+        "source_refs": []
+      },
+      {
+        "question_id": "sla-6",
+        "question": "¿Qué análisis complementa mejor una caída en el cumplimiento de SLA?",
+        "options": [
+          "Revisar los casos incumplidos por prioridad o causa",
+          "Cambiar la visualización",
+          "Mirar solo el promedio",
+          "Eliminar los casos demorados"
+        ],
+        "correct_option": 0,
+        "explanation": "Analizar los incumplimientos permite identificar causas y priorizar acciones.",
+        "source_refs": []
+      },
+      {
+        "question_id": "sla-4",
+        "question": "“Resolver 90% de tickets críticos en menos de 4 horas” es un ejemplo de:",
+        "options": [
+          "Backlog",
+          "Cycle time",
+          "Throughput",
+          "SLA"
+        ],
+        "correct_option": 3,
+        "explanation": "Expresa población, umbral y porcentaje objetivo: los componentes de un SLA.",
+        "source_refs": []
+      },
+      {
+        "question_id": "sla-1",
+        "question": "¿Qué define un SLA?",
+        "options": [
+          "El tiempo desde una solicitud",
+          "La cantidad total de trabajo pendiente",
+          "El volumen de trabajo completado",
+          "Un compromiso medible de nivel de servicio"
+        ],
+        "correct_option": 3,
+        "explanation": "Un SLA establece un estándar o promesa verificable de servicio.",
+        "source_refs": []
+      }
+    ]
+  },
+  "run_id": null
+}

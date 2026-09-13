@@ -1,0 +1,8 @@
+{
+  "result": "PEDAGOGICALLY REASONABLE",
+  "scope": "Ruta introductoria revisada contra content Tavily, no módulos ni fórmulas ejecutados.",
+  "assessment": "Secuencia razonable: rotación, costo por contratación, absentismo e ingresos por empleado. Rationale y razones pertinentes, fuentes especializadas recuperadas. Se acepta como propuesta, sin exigir perfección.",
+  "observation": "El snippet de Sage contiene una fórmula de rotación aparentemente invertida. La ruta no reproduce esa fórmula ni genera módulos; se preserva el snippet como límite de las fuentes externas y no se modifica la evidencia.",
+  "decision": "ACCEPT",
+  "authorization": "Orden explícita del usuario en misión de cierre; registrada por el operador después de revisar la ruta, no decisión automática del tutor."
+}

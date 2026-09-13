@@ -1,0 +1,39 @@
+{
+  "kind": "integration_test_NOT_academic",
+  "module_id": "e9daf3fe-2b02-4381-85de-ed807d26b5c7",
+  "module_result": "PEDAGOGICALLY ACCEPTABLE",
+  "sources_reviewed": [
+    {"url":"https://diggrowth.com/kpi/customer-acquisition-cost-cac","scope":"Content exacto recuperado y conservado por Tavily; apertura web adicional no disponible. Proveedor especializado de marketing analytics, nivel 2 bajo revisión humana."},
+    {"url":"https://www.hyperbots.com/glossary/customer-acquisition-cost-cac","scope":"Content Tavily y página abierta durante revisión. Proveedor de automatización financiera, nivel 2 para esta definición introductoria; no estándar normativo."}
+  ],
+  "module_checks": {
+    "definition":"Correcta: costos de adquisición por cliente nuevo en un período.",
+    "formula":"Correcta: ventas y marketing atribuibles / clientes nuevos; mismo período.",
+    "business_value":"Vincula eficiencia y sostenibilidad al valor del cliente; no decide acciones empresariales.",
+    "interpretation":"Aceptable como introducción junto con business_value. Un CAC bajo no demuestra por sí solo rentabilidad; comparar segmentos, períodos y valor del cliente.",
+    "example":"10000 / 100 = 100 por cliente, aritmética correcta.",
+    "common_mistake":"Excluir costos ajenos a adquisición y evitar ventanas incongruentes es correcto. Onboarding atribuible puede variar según convención; no confundirlo con soporte posterior ajeno a adquisición."
+  },
+  "initial_quiz": {
+    "quiz_id":"8a1a9539-eab3-41c0-a710-c15b8d303b72",
+    "result":"PEDAGOGICAL ISSUE",
+    "question_id":"q4_cac_common_mistake",
+    "issue":"El enunciado pide un error, pero también son errores usar solo marketing/conversiones o exclusivamente ventas y publicidad digital: más de una opción defendible.",
+    "resolution":"Se añadió una instrucción general al system prompt: contrastar todas las opciones y usar prácticas correctas como distractores cuando se pregunta por un error. Se generó otro quiz mediante el flujo normal; el original permanece inmutable y no fue respondido."
+  },
+  "retested_quiz": {
+    "quiz_id":"a0785d84-e862-41a0-a542-928bf017489c",
+    "result":"PEDAGOGICALLY ACCEPTABLE",
+    "correct_options_zero_based":[3,3,1,0,0],
+    "questions_reviewed":[
+      {"question_id":"q4_cac_common_mistake_alt","check":"Únicamente incluir costos ajenos a adquisición es error; los otros tres son prácticas correctas."},
+      {"question_id":"q3_cac_business_value_alt","check":"La sostenibilidad frente al valor del cliente es la única opción pertinente; explicación consistente."},
+      {"question_id":"q5_cac_example_alt","check":"10000/100=100; distractores numéricos incorrectos e inequívocos."},
+      {"question_id":"q1_cac_definition_alt","check":"Ventas, marketing y costos asociados a adquisición integran el numerador; restantes opciones omiten costos o incluyen ajenos."},
+      {"question_id":"q2_cac_formula_alt","check":"Costos/clientes nuevos es la única fórmula correcta; invertir el cociente cambia su significado."}
+    ],
+    "source_refs":"Las cinco preguntas refieren a los dos source_id reales del módulo.",
+    "limitations":"Revisión manual de esta muestra; AJV verifica estructura y referencias, no exactitud semántica universal. Distractores de negocio sencillos, adecuados para nivel introductorio."
+  },
+  "planned_attempt":{"answers_zero_based":[3,3,0,0,1],"expected_score":60,"purpose":"Dos errores deliberados (cálculo e inversión de fórmula) para comprobar feedback adaptativo sobre historial real."}
+}

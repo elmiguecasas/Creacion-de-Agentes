@@ -1,0 +1,27 @@
+{
+  "run_type": "academic_final_run",
+  "timestamp": "2026-09-13T01:41:56.107Z",
+  "sealed_at": "2026-09-13T01:44:02.293Z",
+  "provider": "Gemini API",
+  "model": "gemini-3.5-flash-lite",
+  "search_provider": "Tavily",
+  "user_id": "a9567680-9293-4cf4-b096-49aa4015bcaa",
+  "status": "PASS",
+  "supervision": "L2 — Autonomía supervisada; convención del proyecto, no definición oficial publicada",
+  "run_ids": [
+    {
+      "operation": "interpret",
+      "run_id": "4eb14963-eac0-48b2-ab59-b0a2e19c317f",
+      "prompt_version": "7e9e25b8b21b744247d7b821a20265ca5b32d34f1d3854b6b18b3e1544bc0296",
+      "system_prompt_sha256": "193203d4dc0f8f7c8aaeb9e1908e2c26985e08936ca2137b87d1fafb66a1b860",
+      "user_prompt_template_sha256": "179cfda9ca16b01832e80ebec7e1c04c6e9d36343eee3bd2445a8ff5d1f4852a"
+    },
+    {
+      "operation": "route",
+      "run_id": "105ad5af-188e-485a-959a-13dce7b4e4ce",
+      "prompt_version": "7e9e25b8b21b744247d7b821a20265ca5b32d34f1d3854b6b18b3e1544bc0296",
+      "system_prompt_sha256": "193203d4dc0f8f7c8aaeb9e1908e2c26985e08936ca2137b87d1fafb66a1b860",
+      "user_prompt_template_sha256": "179cfda9ca16b01832e80ebec7e1c04c6e9d36343eee3bd2445a8ff5d1f4852a"
+    }
+  ]
+}

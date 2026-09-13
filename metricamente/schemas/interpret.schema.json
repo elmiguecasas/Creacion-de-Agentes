@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "properties": {
+    "mode": {
+      "type": "string",
+      "enum": [
+        "metric",
+        "area",
+        "clarify"
+      ]
+    },
+    "area": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "metric": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "intent": {
+      "type": "string",
+      "minLength": 1
+    },
+    "clarification": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "mode",
+    "area",
+    "metric",
+    "intent",
+    "clarification"
+  ],
+  "additionalProperties": false
+}

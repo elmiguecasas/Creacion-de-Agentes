@@ -1,0 +1,70 @@
+{
+  "gemini": [
+    {
+      "run_id": "b5f9cfc0-293b-4aa1-acdc-f9706ee30e1f",
+      "stage": "progress",
+      "usageMetadata": {
+        "promptTokenCount": 1616,
+        "candidatesTokenCount": 67,
+        "totalTokenCount": 1683,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1616
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "b5f9cfc0-293b-4aa1-acdc-f9706ee30e1f",
+      "stage": "structured",
+      "usageMetadata": {
+        "promptTokenCount": 1671,
+        "candidatesTokenCount": 37,
+        "totalTokenCount": 1708,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1671
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "12c0b6ec-5c35-4001-bbfc-2697013e40fb",
+      "stage": "progress",
+      "usageMetadata": {
+        "promptTokenCount": 2580,
+        "candidatesTokenCount": 67,
+        "totalTokenCount": 2647,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 2580
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "12c0b6ec-5c35-4001-bbfc-2697013e40fb",
+      "stage": "structured",
+      "usageMetadata": {
+        "promptTokenCount": 3558,
+        "candidatesTokenCount": 302,
+        "totalTokenCount": 3860,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 3558
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "tavily": [],
+  "tavily_applicability": "Not invoked: seed module continuity"
+}

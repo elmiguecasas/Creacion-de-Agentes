@@ -1,2 +1,9 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Preserve delivered evidence bytes; keep historical manifests reproducible.
+/*.md -text
+/*.txt -text
+/Fase5-evidencia-real/** -text
+/Fase5-evidencia-Tavily/** -text
+/.gitattributes -text

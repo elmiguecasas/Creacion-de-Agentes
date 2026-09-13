@@ -1,0 +1,16 @@
+{
+  "run_type": "academic_final_run",
+  "provider_real": true,
+  "no_fixture": true,
+  "structured_ajv": true,
+  "persistence": true,
+  "secret_scan": "PASS",
+  "decision": "ACCEPT",
+  "pedagogy": "PEDAGOGICALLY ACCEPTABLE",
+  "score_reconstruction": {
+    "score": 60,
+    "correct_count": 3,
+    "result": "PASS"
+  },
+  "no_automatic_advancement": "PASS"
+}

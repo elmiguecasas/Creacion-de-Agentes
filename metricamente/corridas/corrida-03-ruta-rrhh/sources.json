@@ -1,0 +1,93 @@
+{
+  "query": "HR metrics human resources key performance indicators workforce analytics formulas standard",
+  "retrieved_response": {
+    "query": "HR metrics human resources key performance indicators workforce analytics formulas standard",
+    "follow_up_questions": null,
+    "answer": null,
+    "images": [],
+    "results": [
+      {
+        "url": "https://extensishr.com/resource/blogs/14-hr-metrics-and-how-to-calculate-them",
+        "title": "14 Key HR Metrics to Track: Definitions and Formulas",
+        "content": "Formula (Monthly): Monthly Revenue / Number of Employees\n Formula (Yearly): Yearly Revenue / Number of Employees\n Analysis: Several factors can influence average revenue per employee, including the age of the organization, its industry, and current turnover rates (a lower-than-normal headcount skews the rate).\n\n## 13. Employee performance [...] Formula: (Total Number of Days Missed by a Team or Department / Total Number of Workdays in a Team or Department) x 100\n Analysis: Identifying which departments or managers are experiencing higher absenteeism rates enables leadership to address the issues contributing to increased absences.\n\n## 8. Employee satisfaction [...] Data-driven insights have become essential to maximizing a company’s HR function and uncovering valuable information about an organization and its workforce.\n\nEvery business wants to attract top talent, reduce turnover, and keep employees productive and engaged, and measuring the right key performance indicators (KPIs) can help them achieve those goals. By tracking HR metrics, SMBs can:",
+        "score": 0.6947383,
+        "raw_content": null,
+        "id": "b0eda2-00"
+      },
+      {
+        "url": "https://www.sage.com/en-us/blog/important-hr-metrics",
+        "title": "The most important HR metrics to track | Sage Advice US",
+        "content": "It can indicate whether your workforce is stable or if there are potential retention problems, especially if turnover is high in key areas.\n\nThe formula is:\n\n(Average number of employees during the period ÷ number of employees who left during the period) × 100 \n\nIf your turnover rate is higher than desired, investigate the causes:\n\nIs turnover occurring in specific departments or roles? [...] HR metrics are quantitative and qualitative indicators that provide actionable insights into how effectively your organization is managing its people.\n\nThey measure key aspects of your workforce’s performance, engagement, and overall impact on business success.\n\nIn the area of employee engagement, you might also measure survey scores, participation rates, and feedback.\n\nBy tracking these metrics, you can identify strengths in your processes and pinpoint areas for improvement. [...] Training effectiveness measures how well your employees are developing and whether training programs are having a positive impact on them.\n\nIt shows if the skills learned in training are translating into improved job performance.\n\nThe formula is:\n\n(Difference between post-training and pre-training performance scores ÷ pre-training performance score) × 100\n\nIf training effectiveness is low, review the training content and delivery methods.",
+        "score": 0.68496037,
+        "raw_content": null,
+        "id": "7b9e77-01"
+      },
+      {
+        "url": "https://www.dayforce.com/blog/key-hr-metrics-your-team-should-track",
+        "title": "Best HR metrics and KPIs to measure in 2026 | Dayforce",
+        "content": "Quality of hire scores how new hires perform in their first six to 12 months, measured against the expectations set for the role. It ties recruiting effort to actual contribution, not just speed. There’s no single industry-standard formula, but a potential approach is to create a composite scoring system that averages several inputs into a single number.\n\nSample formula:([Performance rating] + [Hiring manager satisfaction] + [12-month retention rate]) / 3 = Quality of hire [...] Revenue per employee is a high-level gauge of how productively the workforce converts effort into results. It gives HR a financially credible way to defend headcount or justify new hires in terms that leadership already tracks.\n\nFormula: Revenue over chosen time period (e.g., monthly, yearly) / Average number of employees = Revenue per employee\n\n### Goal and performance cycle completion [...] Formula:([Number of unexpected absences in days in a given period] / [Total number of workdays in the same period]) x 100 = Absenteeism rate\n\n### Time to productivity\n\nTime to productivity illustrates how long a new hire takes to reach full contribution, which signals whether onboarding is effective.\n\nFormula: Count the time between an employee’s first day and when they start contributing in their role; measured against role-specific milestones\n\n## Employee engagement metrics",
+        "score": 0.62687886,
+        "raw_content": null,
+        "id": "b77850-02"
+      },
+      {
+        "url": "https://www.bamboohr.com/blog/key-hr-metrics",
+        "title": "The 30 Most Important HR Metrics You Need to Track",
+        "content": "HR metrics and analytics, such as Employee Net Promoter Score (ENPS) , offer a valuable insight into your workforce, how your HR strategies are working and how motivated or happy your team is.\n\nNot having a grasp on HR metrics leaves your business vulnerable to poor decision making. Plus, not knowing how your employees really feel could leave you blindsided and negatively impact team retention. [...] We’ve created this guide to help you understand what HR metrics are, the best metrics to track and 30 essential HR metrics examples you can start measuring today.\n\nreporting-analytics-2\n\n## What are HR metrics?\n\nHR metrics (or human resource metrics) are key data points that help you track your organization’s human capital. They show you how well your HR strategies and initiatives are performing, and areas that need improvement. [...] 1. Acceptance rate:  The number of offer letters your organization extends divided by the number of candidates who accept an offer.\n2. Cost per hire:  The average cost of hiring a new employee. You can generate this number by adding up both internal and external hiring costs then dividing that total by the number of employees you hired in a given period.\n3. Demographics: The characteristics of your workforce such as age, gender, education level, and length of service.",
+        "score": 0.57952,
+        "raw_content": null,
+        "id": "2c9b36-03"
+      },
+      {
+        "url": "https://www.predictiveindex.com/blog/hr-kpi-metrics",
+        "title": "19 Essential HR KPIs and Metrics For Executives in 2024",
+        "content": "HR metrics and HR KPIs are often used interchangeably—but they serve different purposes in a data-driven HR function.\n\nHR metrics are the broad set of data points that track workforce activity. These include measures like headcount, time to hire, turnover rate, or training hours completed. Metrics help you understand what is happening across the organization, but on their own, they don’t necessarily indicate success or failure. [...] HR KPIs (Key Performance Indicators) are a focused subset of those metrics that are directly tied to business outcomes. They are the measures that matter most—because they reflect progress against strategic goals like improving retention, increasing productivity, or accelerating growth.\n\nThe distinction comes down to intent:\n\n Metrics are descriptive — they provide visibility into HR processes and trends\n KPIs are strategic — they signal whether HR is driving meaningful business impact",
+        "score": 0.5411427,
+        "raw_content": null,
+        "id": "ed253b-04"
+      }
+    ],
+    "response_time": 1.02,
+    "usage": {
+      "credits": 1
+    },
+    "request_id": "6581125d-5ec9-4ccd-a2e2-b29b78f1cadf"
+  },
+  "selected": [
+    {
+      "source_id": "src-sage-hr",
+      "url": "https://www.sage.com/en-us/blog/important-hr-metrics",
+      "title": "The most important HR metrics to track",
+      "tier": 2,
+      "authority_reason": "Publicación especializada de Sage Advice con guías reconocidas sobre analítica y métricas de gestión de personal."
+    },
+    {
+      "source_id": "src-bamboohr",
+      "url": "https://www.bamboohr.com/blog/key-hr-metrics",
+      "title": "The 30 Most Important HR Metrics You Need to Track",
+      "tier": 2,
+      "authority_reason": "Plataforma líder especializada en software y recursos humanos con recursos analíticos validados en el sector."
+    },
+    {
+      "source_id": "src-dayforce",
+      "url": "https://www.dayforce.com/blog/key-hr-metrics-your-team-should-track",
+      "title": "Best HR metrics and KPIs to measure",
+      "tier": 2,
+      "authority_reason": "Consultora y proveedor global especializado en gestión de capital humano y métricas corporativas."
+    },
+    {
+      "source_id": "src-extensishr",
+      "url": "https://extensishr.com/resource/blogs/14-hr-metrics-and-how-to-calculate-them",
+      "title": "14 Key HR Metrics to Track: Definitions and Formulas",
+      "tier": 3,
+      "authority_reason": "Publicación profesional especializada en recursos humanos para el análisis de indicadores de desempeño y ausentismo."
+    },
+    {
+      "source_id": "src-predictiveindex",
+      "url": "https://www.predictiveindex.com/blog/hr-kpi-metrics",
+      "title": "19 Essential HR KPIs and Metrics For Executives",
+      "tier": 2,
+      "authority_reason": "Organización especializada en estrategia de talento y analítica ejecutiva del comportamiento organizacional."
+    }
+  ]
+}

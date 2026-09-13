@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-09-13T01:43:59.385Z",
+  "endpoint": "/api/decisions",
+  "method": "POST",
+  "body": {
+    "run_id": "105ad5af-188e-485a-959a-13dce7b4e4ce",
+    "decision": "accept"
+  },
+  "status": 200,
+  "response": {
+    "status": "recorded"
+  }
+}

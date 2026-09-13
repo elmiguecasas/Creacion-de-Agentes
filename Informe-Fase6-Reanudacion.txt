@@ -1,0 +1,39 @@
+FASE 6 — REANUDACIÓN FOCALIZADA
+
+A. Cambio exacto de prompt
+Se añadió únicamente esta regla general en prompts/system_prompt.md:
+Cuando fuentes confiables presenten convenciones, fórmulas, denominadores o métodos alternativos para una misma métrica, no los combines ni presentes como equivalentes sin condiciones. Seleccioná una convención principal para el módulo y mantenela consistente en definición, fórmula, ejemplo, quiz, respuesta correcta y explicación. Las alternativas pueden mencionarse únicamente indicando explícitamente cuándo aplican, qué supuesto requieren o que funcionan como proxy.
+El diagnóstico y la razón se registraron en DECISIONES.md. No se introdujo una regla específica DSO ni se modificaron código, schemas, tools, modelo o arquitectura.
+
+B. DSO anterior preservado
+Corrida-01-sla y corrida-02-dso permanecen intactas. No se repitió SLA ni se regeneró su usage. La nueva evidencia está en corrida-02-dso-reanudacion, con nuevos IDs.
+
+C. Nueva DSO
+FAIL pedagógico; interpretación, módulo y quiz reales completados técnicamente y AJV PASS. Input exacto: Quiero aprender DSO.
+Módulo 8a44686a-e7af-4d4a-b650-e1ad38633ae3; quiz 7c0b940a-4e7e-4b6b-b360-8642856d2f12.
+La fórmula usa Accounts Receivable / Total Credit Sales sin explicitar promedio ni ventas netas a crédito, como se solicitó. El ejemplo usa netas pero no define si el saldo es promedio/final. q_dso_04 presenta usar únicamente saldo final como distractor no erróneo, sin una convención alternativa contextualizada. Bajo la convención promedio exigida puede ser otro error defendible.
+No se afirma que toda fórmula con saldo final sea inválida: el problema es no cumplir ni explicitar la convención principal solicitada. La nueva versión distingue mejor crédito de contado, pero el criterio de aceptación sigue sin cumplirse. Ver pedagogical-review.json.
+
+D. Score, feedback y decisión
+No ejecutados: se detuvo antes de responder para no puntuar una evaluación que sigue sin cumplir el criterio acordado. No se editaron outputs ni se aplicó otra corrección.
+
+E. RRHH
+No ejecutada. Su inicio dependía de DSO válido; no se registró ACCEPT ficticio ni se crearon intentos.
+
+F. Usage adicional
+Gemini: 7 respuestas reales, {"promptTokenCount":15468,"candidatesTokenCount":1945,"totalTokenCount":17413}. Tavily: una búsqueda, usage {credits:1}, response_time 1.98.
+Query: Days Sales Outstanding DSO definition formula accounts receivable financial metrics. Cinco resultados, HTTP 200; fuentes utilizadas CreditPulse y Billtrust. Metadata exacta por respuesta en usage.json y snapshot-final.json. No se inventaron campos ausentes ni se calcularon costos monetarios.
+
+G. QA realizado
+21 tests automatizados PASS / 0 FAIL. JSON/schema/AJV de nuevas ejecuciones PASS. Revisión pedagógica FAIL por el motivo documentado. No se repitió navegador ni pruebas externas previas; solo llamadas necesarias para esta DSO.
+
+H. Secretos y hashes
+Ambas claves ausentes en evidencia. Manifiestos SHA-256 verificados, incluidas corridas previas; comparación de bytes contra paquete anterior para preservar SLA y DSO original. Nuevo system_prompt SHA-256: 193203d4dc0f8f7c8aaeb9e1908e2c26985e08936ca2137b87d1fafb66a1b860. Nuevo prompt_version: 7e9e25b8b21b744247d7b821a20265ca5b32d34f1d3854b6b18b3e1544bc0296. Manifiesto nuevo: 9942e055cfcc465b1a26b931081ddfe87a5494aa2f9ad275dcb19008c6d5a30d.
+
+I. Estado de las tres corridas
+SLA: PASS conservado, sin repetición.
+DSO original: fallo pedagógico preservado; DSO nueva: FAIL pedagógico / BLOCKED.
+RRHH: pendiente por condición de paso.
+
+J. FASE 6 BLOCKED
+La única corrección autorizada fue aplicada, pero esta generación no cumple la convención principal exigida. Se vuelve a Chat sin intentar correcciones adicionales ni otra generación. No se habilitó billing, no hubo push/PR/merge y no se ejecutó Fase 7.

@@ -1,0 +1,94 @@
+{
+  "used": [
+    {
+      "source_id": "cfi_dso",
+      "url": "https://corporatefinanceinstitute.com/resources/accounting/days-sales-outstanding",
+      "title": "Days Sales Outstanding (DSO) - Formula, Example, Define",
+      "tier": 2,
+      "authority_reason": "Corporate Finance Institute es una institución de capacitación financiera ampliamente reconocida y consultada por profesionales."
+    },
+    {
+      "source_id": "wallstreetprep_dso",
+      "url": "https://www.wallstreetprep.com/knowledge/days-sales-outstanding-dso",
+      "title": "Days Sales Outstanding (DSO) | Formula + Calculator",
+      "tier": 2,
+      "authority_reason": "Wall StreetPrep es un proveedor de formación financiera corporativa con altos estándares técnicos."
+    }
+  ],
+  "retrievals": [
+    {
+      "run_id": "532bd536-dbbc-432a-b7d3-07e3a8b00485",
+      "query": "DSO Days Sales Outstanding definition formula finance operations",
+      "response": {
+        "query": "DSO Days Sales Outstanding definition formula finance operations",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://www.highradius.com/resources/Blog/what-is-days-sales-outstanding-dso-and-how-to-use-it-for-optimizing-accounts-receivables-ar",
+            "title": "Days Sales Outstanding (DSO): Calculation, Formula & Optimization Tips",
+            "content": "## What is Days Sales Outstanding (DSO)?\n\nDays Sales Outstanding (DSO) is a financial metric that reveals how many days, on average, it takes a company to collect payment from its customers after making a credit sale. In simpler terms, it measures how long accounts receivable remain unpaid.\n\nA lower DSO means faster collections and healthier cash flow. A higher DSO suggests slower cash conversion, which can stress liquidity and operations.  \n  \nDSO formula & example [...] The full-year DSO is calculated using the formula:  \n DSO = (Accounts Receivable / Net Credit Sales) × 365 Here’s what each term means:\n\nAccounts Receivable: Total outstanding invoices at the end of the year.  \n Net Credit Sales: Total sales made on credit during the year (excluding returns or cash sales).  \n 365: Represents the number of days in a year to convert the ratio into a daily average. [...] Days Sales Outstanding = (Accounts Receivable/Net Credit Sales)x Number of days.\n\n### Example Calculation of DSO:\n\nLet’s consider a specific scenario for Company A, a hygiene products provider. In a given period, the company recorded approximately $30,000 in credit sales and had $20,000 in accounts receivables that were collected within 40 days. Let’s calculate its Days Sales Outstanding (DSO):\n\nDSO = (20,000 / 30,000) \\ 40 = 26.6 days",
+            "score": 0.8740022,
+            "raw_content": null,
+            "id": "85b5c2-00"
+          },
+          {
+            "url": "https://www.billtrust.com/resources/blog/how-to-calculate-days-sales-outstanding-on-accounts-receivables",
+            "title": "Days Sales Outstanding (DSO): Formula and Importance | Billtrust",
+            "content": "Days Sales Outstanding (DSO) is a critical financial metric that reflects a company’s efficiency in collecting its receivables. It’s influenced by various factors, ranging from internal processes such as payment terms and credit policies to external factors including macroeconomic conditions, technological advancements, and geopolitical events. [...] In this article, we discuss the definition of DSO, how to calculate it, the importance and limitations of DSO, and best practices on how to improve it.\n\n## What is Days Sales Outstanding (DSO)?\n\nDay Sales Outstanding (DSO) is a measurement of the average number of days a company typically takes to collect revenue once a sale has been completed. It’s a key performance indicator for analyzing accounts receivables and of a company’s cash flow and liquidity. [...] DSO is an indicator of how many average days worth of sales are tied up in receivables. By reducing Days Sales Outstanding (DSO), your company can free up cash for investments, payroll, and purchasing, enhancing its financial flexibility.\n\nThere are a number of valuable insights that a business can derive from calculating DSO, including:",
+            "score": 0.86303437,
+            "raw_content": null,
+            "id": "a49303-01"
+          },
+          {
+            "url": "https://corporatefinanceinstitute.com/resources/accounting/days-sales-outstanding",
+            "title": "Days Sales Outstanding (DSO) - Formula, Example, Define",
+            "content": "Days Sales Outstanding (DSO) represents the average number of days it takes credit sales to be converted into cash or how long it takes a company to collect its account receivables. DSO can be calculated by dividing the total accounts receivable during a certain time frame by the total net credit sales. This number is then multiplied by the number of days in the period of time. [...] Determining the days sales outstanding is an important tool for measuring the liquidity of a company’s current assets. Due to the high importance of cash in operating a business, it is in the company’s best interests to collect receivable balances as quickly as possible. Managers, investors, and creditors see how effective the company is in collecting cash from customers. A lower DSO value reflects high liquidity and cash flow measurements. [...] Fast credit collectability decreases problems related to paying operational expenses, and any excess money that is collected can be reinvested right away to increase future earnings.\n\n## How Important is Days Sales Outstanding in Business Operations?",
+            "score": 0.8622012,
+            "raw_content": null,
+            "id": "628e11-02"
+          },
+          {
+            "url": "https://www.wallstreetprep.com/knowledge/days-sales-outstanding-dso",
+            "title": "Days Sales Outstanding (DSO) | Formula + Calculator",
+            "content": "Days sales outstanding (DSO) measures the average number of days it takes for a company to collect cash from credit purchases.\n DSO is calculated as the average accounts receivable (A/R) outstanding divided by revenue, multiplied by the number of days in the period of time (usually 365 days).\n A lower DSO value reflects more cash on hand, while a higher DSO indicates slower credit sales to cash conversion, leading to low liquidity and cash flow generation. [...] The calculation of days sales outstanding (DSO) involves dividing the accounts receivable balance by the revenue for the period, which is then multiplied by 365 days.\n\nDays Sales Outstanding (DSO) = (Average Accounts Receivable ÷ Net Revenue) × 365 Days\n\nWhere:\n\n Average Accounts Receivable = (Ending Accounts Receivable + Beginning Accounts Receivable) ÷ 2\n Net Revenue = Gross Revenue – Returns – Discounts [...] ## How to Calculate Days Sales Outstanding (DSO)\n\nThe days sales outstanding (DSO) is a working capital metric that measures the number of days it takes a company to retrieve cash payments from customers who paid using credit.\n\nUsually, the DSO metric is expressed on an annual basis for comparability, so the average accounts receivable balance is used in the calculation to prevent a timing mismatch.",
+            "score": 0.8593928,
+            "raw_content": null,
+            "id": "bc6c09-03"
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=qaWs8XR9NbI",
+            "title": "Days Sales Outstanding (DSO) Explained",
+            "content": "DSO is calculated by dividing the total outstanding accounts receivable by the total sales, and then multiplying the result by the number of days in the period. The formula is:\n\nDSO = (Accounts Receivable / Total Sales) x Number of Days\n\nFor example, if a company has $50,000 in accounts receivable and $100,000 in total sales for a month with 30 days, the DSO calculation would be:\n\nDSO = ($50,000 / $100,000) x 30 = 15 days",
+            "score": 0.82895297,
+            "raw_content": null,
+            "id": "16eeaa-04"
+          }
+        ],
+        "response_time": 1.39,
+        "usage": {
+          "credits": 1
+        },
+        "request_id": "29c697e5-3c1c-4c29-a079-e3573a317aa7"
+      },
+      "selected": [
+        {
+          "source_id": "cfi_dso",
+          "url": "https://corporatefinanceinstitute.com/resources/accounting/days-sales-outstanding",
+          "title": "Days Sales Outstanding (DSO) - Formula, Example, Define",
+          "tier": 2,
+          "authority_reason": "Corporate Finance Institute es una institución de capacitación financiera ampliamente reconocida y consultada por profesionales."
+        },
+        {
+          "source_id": "wallstreetprep_dso",
+          "url": "https://www.wallstreetprep.com/knowledge/days-sales-outstanding-dso",
+          "title": "Days Sales Outstanding (DSO) | Formula + Calculator",
+          "tier": 2,
+          "authority_reason": "Wall StreetPrep es un proveedor de formación financiera corporativa con altos estándares técnicos."
+        }
+      ]
+    }
+  ],
+  "origin": "Tavily results, model selection preserved"
+}

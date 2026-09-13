@@ -1,0 +1,127 @@
+{
+  "gemini": [
+    {
+      "run_id": "2ace6813-1e4b-4f90-9c81-cf220b85d66e",
+      "stage": "progress",
+      "usageMetadata": {
+        "promptTokenCount": 1703,
+        "candidatesTokenCount": 66,
+        "totalTokenCount": 1769,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1703
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "2ace6813-1e4b-4f90-9c81-cf220b85d66e",
+      "stage": "structured",
+      "usageMetadata": {
+        "promptTokenCount": 1756,
+        "candidatesTokenCount": 70,
+        "totalTokenCount": 1826,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1756
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "8a44686a-e7af-4d4a-b650-e1ad38633ae3",
+      "stage": "progress",
+      "usageMetadata": {
+        "promptTokenCount": 1743,
+        "candidatesTokenCount": 63,
+        "totalTokenCount": 1806,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1743
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "8a44686a-e7af-4d4a-b650-e1ad38633ae3",
+      "stage": "search",
+      "usageMetadata": {
+        "promptTokenCount": 1867,
+        "candidatesTokenCount": 27,
+        "totalTokenCount": 1894,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1867
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "8a44686a-e7af-4d4a-b650-e1ad38633ae3",
+      "stage": "structured",
+      "usageMetadata": {
+        "promptTokenCount": 3761,
+        "candidatesTokenCount": 671,
+        "totalTokenCount": 4432,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 3761
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "7c0b940a-4e7e-4b6b-b360-8642856d2f12",
+      "stage": "progress",
+      "usageMetadata": {
+        "promptTokenCount": 2291,
+        "candidatesTokenCount": 69,
+        "totalTokenCount": 2360,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 2291
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "7c0b940a-4e7e-4b6b-b360-8642856d2f12",
+      "stage": "structured",
+      "usageMetadata": {
+        "promptTokenCount": 2347,
+        "candidatesTokenCount": 979,
+        "totalTokenCount": 3326,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 2347
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "tavily": [
+    {
+      "run_id": "8a44686a-e7af-4d4a-b650-e1ad38633ae3",
+      "query": "Days Sales Outstanding DSO definition formula accounts receivable financial metrics",
+      "usage": {
+        "credits": 1
+      },
+      "response_time": 1.98
+    }
+  ],
+  "tavily_applicability": "Real search invoked"
+}

@@ -1,0 +1,11 @@
+{
+  "run_type":"academic_final_run",
+  "result":"PEDAGOGICALLY ACCEPTABLE",
+  "scope":"Módulo y quiz seed de continuidad con Entrega 1; sin búsqueda externa ni fuentes retrospectivas inventadas.",
+  "quiz_id":"8959972e-016f-48a6-ac53-7750b559da46",
+  "correct_options_zero_based":[3,2,0,3,3],
+  "checks":"Cinco preguntas con cuatro opciones, claves coherentes con módulo seed, fórmula de cumplimiento y explicaciones correctas para el objetivo introductorio. source_refs vacíos porque el seed no tenía fuentes.",
+  "feedback_review":"Identifica los dos errores deliberados de reporte y fórmula, usa score oficial 60 y reconoce un único intento. Recomienda review sin ejecutarlo.",
+  "human_decision":"El usuario respondió ACCEPT explícitamente mediante pregunta en esta conversación; registrada en el endpoint de decisiones.",
+  "disclaimer":"Las respuestas fueron seleccionadas para ejercitar el mecanismo de feedback adaptativo; no constituyen una evaluación académica del autor."
+}

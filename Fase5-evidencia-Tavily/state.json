@@ -1,0 +1,247 @@
+{
+  "user_id": "fe56b74e-64db-4836-a13f-d05f8309bc43",
+  "kind": "integration_test_NOT_academic",
+  "model": "gemini-3.5-flash-lite",
+  "interpret": {
+    "data": {
+      "mode": "metric",
+      "area": "Finanzas y Crecimiento",
+      "metric": "CAC",
+      "intent": "Quiero aprender CAC",
+      "clarification": null
+    },
+    "run_id": "23bee159-10a9-43ca-88c9-4bd76c95461b"
+  },
+  "module": {
+    "data": {
+      "module_id": "e9daf3fe-2b02-4381-85de-ed807d26b5c7",
+      "version": 1,
+      "area": "Marketing",
+      "metric": "CAC",
+      "title": "Customer Acquisition Cost (CAC)",
+      "definition": "El Costo de Adquisición de Clientes (CAC) es el costo total incurrido por una organización para adquirir un nuevo cliente, considerando los gastos de ventas, marketing, publicidad y costos indirectos asociados durante un período determinado.",
+      "business_value": "Permite evaluar la eficiencia de las inversiones en marketing y ventas, determinando si la estrategia de crecimiento y la asignación de capital son financieramente sostenibles en relación con el valor que aporta el cliente.",
+      "formula": "CAC = Total Sales and Marketing Costs / Number of New Customers Acquired",
+      "interpretation": "Un CAC más bajo indica mayor eficiencia en la conversión de prospectos y optimización de canales. Un CAC elevado, en cambio, puede reflejar ineficiencias en las estrategias comerciales o de marketing que erosionan el retorno de inversión (ROI).",
+      "example": "Si una empresa destina $10,000 en un mes a esfuerzos de marketing y ventas y consigue 100 nuevos clientes en ese mismo período, el CAC es de $100 por cliente.",
+      "common_mistake": "Mezclar costos operativos ajenos a la adquisición, como soporte técnico o desarrollo de producto, o calcular numerador y denominador con ventanas temporales o fuentes de datos incongruentes.",
+      "sources": [
+        {
+          "source_id": "src_diggrowth_cac",
+          "url": "https://diggrowth.com/kpi/customer-acquisition-cost-cac",
+          "title": "Customer Acquisition Cost (CAC): Definition, Formula & Benchmark | DiGGrowth",
+          "tier": 2,
+          "authority_reason": "Plataforma especializada en métricas SaaS y análisis de indicadores de crecimiento y eficiencia comercial."
+        },
+        {
+          "source_id": "src_hyperbots_cac",
+          "url": "https://www.hyperbots.com/glossary/customer-acquisition-cost-cac",
+          "title": "What is Customer Acquisition Cost (CAC)? Definition, Process & Key Metrics",
+          "tier": 2,
+          "authority_reason": "Glosario y recurso analítico especializado en métricas financieras y de negocio para organizaciones digitales."
+        }
+      ]
+    },
+    "run_id": "42e71c91-5e8c-47e1-8e50-c2a1ec9addea"
+  },
+  "quiz": {
+    "data": {
+      "quiz_id": "a0785d84-e862-41a0-a542-928bf017489c",
+      "version": 1,
+      "module_id": "e9daf3fe-2b02-4381-85de-ed807d26b5c7",
+      "questions": [
+        {
+          "question_id": "q4_cac_common_mistake_alt",
+          "question": "¿Cuál de las siguientes acciones representa una distorsión metodológica o error común al determinar el CAC?",
+          "options": [
+            "Separar adecuadamente los gastos de ventas y marketing de otros departamentos no relacionados.",
+            "Utilizar las fuentes de datos correctas correspondientes al mismo período temporal de análisis.",
+            "Delimitar claramente el número de clientes nuevos adquiridos mediante los canales comerciales evaluados.",
+            "Incluir en el cálculo costos operativos ajenos a la adquisición, tales como el soporte técnico o desarrollo de producto."
+          ],
+          "correct_option": 3,
+          "explanation": "Mezclar costos operativos no vinculados a la adquisición, como el soporte o desarrollo, distorsiona la realidad de la métrica.",
+          "source_refs": [
+            "src_diggrowth_cac",
+            "src_hyperbots_cac"
+          ]
+        },
+        {
+          "question_id": "q3_cac_business_value_alt",
+          "question": "¿De qué manera impacta el monitoreo constante del CAC en la estrategia de crecimiento de una organización?",
+          "options": [
+            "Define automáticamente el organigrama y las jerarquías internas del departamento de recursos humanos.",
+            "Establece de manera inflexible el salario mínimo garantizado para el personal operativo de soporte.",
+            "Calcula con precisión contable la depreciación anual de los equipos informáticos y maquinarias.",
+            "Permite evaluar si la asignación de capital y la estrategia de adquisición son financieramente sostenibles frente al valor del cliente."
+          ],
+          "correct_option": 3,
+          "explanation": "Monitorear el CAC permite evaluar si las inversiones en marketing y ventas generan un crecimiento sostenible en relación con el valor aportado por el cliente.",
+          "source_refs": [
+            "src_diggrowth_cac",
+            "src_hyperbots_cac"
+          ]
+        },
+        {
+          "question_id": "q5_cac_example_alt",
+          "question": "Si una empresa invierte $10,000 mensuales en esfuerzos comerciales y de marketing logrando incorporar 100 nuevos clientes, ¿cuál es el análisis financiero correcto?",
+          "options": [
+            "La inversión total indica que el costo por cliente incorporado asciende a $1,000.",
+            "Cada nuevo cliente adquirido representa un costo operativo e inversión de $100.",
+            "El costo unitario de adquisición por cada nuevo cliente es exactamente de $10.",
+            "El rendimiento obtenido arroja un costo de adquisición de $0.10 por cliente."
+          ],
+          "correct_option": 1,
+          "explanation": "Al dividir $10,000 entre 100 nuevos clientes se obtiene un costo de adquisición unitario de $100 por cada cliente.",
+          "source_refs": [
+            "src_diggrowth_cac",
+            "src_hyperbots_cac"
+          ]
+        },
+        {
+          "question_id": "q1_cac_definition_alt",
+          "question": "¿Qué componentes integran fundamentalmente el numerador al calcular el Costo de Adquisición de Clientes según las prácticas estándar?",
+          "options": [
+            "Los gastos totales de ventas, marketing, publicidad y costos indirectos asociados al periodo.",
+            "El sueldo exclusivo del equipo gerencial de la organización sin impacto en la comercialización.",
+            "Únicamente los gastos directos de pauta publicitaria en redes sociales sin personal comercial.",
+            "Los costos fijos totales de la compañía incluyendo alquileres corporativos y producción general."
+          ],
+          "correct_option": 0,
+          "explanation": "El numerador del CAC abarca el costo total invertido tanto en ventas como en marketing, publicidad y costos indirectos asociados para incorporar clientes.",
+          "source_refs": [
+            "src_diggrowth_cac",
+            "src_hyperbots_cac"
+          ]
+        },
+        {
+          "question_id": "q2_cac_formula_alt",
+          "question": "Desde una perspectiva de eficiencia financiera, ¿cómo se interpreta matemáticamente el cociente del CAC?",
+          "options": [
+            "Dividiendo los costos totales de ventas y marketing entre el número de nuevos clientes adquiridos.",
+            "Calculando el cociente entre los ingresos operativos netos y el presupuesto publicitario mensual.",
+            "Multiplicando los costos totales comerciales por el número de clientes que abandonaron la empresa.",
+            "Dividiendo la cantidad de nuevos clientes entre la inversión total realizada en ventas y marketing."
+          ],
+          "correct_option": 0,
+          "explanation": "La fórmula estándar divide la inversión total asignada a ventas y marketing entre el número exacto de nuevos clientes captados.",
+          "source_refs": [
+            "src_diggrowth_cac",
+            "src_hyperbots_cac"
+          ]
+        }
+      ]
+    },
+    "run_id": "2debe5bd-fa18-4a87-b45d-4d6f0b9ce2c8"
+  },
+  "attempt": {
+    "data": {
+      "attempt_id": "93803e62-6156-4eec-b43c-54bfc9e28853",
+      "user_id": "fe56b74e-64db-4836-a13f-d05f8309bc43",
+      "quiz_id": "a0785d84-e862-41a0-a542-928bf017489c",
+      "answers": [
+        3,
+        3,
+        0,
+        0,
+        1
+      ],
+      "results": [
+        {
+          "question_id": "q4_cac_common_mistake_alt",
+          "answer": 3,
+          "correct_option": 3,
+          "correct": true
+        },
+        {
+          "question_id": "q3_cac_business_value_alt",
+          "answer": 3,
+          "correct_option": 3,
+          "correct": true
+        },
+        {
+          "question_id": "q5_cac_example_alt",
+          "answer": 0,
+          "correct_option": 1,
+          "correct": false
+        },
+        {
+          "question_id": "q1_cac_definition_alt",
+          "answer": 0,
+          "correct_option": 0,
+          "correct": true
+        },
+        {
+          "question_id": "q2_cac_formula_alt",
+          "answer": 1,
+          "correct_option": 0,
+          "correct": false
+        }
+      ],
+      "score": 60,
+      "correct_count": 3,
+      "created_at": "2026-09-12T18:17:30.335Z"
+    }
+  },
+  "feedback": {
+    "data": {
+      "diagnosis": "El usuario completó su primer intento en el módulo de Costo de Adquisición de Clientes (CAC) obteniendo un score oficial de 60 sobre 100 (3 respuestas correctas de 5). El historial muestra una única evidencia registrada, reflejando solidez en la comprensión de la definición conceptual, el valor de negocio y los errores comunes metodológicos, pero evidenciando áreas de mejora en la aplicación práctica de la fórmula y el cálculo con ejemplos numéricos.",
+      "strengths": [
+        "Comprensión clara de los componentes que integran el numerador del CAC según las prácticas estándar.",
+        "Identificación correcta del impacto estratégico y del valor de negocio del monitoreo del CAC.",
+        "Reconocimiento adecuado de los errores comunes y distorsiones metodológicas al determinar la métrica."
+      ],
+      "weaknesses": [
+        "Dificultad en la interpretación matemática y el manejo del cociente de la fórmula del CAC.",
+        "Error al resolver el cálculo del costo unitario de adquisición en el ejemplo numérico propuesto."
+      ],
+      "recommended_action": "review",
+      "recommended_focus": "Revisar los fundamentos de la fórmula matemática del CAC y practicar ejercicios de cálculo numérico para afianzar la relación entre inversión total y número de nuevos clientes.",
+      "next_metric": null,
+      "reason": "Dado que el score oficial registrado es del 60% y se identificaron debilidades puntuales en la aplicación de la fórmula y el ejemplo numérico, se recomienda realizar un repaso focalizado de esos conceptos antes de reintentar la evaluación."
+    },
+    "run_id": "5bf06b4e-59f1-4521-8d37-a7c4b587c9ff"
+  },
+  "route": {
+    "data": {
+      "route_id": "a3c8fa2b-6b5d-486a-ba8b-7db59fc187be",
+      "area": "Recursos Humanos",
+      "title": "Recorrido de Aprendizaje en Métricas de Recursos Humanos",
+      "rationale": "Una ruta estructurada para comprender, calcular y alinear los principales indicadores de Recursos Humanos con los objetivos organizacionales, basada en estándares de la industria y marcos estratégicos.",
+      "modules": [
+        {
+          "position": 1,
+          "metric": "Costo por Contratación (Cost per Hire)",
+          "reason": "Permite medir la inversión financiera total requerida para incorporar un nuevo colaborador, integrando costos internos y externos."
+        },
+        {
+          "position": 2,
+          "metric": "Tasa de Rotación de Nuevos Contratados (New-Hire Turnover)",
+          "reason": "Evalúa cuántos empleados abandonan la organización en sus primeros meses, reflejando la efectividad del proceso de selección y el onboarding."
+        },
+        {
+          "position": 3,
+          "metric": "Tasa de Promoción Interna (Internal Promotion Rate)",
+          "reason": "Mide el desarrollo del talento interno y el impacto de las iniciativas de movilidad y crecimiento profesional dentro de la organización."
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "shrm_extensis",
+          "url": "https://extensishr.com/resource/blogs/14-hr-metrics-and-how-to-calculate-them",
+          "title": "14 Key HR Metrics to Track: Definitions and Formulas",
+          "tier": 2,
+          "authority_reason": "Publicación especializada basada en marcos y benchmarks de la Society for Human Resource Management (SHRM)."
+        },
+        {
+          "source_id": "aihr_kpis",
+          "url": "https://www.aihr.com/blog/human-resources-key-performance-indicators-hr-kpis",
+          "title": "HR KPIs: Guide, 20 Examples & Free Template",
+          "tier": 2,
+          "authority_reason": "Fuente especializada en analítica de personas e indicadores estratégicos de gestión humana."
+        }
+      ]
+    },
+    "run_id": "e4ba116e-492c-42af-8ddb-3bb3ef767374"
+  }
+}

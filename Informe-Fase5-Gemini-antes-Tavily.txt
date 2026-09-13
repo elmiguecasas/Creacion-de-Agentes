@@ -1,0 +1,165 @@
+FASE 5 — MIGRACIÓN ACOTADA A GEMINI + TESTING REAL
+Metricamente — informe del 12 de septiembre de 2026
+
+A. ESTADO
+BLOCKED.
+Actualización con API real del 12 de septiembre de 2026. La clave configurada por el usuario permitió consultar metadatos del modelo. Sin embargo, las cinco solicitudes reales de generación devolvieron HTTP 404 NOT_FOUND: el servicio indicó que models/gemini-2.5-flash ya no está disponible para usuarios nuevos.
+La causa anterior (credencial ausente) queda resuelta. El bloqueo actual es disponibilidad efectiva del modelo aprobado para esta cuenta. Consultar metadatos no demuestra acceso a inferencia.
+Se realizaron seis solicitudes externas: una consulta de modelo y cinco generaciones. No se habilitó billing ni se cambió de modelo/proveedor/API. No se ejecutó Fase 6. Los tests están identificados como integration_test_NOT_academic.
+
+B. MIGRACIÓN
+
+Se compararon por SHA-256 los 34 archivos de proyecto del paquete de Segunda Misión contra el árbol actual. Exactamente 10 cambiaron; 24 permanecen idénticos.
+
+Archivo | Diferencia respecto de la implementación OpenAI
+package.json | Sustituye openai por @google/genai; permanece el resto del stack.
+package-lock.json | Actualiza dependencia de proveedor y transitivas; @google/genai 2.22.0 instalado.
+.env.example | GEMINI_API_KEY y GEMINI_MODEL=gemini-2.5-flash sustituyen variables OpenAI.
+server/agent.js | GoogleGenAI/models.generateContent; functionDeclarations y functionResponse; googleSearch; responseJsonSchema; extracción desde groundingChunks; usageMetadata; errores y redacción de secretos.
+tests/helpers.js | Doble explícito que devuelve el contrato del SDK Gemini; no responde como OpenAI.
+tests/agent.test.js | Aserciones específicas Gemini, grounding/usage, preservación de requests y redacción.
+README.md | Configuración, proveedor, límites, free tier y pendientes actualizados.
+DECISIONES.md | Registra migración, alcance, gobierno y ausencia de verificación real; conserva historia anterior.
+server/app.js | Única línea de health: consulta agent.configured en lugar de verificar OPENAI_API_KEY.
+scripts/smoke-agent.js | Únicamente sustituye la comprobación y mensaje de OPENAI_API_KEY por GEMINI_API_KEY.
+
+Los dos últimos ajustes se documentaron y anunciaron antes de ejecutarlos: sin ellos health y smoke seguirían comprobando el proveedor retirado. No se alteraron endpoints ni responsabilidades.
+
+Idénticos a Segunda Misión: frontend completo (app.js/index.html/styles.css), todos los JSON Schemas, prompts, validación AJV, scoring, SQLite, store, congelación de quizzes, exportador de snapshots, semillas, tests/core.test.js, README.txt y demás archivos no listados como modificados.
+
+No se materializó ni se leyó «Entrega 2. System-User Prompt». No se introdujo Python ni otra arquitectura. No quedan dos proveedores activos.
+
+C. FREE TIER
+El usuario confirmó proyecto en Nivel gratuito y billing deshabilitado. Las solicitudes usaron únicamente la credencial de outputs/metricamente/.env. No se consultó ni modificó la configuración de facturación desde esta misión.
+La API respondió a metadatos y rechazó la generación por disponibilidad del modelo, no por pago. No se observó HTTP 429 ni una cuota numérica. No corresponde clasificar este error como BLOCKED — PAID TIER REQUIRED.
+No se calculó costo ni se infiere consumo cero a partir de metadata ausente. La disponibilidad publicada anteriormente no prevalece sobre el error real de esta cuenta.
+
+D. V1–V11
+ID | Prueba | Esperado | Observado | Evidencia | Estado
+V1 | Acceso a gemini-2.5-flash | Inferencia habilitada | models.get PASS, pero generateContent 404; acceso operativo no disponible | V1.json y V2-error.json | FAIL
+V2 | Request mínimo real | Texto de respuesta | HTTP 404 NOT_FOUND | V2-error.json | FAIL
+V3 | Google Search Grounding | Búsquedas y metadata | Request real con googleSearch rechazado 404 antes de búsqueda | V3-error.json | BLOCKED
+V4 | Structured Output + AJV | JSON real validado | Request real con responseJsonSchema rechazado 404; no output para AJV | V4-error.json | BLOCKED
+V5 | get_learning_progress real | Modelo emite functionCall, SQLite responde y resultado vuelve | Primera solicitud real con declaración forzada rechazada 404; no functionCall emitido | snapshot-module-* y snapshot-route-* | BLOCKED
+V6 | Módulo CAC | Búsqueda, fuentes, módulo persistido | Endpoint real invocado; run failed en etapa progress; cero módulos generados | module-error-* y snapshot-module-* | BLOCKED
+V7 | Quiz real | Cinco preguntas validadas/congeladas y revisión | No ejecutable sin módulo real de V6; no se sustituyó con fixture | verification.json: generated_modules=0 | BLOCKED
+V8 | Intento real | Scoring oficial e intento inmutable del quiz real | No ejecutable sin V7; cero intentos técnicos | verification.json: attempts=0 | BLOCKED
+V9 | Feedback real | Interpretación del intento/historial real | No ejecutable sin V8 | snapshot-route-* sin intentos | BLOCKED
+V10 | Ruta RRHH real | Búsqueda, ruta estructurada, control humano | Endpoint real invocado; run failed en progress por 404; cero rutas | route-error-* y snapshot-route-* | BLOCKED
+V11 | Evidencia real | Logs, outputs, grounding y usage sin secretos | Logs de fallos/snapshots y escaneo PASS; API no entregó grounding, output ni usage | verification.json y manifest.json | BLOCKED
+
+Evidencia en outputs/Fase5-evidencia-real; manifest.json registra SHA-256 de cada JSON. Los estados BLOCKED no son PASS implícitos ni incompatibilidades de funciones demostradas: no se pudo superar la indisponibilidad del modelo.
+Run módulo: 4a8a214a-9336-4cd9-b45e-fb8183c7edca, 2026-09-12T14:14:23.104Z.
+Run ruta: 0668c590-1c59-4e8d-8da3-548a4bf465c4, 2026-09-12T14:14:54.503Z.
+Usuario técnico único: f0442452-456a-4d49-96ac-2c461fb8287d. Sin corridas académicas.
+
+E. GROUNDING
+
+Implementación:
+- Fase de búsqueda mediante config.tools=[{googleSearch:{}}].
+- Se conserva la respuesta completa del SDK en la traza.
+- grounding_metadata copia groundingMetadata sin fabricar campos.
+- Se preservan webSearchQueries, groundingChunks, groundingSupports, títulos, URIs, searchEntryPoint y cualquier metadata adicional cuando aparecen.
+- retrievedSources extrae únicamente groundingChunks[].web.uri/title del candidato utilizado. Ignora URLs de texto libre.
+- Se mantiene la validación existente de referencias, niveles 1/2/3 y al menos una fuente nivel 1/2, clasificada bajo el prompt.
+- Si no hay chunks web válidos se devuelve insufficient_sources, aunque el texto contenga una URL.
+
+Request real con googleSearch enviado: sí (V3). Queries reales preservadas: ninguna; HTTP 404 impidió recibir groundingMetadata. No se afirma ejecución efectiva de Google Search.
+Fuentes reales recuperadas: ninguna.
+La fixture contiene «fixture query» y example.org únicamente para probar extracción. No es una búsqueda ni evidencia académica.
+
+F. FUNCTION CALLING
+
+El adaptador declara get_learning_progress con parametersJsonSchema y solicita modo ANY, restringido a ese nombre. Lee functionCall.args, verifica usuario y filtros, consulta el mismo store.progress y devuelve functionResponse con el resultado real del servicio.
+
+El modelo no recibe conexión SQLite, SQL ni herramienta de escritura. Se conserva el rechazo cross-user. Las partes de contenido del modelo, incluidas firmas si existen, se mantienen en el contexto al responder la herramienta.
+
+Evidencia local: la fixture emite functionCall; el servicio consulta SQLite; el test de feedback comprueba que el historial recuperado contiene score 100 guardado, pese a enviar score 0 ajeno en el request de feedback. Son pruebas de integración controlada, no evidencia de function calling por Gemini vivo.
+
+G. STRUCTURED OUTPUTS
+
+Schemas conservados exactamente:
+- module.schema.json
+- quiz.schema.json
+- route.schema.json
+- feedback.schema.json
+- interpret.schema.json
+
+Se envían mediante responseMimeType=application/json y responseJsonSchema=envelope(operation). AJV sigue aplicando el contrato completo y las validaciones semánticas existentes. No se simplificó ninguna construcción ni se usó parsing libre como sustituto de Structured Outputs.
+
+La compatibilidad real del schema continúa sin verificar: V4 envió el envelope de interpret y recibió 404 por modelo antes de producir JSON. AJV no recibió salida real. No existe error real que justifique quitar keywords. La documentación del SDK admite responseJsonSchema, con un subconjunto de JSON Schema: https://googleapis.github.io/js-genai/release_docs/interfaces/types.GenerateContentConfig.html.
+
+Se conserva como máximo un reintento por salida estructuralmente inválida. Los tests comprueban éxito después de un único fallo y error terminal después del segundo. No hay tercer retry.
+
+H. PEDAGOGÍA
+
+BLOCKED — no hay módulo ni quiz generado por Gemini real para revisar contra fuentes recuperadas.
+
+No se emite PEDAGOGICALLY ACCEPTABLE ni PEDAGOGICAL ISSUE basándose en contenido fixture. La revisión de definición, fórmula, interpretación, ejemplo, preguntas y claves queda pendiente de V6/V7 reales.
+
+I. USAGE
+
+usage_metadata real entregada por Gemini en esta fase: AUSENTE. La consulta de metadatos y los cinco errores reales no devolvieron usageMetadata; los snapshots de ambos runs contienen usage vacío. No hay cifras reales de tokens que transcribir.
+
+El adaptador preserva el objeto usageMetadata exacto y lo expone en la traza como usage_metadata, además de la respuesta original. Mantiene, cuando se reciban:
+- promptTokenCount;
+- candidatesTokenCount;
+- thoughtsTokenCount;
+- toolUsePromptTokenCount;
+- totalTokenCount;
+- cualquier otro campo que efectivamente devuelva el SDK.
+
+No se convierten campos ausentes en consumo cero ni se calcula economía final. Los valores numéricos fixture no representan consumo real.
+
+J. CORRECCIONES
+
+Fallo/condición → diagnóstico → cambio mínimo → retest
+
+Health y smoke dependían de OPENAI_API_KEY → referencias residuales fuera del adaptador → health consulta agent.configured y smoke comprueba GEMINI_API_KEY → startup y smoke sin clave correctos.
+Fixtures tenían formato Responses → incompatibles con Gemini SDK → cambio de fixtures/asserts provider-specific, sin cambiar tests de scoring/persistencia → 21 PASS.
+Redacción de propiedad apiKey con comparación en minúsculas → normalización debía comparar «apikey» → corrección del literal y aserción con secreto sintético → PASS.
+Posible URL escrita en texto sin grounding → no es evidencia recuperada → extracción solo desde chunks; fixture con URL en texto y chunks vacíos se rechaza → PASS.
+SDK instalado advierte dependencia transitiva node-domexception deprecada → advertencia de instalación, no fallo operativo → sin dependencia añadida manualmente para resolverla → instalación y tests PASS; auditoría npm informó 0 vulnerabilidades en ese momento.
+
+Reanudación real: HTTP 404 en cinco generaciones → modelo no disponible para usuarios nuevos según la API → ningún cambio de código, schema o modelo, porque no se demostró un defecto de implementación → regresión final 21 PASS y navegador 4 PASS. Las correcciones anteriores corresponden a la migración ya realizada; en esta reanudación solo se actualizaron documentos y evidencia.
+
+K. REGRESIÓN
+
+- 21 tests automáticos existentes, con adaptación de fixtures/aserciones provider-specific: 21 PASS / 0 FAIL.
+- Cuatro escenarios de navegador: 4 PASS / 0 pageerror.
+  1. Seed, resultado guardado con feedback sin API, reload, reintento y móvil.
+  2. Módulo/quiz/feedback fixture y rechazo humano.
+  3. Ruta fixture sin completitud ficticia y elección explícita.
+  4. Contenido no confiable representado como texto.
+- Startup del entrypoint server/index.js: PASS, /api/health devuelve status ok y agent_configured true (configuración presente; no significa acceso efectivo al modelo).
+- git diff --check: PASS. Solo advertencias de normalización LF/CRLF heredadas del entorno; sin errores de whitespace.
+- Comparación de alcance por hash contra paquete previo: 10 modificados / 24 idénticos; frontend, DB, scoring, schemas y persistencia intactos.
+
+Estos resultados son regresión técnica, no las tres corridas finales.
+
+L. GAPS DEMOSTRADOS
+1. El modelo aprobado rechaza todas las generaciones reales de esta cuenta con 404, aunque sus metadatos siguen accesibles.
+2. No se pudieron verificar búsqueda ejecutada, metadata de grounding, function call emitido y respondido, ni JSON real validado por AJV.
+3. No existen módulo/quiz generados para validar definición, fórmula, interpretación, ejemplo, preguntas o claves. Pedagogía: BLOCKED, sin base para emitir PEDAGOGICALLY ACCEPTABLE o PEDAGOGICAL ISSUE.
+4. Intento/scoring sobre quiz real, feedback adaptativo y ruta real quedan pendientes. Las pruebas locales pasan pero no sustituyen esos resultados.
+5. Los logs de errores reales son reconstruibles y no contienen la clave; no hay outputs exitosos ni usageMetadata real para evaluar.
+No hay evidencia de pago requerido, agotamiento de cuota o rechazo de keywords del schema. No se justifican cambios preventivos de esas piezas.
+
+M. GIT
+
+Rama local: work/metricamente-implementation.
+Base remota: 378c88ef70ee5828a19abaf15a19a2a87662220d.
+Commits creados en Fase 5: 0.
+Push: 0. PR: 0. Merge: 0.
+
+La implementación sigue sin commit, como estaba al comenzar. git status incluye cambios de Segunda Misión: app.js/index.html/styles.css aparecen modificados respecto del commit base, pero sus hashes NO cambiaron en Fase 5. Los demás archivos de implementación permanecen sin seguimiento porque no se crearon commits previos.
+
+La comparación contra el ZIP previo identifica los cambios exclusivos de esta misión. .env fue creado por el usuario; continúa local, excluido de Git y del paquete. Su contenido no se reproduce. La carpeta excluida continúa fuera del checkout.
+
+N. CONCLUSIÓN
+BLOCKED para Fase 6 — Tres corridas reales.
+La regresión local pasa; el testing real demostró que gemini-2.5-flash no permite generación con esta cuenta. La arquitectura se mantiene intacta y no se declara READY.
+Debe volver a Chat la decisión sobre un modelo disponible y permitido en free tier, o un acceso válido al modelo aprobado. El mensaje de Google sugiere otro modelo y otra API, pero esta misión no los adopta ni verifica sus condiciones. Cualquier cambio debe conservar las restricciones acordadas y después repetir V1–V11, incluida revisión pedagógica.
+La credencial ya está configurada: no se solicita otra copia. No se habilitó billing. No hubo commit, push, PR ni merge. Fase 6 NO ejecutada.
+Paquete actualizado: metricamente-gemini-fase5-verificacion-real.zip. Incluye código actual sin secretos, este informe, evidencia JSON real con manifiesto y regresión local separada. Los snapshots técnicos están fuera de corridas/.
+

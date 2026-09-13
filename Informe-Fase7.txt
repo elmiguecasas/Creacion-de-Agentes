@@ -1,0 +1,71 @@
+FASE 7 — INFORME FINAL DE DOCUMENTACIÓN
+
+A. Estado
+PASS — FASE 7 COMPLETE. Documentación consolidada sobre código y evidencia existentes. No se ejecutaron Gemini, Tavily, nuevas corridas, tests funcionales, navegador ni fases posteriores. No hubo push/PR/merge.
+
+B. Archivos modificados
+outputs/metricamente/README.md → documentación principal consolidada → permitir comprensión, instalación, uso y reconstrucción sin la conversación.
+outputs/metricamente/corridas/README.md → índice académico final → reflejar tres corridas reales y distinguir fallo pedagógico de invalidez académica.
+outputs/Informe-Fase7.txt → este informe nuevo → registrar alcance, comprobaciones y gaps.
+Sólo dos archivos del proyecto cambiaron respecto del inicio de esta fase, confirmado por comparación SHA-256 de 123 archivos de documentación, implementación y evidencia. No hubo archivos eliminados. Prompts, código, schemas, scoring, herramientas, datos seed, DECISIONES.md y carpetas individuales de corridas permanecieron intactos. La carpeta excluida de Entrega 2 no se consultó.
+
+C. README — secciones finales
+Definición y problema; estado/alcance; evolución Entrega 1; implementado vs roadmap; arquitectura/flujo; modos conceptuales specific_metric/learning_route y valores reales metric/area; contrato y validación; herramientas/proveedores; quizzes/scoring/feedback; persistencia/identidad; L2; estructura; requisitos/instalación/configuración/arranque; uso; endpoints; corridas/reconstrucción; comandos auxiliares; seguridad/limitaciones/economía; antecedentes de proveedores.
+
+D. Corridas
+Índice actualizado con enlaces, inputs exactos, run_ids, artefactos, versiones de prompts, usage y supervisión:
+- SLA: PASS, quiz nuevo, score 60/100, feedback, ACCEPT, sin iniciar repaso.
+- DSO original: REAL RUN — PEDAGOGICAL FAILURE PRESERVED; sin intento, score ni feedback. Fallo detectado antes de puntuar.
+- DSO reanudación: iteración preservada, no reemplazo ni cuarta corrida académica.
+- RRHH: PASS, ruta por dominio con Tavily, ACCEPT; sin módulos, quizzes o attempts nuevos.
+Los estados BLOCKED en artefactos históricos sellados no se reescribieron. El índice explica su relación con el cierre académico final. No se regeneró hasta obtener una salida favorable.
+
+E. Reproducibilidad
+Un tercero puede localizar input/output, seguir run_ids, consultar solicitudes/respuestas, herramientas, query, fuentes, usage y decisiones; verificar manifest SHA-256; reconstruir el score sobre el quiz congelado; identificar prompts/schemas efectivos en snapshots.
+Comprobación offline del snapshot SLA: score 60, tres aciertos y resultados por pregunta coincidentes con lo persistido. No se creó otro intento.
+Replay/reconstrucción no invoca proveedores. Rerun sí, consume recursos y puede variar. No hay restauración automática de SQLite desde snapshots ni determinismo prometido para Gemini/Tavily.
+
+F. Instalación
+Verificados directamente package.json, .env.example, scripts/export-run.js y server/index.js: Node >=22, npm ci, npm start, npm test, npm run export:run -- <user-id>, npm run smoke:agent. El README distingue comandos offline de smoke externo con consumo y evita sobrescribir .env existente. Documenta HOST/PORT, DATABASE_PATH, credenciales vacías y modelo gemini-3.5-flash-lite.
+Los comandos de instalación/arranque se contrastaron con código; no se reinstalaron dependencias ni se inició una nueva sesión para repetir Fase 5. Health indica configuración local Gemini, no acceso real ni cuota de ambos proveedores.
+
+G. Supervisión
+L2 — Autonomía supervisada, convención operativa del proyecto ante ausencia de definiciones oficiales publicadas L0–L4.
+Agente: interpreta, consulta, busca, genera, analiza y recomienda. Humano: inicia, responde, revisa, acepta/rechaza y decide el siguiente paso.
+Matiz documentado: registrar aceptación mediante endpoint no inicia actividades; los botones del frontend pueden registrar la aceptación e iniciar la actividad elegida con el mismo clic explícito. No hay avance autónomo del agente. La revisión pedagógica académica fue humana; no se afirma una aprobación pedagógica automática de todos los módulos.
+
+H. Limitaciones
+Schema/AJV válido no garantiza calidad pedagógica; fuentes/snippets requieren evaluación; DSO preserva un fallo real; snippet RRHH aparentemente problemático no reproducido; modelo/búsqueda no determinísticos; UUID no es autenticación; no recuperación de identidad entre dispositivos; claves correctas visibles para autoaprendizaje; seeds sin fuentes externas inventadas; no LMS completo. Roadmap explícito: flashcards, repetición espaciada, simuladores, dashboard avanzado, autenticación completa, multiusuario corporativo y multiagente.
+
+I. Estructura obligatoria
+README.md → existe.
+prompts/system_prompt.md → existe; seis piezas verificadas.
+prompts/user_prompt.md → existe; seis piezas verificadas.
+corridas/ → existe; tres corridas más una iteración.
+DECISIONES.md → existe; conservado, sin auditoría histórica ni reescritura.
+
+J. Consistencia y QA documental
+Corregidos en documentación vigente: Fase 6 supuestamente no ejecutada; RRHH pendiente; índice BLOCKED general; tres corridas todavía pendientes; etiqueta L2 no adoptada; afirmación demasiado amplia de ausencia de avance tras aceptación; exclusión Git supuestamente total de corridas.
+Proveedor vigente: Gemini 3.5 Flash-Lite + Tavily. Proveedores previos sólo aparecen como historia. Modos conceptuales diferenciados de valores reales del schema.
+19 enlaces internos comprobados, todos con destino existente.
+85 entradas verificadas en cinco manifiestos: SLA 28; DSO original 18; suplemento DSO 3; iteración 18; RRHH 18. Cero fallos. No se cambió ningún manifiesto ni output.
+Ambos prompts conservan sus hashes y las seis piezas. El system prompt numera sus encabezados, mientras el user prompt no; la comprobación se adaptó a ese formato sin cambiar los archivos.
+git diff --check: sin errores. Git emitió avisos preexistentes sobre normalización LF/CRLF de frontend; esos archivos no se modificaron en esta fase.
+No se repitieron los 21 tests funcionales ya acreditados.
+
+K. Secretos
+.env existe localmente dentro de la carpeta del proyecto, está ignorado por Git y no está versionado. No es correcto decir que está físicamente fuera de la carpeta: el README aclara que queda fuera del material versionado/entregable.
+.env.example tiene GEMINI_API_KEY y TAVILY_API_KEY vacías.
+Escaneo en memoria de claves configuradas y patrones sobre 92 archivos (documentación principal, ejemplo y corridas): cero coincidencias; sin imprimir credenciales. El informe no contiene valores secretos.
+Los JSON directamente bajo corridas/ están ignorados; las subcarpetas académicas no lo están automáticamente. Se documenta revisión expresa antes de compartir.
+
+L. Gaps reales posteriores
+1. Discrepancia literal de contrato: el system prompt vigente aún dice «No asignes una etiqueta L0–L4: sus definiciones oficiales están pendientes». La documentación adopta L2 como convención, no definición oficial. Se reporta; no se corrige el prompt ni se oculta su versión. Cualquier armonización requiere autorización posterior.
+2. Análisis económico final pendiente: existe usage real, no valoración monetaria final ni certificación de condiciones de cuenta.
+3. Auditoría histórica de DECISIONES.md pendiente de la fase correspondiente; no ejecutada aquí.
+4. DSO sigue pedagógicamente FAIL; la documentación no lo subsana. La revisión de fuentes y consistencia sigue requiriendo supervisión.
+5. Autenticación y protección para despliegue compartido no implementadas; no se presentan como listas para producción.
+Estos gaps están declarados y no bloquean completar la misión documental, que exige reportarlos sin desarrollar nuevas soluciones.
+
+M. Conclusión
+FASE 7 COMPLETE. Documentación operativa y de evidencia consolidada, con limitaciones y discrepancias visibles. Fase 8 no ejecutada. Sin cambios de arquitectura, proveedores, prompts, schemas, scoring, SQLite o herramientas; sin consumo externo nuevo.

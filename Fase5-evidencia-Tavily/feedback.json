@@ -1,0 +1,19 @@
+{
+  "data": {
+    "diagnosis": "El usuario completó su primer intento en el módulo de Costo de Adquisición de Clientes (CAC) obteniendo un score oficial de 60 sobre 100 (3 respuestas correctas de 5). El historial muestra una única evidencia registrada, reflejando solidez en la comprensión de la definición conceptual, el valor de negocio y los errores comunes metodológicos, pero evidenciando áreas de mejora en la aplicación práctica de la fórmula y el cálculo con ejemplos numéricos.",
+    "strengths": [
+      "Comprensión clara de los componentes que integran el numerador del CAC según las prácticas estándar.",
+      "Identificación correcta del impacto estratégico y del valor de negocio del monitoreo del CAC.",
+      "Reconocimiento adecuado de los errores comunes y distorsiones metodológicas al determinar la métrica."
+    ],
+    "weaknesses": [
+      "Dificultad en la interpretación matemática y el manejo del cociente de la fórmula del CAC.",
+      "Error al resolver el cálculo del costo unitario de adquisición en el ejemplo numérico propuesto."
+    ],
+    "recommended_action": "review",
+    "recommended_focus": "Revisar los fundamentos de la fórmula matemática del CAC y practicar ejercicios de cálculo numérico para afianzar la relación entre inversión total y número de nuevos clientes.",
+    "next_metric": null,
+    "reason": "Dado que el score oficial registrado es del 60% y se identificaron debilidades puntuales en la aplicación de la fórmula y el ejemplo numérico, se recomienda realizar un repaso focalizado de esos conceptos antes de reintentar la evaluación."
+  },
+  "run_id": "5bf06b4e-59f1-4521-8d37-a7c4b587c9ff"
+}

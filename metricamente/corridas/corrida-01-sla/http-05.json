@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-09-12T19:08:35.539Z",
+  "endpoint": "/api/learning/feedback",
+  "method": "POST",
+  "body": {
+    "attempt_id": "7572a2f2-4a2d-4544-9c81-11096e9fb203"
+  },
+  "status": 200,
+  "response": {
+    "data": {
+      "diagnosis": "El usuario completó un intento sobre el módulo SLA con un puntaje de 60/100 (3 de 5 respuestas correctas). El registro histórico muestra este único intento en el sistema.",
+      "strengths": [
+        "Reconoce el concepto general de SLA como un compromiso medible de servicio.",
+        "Identifica ejemplos prácticos que combinan población, umbral y porcentaje objetivo.",
+        "Comprende que el análisis complementario ante caídas de SLA requiere revisar los casos incumplidos por causa o prioridad."
+      ],
+      "weaknesses": [
+        "Confundió los requisitos indispensables al reportar cumplimiento de SLA (período, población y condición de cumplimiento).",
+        "Falló en el cálculo operativo del porcentaje de cumplimiento (ítems dentro de SLA / ítems elegibles × 100)."
+      ],
+      "recommended_action": "review",
+      "recommended_focus": "Repasar la fórmula de cálculo del porcentaje de cumplimiento y los componentes clave que deben informarse junto a un SLA.",
+      "next_metric": null,
+      "reason": "El puntaje oficial de 60 y la evidencia de los errores en cálculo y requisitos de reporte justifican una revisión antes de un nuevo intento."
+    },
+    "run_id": "12c0b6ec-5c35-4001-bbfc-2697013e40fb"
+  }
+}

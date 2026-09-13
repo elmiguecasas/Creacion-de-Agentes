@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-09-12T19:08:34.833Z",
+  "endpoint": "/api/attempts",
+  "method": "POST",
+  "body": {
+    "quiz_id": "8959972e-016f-48a6-ac53-7750b559da46",
+    "answers": [
+      0,
+      3,
+      0,
+      3,
+      3
+    ]
+  },
+  "status": 200,
+  "response": {
+    "data": {
+      "attempt_id": "7572a2f2-4a2d-4544-9c81-11096e9fb203",
+      "user_id": "8a5a00a5-032c-4e2e-aecc-a15957773167",
+      "quiz_id": "8959972e-016f-48a6-ac53-7750b559da46",
+      "answers": [
+        0,
+        3,
+        0,
+        3,
+        3
+      ],
+      "results": [
+        {
+          "question_id": "sla-5",
+          "answer": 0,
+          "correct_option": 3,
+          "correct": false
+        },
+        {
+          "question_id": "sla-2",
+          "answer": 3,
+          "correct_option": 2,
+          "correct": false
+        },
+        {
+          "question_id": "sla-6",
+          "answer": 0,
+          "correct_option": 0,
+          "correct": true
+        },
+        {
+          "question_id": "sla-4",
+          "answer": 3,
+          "correct_option": 3,
+          "correct": true
+        },
+        {
+          "question_id": "sla-1",
+          "answer": 3,
+          "correct_option": 3,
+          "correct": true
+        }
+      ],
+      "score": 60,
+      "correct_count": 3,
+      "created_at": "2026-09-12T19:08:34.881Z"
+    }
+  }
+}

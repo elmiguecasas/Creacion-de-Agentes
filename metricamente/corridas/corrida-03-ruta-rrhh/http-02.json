@@ -1,0 +1,77 @@
+{
+  "timestamp": "2026-09-13T01:41:59.592Z",
+  "endpoint": "/api/learning/route",
+  "method": "POST",
+  "body": {
+    "intent": "Quiero aprender métricas de Recursos Humanos"
+  },
+  "status": 201,
+  "response": {
+    "data": {
+      "route_id": "9dccd289-cecf-4390-b6cf-78719b77c364",
+      "area": "Recursos Humanos",
+      "title": "Ruta de Aprendizaje en Métricas de Recursos Humanos y Capital Humano",
+      "rationale": "Esta ruta estructurada permite comprender, medir y analizar de forma integral la gestión del talento, la eficiencia operativa y el impacto estratégico del capital humano en la organización, basándose en prácticas reconocidas del sector.",
+      "modules": [
+        {
+          "position": 1,
+          "metric": "Tasa de Rotación (Turnover Rate)",
+          "reason": "Mide la estabilidad de la fuerza laboral y detecta problemas potenciales de retención o satisfacción en la organización."
+        },
+        {
+          "position": 2,
+          "metric": "Costo por Contratación (Cost per Hire)",
+          "reason": "Permite cuantificar la eficiencia financiera y los recursos invertidos en los procesos de adquisición de talento."
+        },
+        {
+          "position": 3,
+          "metric": "Tasa de Absentismo (Absenteeism Rate)",
+          "reason": "Evalúa el impacto de las ausencias no planeadas en la productividad y la salud operativa de los equipos de trabajo."
+        },
+        {
+          "position": 4,
+          "metric": "Ingresos por Empleado (Revenue per Employee)",
+          "reason": "Vincula la productividad general de la plantilla con los resultados financieros globales de la compañía."
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "src-sage-hr",
+          "url": "https://www.sage.com/en-us/blog/important-hr-metrics",
+          "title": "The most important HR metrics to track",
+          "tier": 2,
+          "authority_reason": "Publicación especializada de Sage Advice con guías reconocidas sobre analítica y métricas de gestión de personal."
+        },
+        {
+          "source_id": "src-bamboohr",
+          "url": "https://www.bamboohr.com/blog/key-hr-metrics",
+          "title": "The 30 Most Important HR Metrics You Need to Track",
+          "tier": 2,
+          "authority_reason": "Plataforma líder especializada en software y recursos humanos con recursos analíticos validados en el sector."
+        },
+        {
+          "source_id": "src-dayforce",
+          "url": "https://www.dayforce.com/blog/key-hr-metrics-your-team-should-track",
+          "title": "Best HR metrics and KPIs to measure",
+          "tier": 2,
+          "authority_reason": "Consultora y proveedor global especializado en gestión de capital humano y métricas corporativas."
+        },
+        {
+          "source_id": "src-extensishr",
+          "url": "https://extensishr.com/resource/blogs/14-hr-metrics-and-how-to-calculate-them",
+          "title": "14 Key HR Metrics to Track: Definitions and Formulas",
+          "tier": 3,
+          "authority_reason": "Publicación profesional especializada en recursos humanos para el análisis de indicadores de desempeño y ausentismo."
+        },
+        {
+          "source_id": "src-predictiveindex",
+          "url": "https://www.predictiveindex.com/blog/hr-kpi-metrics",
+          "title": "19 Essential HR KPIs and Metrics For Executives",
+          "tier": 2,
+          "authority_reason": "Organización especializada en estrategia de talento y analítica ejecutiva del comportamiento organizacional."
+        }
+      ]
+    },
+    "run_id": "105ad5af-188e-485a-959a-13dce7b4e4ce"
+  }
+}

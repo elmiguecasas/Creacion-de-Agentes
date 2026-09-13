@@ -1,0 +1,83 @@
+FASE 6 — INFORME FINAL CONSOLIDADO
+
+FASE 6 COMPLETE. Existen tres corridas académicas nuevas, distintas y reconstruibles: SLA, DSO original y RRHH. DSO es evidencia válida con fallo pedagógico preservado, no contenido pedagógicamente aprobado.
+
+Corrida 1 — SLA: PASS. Input «Quiero aprender SLA». Seed histórico de continuidad, quiz nuevo, score oficial 60/100, feedback real y ACCEPT explícito del usuario, sin avance automático. Evidencia y usage intactos; no se repitió.
+
+Corrida 2 — DSO original: REAL RUN — PEDAGOGICAL FAILURE PRESERVED. Input «Quiero aprender DSO». Interpretación, progreso, Tavily, módulo y quiz reales. La supervisión L2 detectó mezcla de convenciones antes de producir score. No hay intento, feedback ni decisión final inventados. JSON/AJV válido no garantiza exactitud pedagógica. La aceptación académica de esta evidencia fue decidida expresamente por el usuario; no cambia los outputs ni el estado pedagógico original.
+
+La segunda generación DSO permanece en corrida-02-dso-reanudacion como evidencia de iteración/proceso; NO sustituye Corrida 2 ni cuenta como la tercera. Se preservan ambas fallas. No se regeneró repetidamente hasta obtener un resultado favorable: tras una reanudación autorizada se detuvo de nuevo, y no se hicieron más generaciones DSO.
+
+Corrida 3 — RRHH: PASS. Input exacto «Quiero aprender métricas de Recursos Humanos». Interpret run 4eb14963-eac0-48b2-ab59-b0a2e19c317f; route run 105ad5af-188e-485a-959a-13dce7b4e4ce; route_id 9dccd289-cecf-4390-b6cf-78719b77c364. Gemini interpretó mode area, consultó SQLite, emitió búsqueda Tavily y generó ruta válida por AJV, persistida y revisada. Secuencia: rotación → costo por contratación → absentismo → ingresos por empleado. ACCEPT autorizado por el usuario y registrado después de revisión. Cero módulos dinámicos nuevos, quizzes o attempts; sin auto-completitud.
+
+Query Tavily RRHH: HR metrics human resources key performance indicators workforce analytics formulas standard. HTTP 200; cinco resultados; usage {"credits":1}; response_time 1.02. Fuentes utilizadas: Sage, BambooHR, Dayforce, ExtensisHR y Predictive Index. Sus URLs, títulos, snippets y selección exacta están conservados. Observación: el snippet Sage muestra una fórmula de rotación aparentemente invertida; la ruta no la reproduce y no se generaron módulos. No se repitió búsqueda para mejorar estilo o resultado.
+
+Usage real por ejecución, sin cálculo monetario:
+[
+  {
+    "folder": "corrida-01-sla",
+    "promptTokenCount": 9425,
+    "candidatesTokenCount": 473,
+    "totalTokenCount": 9898,
+    "tavily": []
+  },
+  {
+    "folder": "corrida-02-dso",
+    "promptTokenCount": 14496,
+    "candidatesTokenCount": 2166,
+    "totalTokenCount": 16662,
+    "tavily": [
+      {
+        "run_id": "532bd536-dbbc-432a-b7d3-07e3a8b00485",
+        "query": "DSO Days Sales Outstanding definition formula finance operations",
+        "usage": {
+          "credits": 1
+        },
+        "response_time": 1.39
+      }
+    ]
+  },
+  {
+    "folder": "corrida-02-dso-reanudacion",
+    "promptTokenCount": 15468,
+    "candidatesTokenCount": 1945,
+    "totalTokenCount": 17413,
+    "tavily": [
+      {
+        "run_id": "8a44686a-e7af-4d4a-b650-e1ad38633ae3",
+        "query": "Days Sales Outstanding DSO definition formula accounts receivable financial metrics",
+        "usage": {
+          "credits": 1
+        },
+        "response_time": 1.98
+      }
+    ]
+  },
+  {
+    "folder": "corrida-03-ruta-rrhh",
+    "promptTokenCount": 10519,
+    "candidatesTokenCount": 889,
+    "totalTokenCount": 11408,
+    "tavily": [
+      {
+        "run_id": "105ad5af-188e-485a-959a-13dce7b4e4ce",
+        "query": "HR metrics human resources key performance indicators workforce analytics formulas standard",
+        "usage": {
+          "credits": 1
+        },
+        "response_time": 1.02
+      }
+    ]
+  }
+]
+La iteración DSO se identifica separadamente. SLA y DSO mantienen su usage original; no se hicieron nuevas llamadas para recalcularlo. Campos no recibidos no se convierten en cero.
+
+Reproducibilidad: corridas/corrida-01-sla, corrida-02-dso y corrida-03-ruta-rrhh contienen README, metadata, inputs, outputs aplicables, snapshots, tool calls, fuentes, usage y manifiestos SHA-256. Los snapshots conservan prompts y schemas reales y sus hashes. Se verificaron todos los manifiestos, incluida la iteración, sin modificar carpetas previas. Replay/reconstrucción verifica lo guardado; rerun implica nueva generación sin garantía de texto idéntico.
+
+L2 — Autonomía supervisada, convención del proyecto ante ausencia de definiciones oficiales L0–L4. El tutor consulta/busca/genera/interpreta/recomienda; el humano inicia/responde/acepta/rechaza y decide el siguiente paso. SLA aporta aceptación humana; DSO aporta detección y detención por fallo; RRHH aporta ACCEPT explícitamente autorizado sin iniciar módulos.
+
+Control de alcance: únicamente RRHH nueva en este cierre, sin reintentos. No se repitieron tests, navegador, SLA, DSO ni Fase 5. Sin cambios de prompt, código, schemas, scoring, proveedores o herramientas. No se habilitó billing; claves ausentes del entregable. No hubo push/PR/merge ni ejecución de Fase 7.
+
+Gaps demostrados: DSO sigue pedagógicamente FAIL y no demuestra score/feedback propios; eso no invalida su condición de corrida académica real según la decisión de Chat. La verdad de fuentes y la consistencia pedagógica requieren supervisión, aun con schema válido. Los informes BLOCKED anteriores describen estados históricos y se preservan; este informe consolida la decisión vigente.
+
+FASE 6 COMPLETE. No se ejecutó ninguna fase posterior.

@@ -1,0 +1,32 @@
+{
+  "data": {
+    "module_id": "6d235f59-271d-49d4-ba1b-22e79cfd8e8f",
+    "version": 1,
+    "area": "Finanzas Operativas",
+    "metric": "DSO (Days Sales Outstanding)",
+    "title": "Módulo de Aprendizaje: Days Sales Outstanding (DSO)",
+    "definition": "El Days Sales Outstanding (DSO) es un indicador financiero que mide el número promedio de días que le toma a una empresa cobrar los pagos de sus clientes después de haber realizado una venta a crédito.",
+    "business_value": "Permite evaluar la eficiencia en la gestión de cuentas por cobrar, la liquidez y la generación de flujo de caja operativo. Un ciclo de cobro más corto libera capital de trabajo para reinversión y reduce los riesgos de incobrabilidad.",
+    "formula": "DSO = (Cuentas por Cobrar / Ventas Totales a Crédito o Netas) × Número de Días del Periodo",
+    "interpretation": "Un DSO bajo indica una conversión rápida de las ventas a crédito en efectivo y una alta liquidez. Un DSO alto refleja retrasos en los cobros, mayor riesgo de morosidad y tensión en el flujo de caja.",
+    "example": "Si una empresa registra $50,000 en cuentas por cobrar y $100,000 en ventas totales durante un periodo de 30 días, el DSO es de (50,000 / 100,000) × 30 = 15 días.",
+    "common_mistake": "Confundir el uso de las ventas totales con las ventas exclusivamente a crédito al calcular el ratio, o utilizar el saldo de cuentas por cobrar final en lugar del promedio cuando se evalúan periodos anuales.",
+    "sources": [
+      {
+        "source_id": "cfi_dso",
+        "url": "https://corporatefinanceinstitute.com/resources/accounting/days-sales-outstanding",
+        "title": "Days Sales Outstanding (DSO) - Formula, Example, Define",
+        "tier": 2,
+        "authority_reason": "Corporate Finance Institute es una institución de capacitación financiera ampliamente reconocida y consultada por profesionales."
+      },
+      {
+        "source_id": "wallstreetprep_dso",
+        "url": "https://www.wallstreetprep.com/knowledge/days-sales-outstanding-dso",
+        "title": "Days Sales Outstanding (DSO) | Formula + Calculator",
+        "tier": 2,
+        "authority_reason": "Wall StreetPrep es un proveedor de formación financiera corporativa con altos estándares técnicos."
+      }
+    ]
+  },
+  "run_id": "532bd536-dbbc-432a-b7d3-07e3a8b00485"
+}

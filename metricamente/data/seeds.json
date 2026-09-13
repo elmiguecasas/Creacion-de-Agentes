@@ -1,0 +1,482 @@
+[
+  {
+    "module": {
+      "module_id": "throughput",
+      "version": 1,
+      "area": "Operaciones",
+      "metric": "Throughput",
+      "title": "Throughput",
+      "definition": "El throughput es la cantidad de unidades de trabajo que un proceso completa durante un período. Las unidades pueden ser pedidos, casos, productos o tareas.",
+      "business_value": "Medí la capacidad real de salida de un proceso.",
+      "formula": "Throughput = unidades terminadas / período",
+      "interpretation": "Sirve para saber cuánto entrega el proceso, no cuánto trabajo está en curso. Comparalo con períodos equivalentes y mantené constante la definición de “terminado”.",
+      "example": "Si se terminan 120 solicitudes en una semana, el throughput es 120 solicitudes por semana.",
+      "common_mistake": "Un throughput alto no siempre implica mayor productividad: puede deberse a más personas, casos más simples o menor calidad. Leélo junto con capacidad y calidad.",
+      "sources": []
+    },
+    "questions": [
+      {
+        "question_id": "throughput-1",
+        "question": "¿Qué expresa mejor el throughput?",
+        "options": [
+          "El tiempo total que espera un cliente",
+          "La cantidad de unidades completadas en un período",
+          "El trabajo que aún no comenzó",
+          "El porcentaje de casos dentro de un acuerdo"
+        ],
+        "correct_option": 1,
+        "explanation": "Throughput mide salida: cuántas unidades se completaron durante un período.",
+        "source_refs": []
+      },
+      {
+        "question_id": "throughput-2",
+        "question": "Un equipo cerró 120 solicitudes en una semana. ¿Cuál fue su throughput semanal?",
+        "options": [
+          "120 solicitudes",
+          "120 horas",
+          "1 semana por solicitud",
+          "No se puede calcular"
+        ],
+        "correct_option": 0,
+        "explanation": "La unidad terminada es la solicitud y el período es la semana: el throughput es 120 solicitudes semanales.",
+        "source_refs": []
+      },
+      {
+        "question_id": "throughput-3",
+        "question": "¿Por qué un throughput alto no prueba por sí solo una mayor productividad?",
+        "options": [
+          "Porque puede haber cambiado la cantidad de personas o la complejidad de los casos",
+          "Porque throughput siempre mide calidad",
+          "Porque solo puede calcularse anualmente",
+          "Porque excluye las unidades terminadas"
+        ],
+        "correct_option": 0,
+        "explanation": "Más salida puede provenir de mayor capacidad o de trabajo más simple; requiere contexto para interpretarse.",
+        "source_refs": []
+      },
+      {
+        "question_id": "throughput-4",
+        "question": "¿Cuál es la mejor métrica complementaria para evitar leer throughput de forma aislada?",
+        "options": [
+          "Calidad del resultado",
+          "Nombre del equipo",
+          "Fecha de creación del reporte",
+          "Color del dashboard"
+        ],
+        "correct_option": 0,
+        "explanation": "La calidad permite verificar que un mayor volumen entregado no se obtuvo deteriorando el resultado.",
+        "source_refs": []
+      },
+      {
+        "question_id": "throughput-5",
+        "question": "Si entran 100 pedidos y se terminan 80 por semana, ¿qué indica un throughput de 80?",
+        "options": [
+          "La operación elimina más trabajo del que recibe",
+          "Se completan 80 pedidos por semana",
+          "Todos los pedidos cumplen SLA",
+          "El lead time es de 80 días"
+        ],
+        "correct_option": 1,
+        "explanation": "El throughput solo describe las 80 unidades completadas en ese período.",
+        "source_refs": []
+      },
+      {
+        "question_id": "throughput-6",
+        "question": "¿Qué debe permanecer consistente al comparar throughput entre meses?",
+        "options": [
+          "La definición de “unidad terminada”",
+          "El diseño visual del gráfico",
+          "El nombre del analista",
+          "El día de publicación"
+        ],
+        "correct_option": 0,
+        "explanation": "Cambiar qué cuenta como terminado vuelve engañosa cualquier comparación de throughput.",
+        "source_refs": []
+      }
+    ]
+  },
+  {
+    "module": {
+      "module_id": "lead-time",
+      "version": 1,
+      "area": "Operaciones",
+      "metric": "Lead time",
+      "title": "Lead time",
+      "definition": "El lead time es el tiempo total desde que se solicita un trabajo hasta que se entrega. Incluye las esperas antes de que el equipo comience a trabajar.",
+      "business_value": "Entendé cuánto espera un cliente para obtener una respuesta o entrega.",
+      "formula": "Lead time = fecha de entrega − fecha de solicitud",
+      "interpretation": "Representa la experiencia de espera de quien hace la solicitud. Si aumenta, conviene investigar colas, prioridades, dependencias o capacidad.",
+      "example": "Una solicitud recibida el lunes y entregada el viernes tiene aproximadamente cuatro días de lead time.",
+      "common_mistake": "Excluir el tiempo en cola produce una visión incompleta. El lead time incluye todo el recorrido, incluso cuando nadie trabaja activamente en el pedido.",
+      "sources": []
+    },
+    "questions": [
+      {
+        "question_id": "lead-time-1",
+        "question": "¿Desde cuándo se mide el lead time?",
+        "options": [
+          "Desde que el equipo inicia el trabajo",
+          "Desde que el cliente solicita el trabajo",
+          "Desde que el reporte se publica",
+          "Desde la última revisión"
+        ],
+        "correct_option": 1,
+        "explanation": "El lead time representa la espera completa desde la solicitud hasta la entrega.",
+        "source_refs": []
+      },
+      {
+        "question_id": "lead-time-2",
+        "question": "¿Qué incluye el lead time que el cycle time no necesariamente incluye?",
+        "options": [
+          "Tiempo de espera antes de iniciar el trabajo",
+          "El tiempo de ejecución",
+          "La fecha de entrega",
+          "Las unidades completadas"
+        ],
+        "correct_option": 0,
+        "explanation": "La cola previa al inicio forma parte de la espera total del cliente.",
+        "source_refs": []
+      },
+      {
+        "question_id": "lead-time-3",
+        "question": "Una solicitud entra el lunes, se empieza el jueves y se entrega el viernes. ¿Qué métrica refleja los cuatro días de espera?",
+        "options": [
+          "Lead time",
+          "Cycle time",
+          "Throughput",
+          "SLA"
+        ],
+        "correct_option": 0,
+        "explanation": "El lead time cubre desde el lunes, fecha de solicitud, hasta la entrega del viernes.",
+        "source_refs": []
+      },
+      {
+        "question_id": "lead-time-4",
+        "question": "Si el lead time aumenta pero el cycle time permanece estable, una hipótesis inicial razonable es:",
+        "options": [
+          "Hay más espera o cola antes de iniciar",
+          "El equipo resuelve más rápido",
+          "El backlog desapareció",
+          "El SLA ya no aplica"
+        ],
+        "correct_option": 0,
+        "explanation": "La ejecución no cambió, por lo que conviene investigar la espera previa o dependencias.",
+        "source_refs": []
+      },
+      {
+        "question_id": "lead-time-5",
+        "question": "¿Para quién representa especialmente la experiencia el lead time?",
+        "options": [
+          "Para quien solicita el trabajo",
+          "Solo para el analista financiero",
+          "Solo para el proveedor de software",
+          "Para nadie externo al proceso"
+        ],
+        "correct_option": 0,
+        "explanation": "Describe cuánto espera la persona o área que hizo la solicitud.",
+        "source_refs": []
+      },
+      {
+        "question_id": "lead-time-6",
+        "question": "¿Cuál es un error al calcular lead time?",
+        "options": [
+          "Excluir los días que el ítem estuvo en cola",
+          "Registrar fecha de solicitud",
+          "Registrar fecha de entrega",
+          "Usar una unidad de tiempo consistente"
+        ],
+        "correct_option": 0,
+        "explanation": "Quitar la cola elimina parte central de la espera real del solicitante.",
+        "source_refs": []
+      }
+    ]
+  },
+  {
+    "module": {
+      "module_id": "cycle-time",
+      "version": 1,
+      "area": "Operaciones",
+      "metric": "Cycle time",
+      "title": "Cycle time",
+      "definition": "El cycle time es el tiempo que transcurre desde que el equipo empieza a trabajar una unidad hasta que la completa.",
+      "business_value": "Aislá la velocidad de ejecución del equipo una vez iniciado el trabajo.",
+      "formula": "Cycle time = fecha de fin − fecha de inicio de trabajo",
+      "interpretation": "Ayuda a detectar fricciones dentro del proceso: retrabajos, aprobaciones, bloqueos o pasos innecesarios. Es una métrica de flujo interno.",
+      "example": "Si el trabajo comienza el jueves y termina el viernes, el cycle time es aproximadamente un día, incluyendo las esperas dentro de ese intervalo.",
+      "common_mistake": "Si el cliente espera tres días antes del inicio y el equipo tarda uno en resolver, el cycle time es un día; el lead time es cuatro días.",
+      "sources": []
+    },
+    "questions": [
+      {
+        "question_id": "cycle-time-1",
+        "question": "¿Desde qué punto se mide el cycle time?",
+        "options": [
+          "Desde la solicitud del cliente",
+          "Desde que comienza el trabajo activo",
+          "Desde que se crea el dashboard",
+          "Desde el cierre del mes"
+        ],
+        "correct_option": 1,
+        "explanation": "El cycle time comienza cuando el equipo toma e inicia el trabajo.",
+        "source_refs": []
+      },
+      {
+        "question_id": "cycle-time-2",
+        "question": "¿Qué ayuda a diagnosticar un cycle time elevado?",
+        "options": [
+          "Retrabajos, bloqueos o pasos innecesarios",
+          "El tamaño del logo",
+          "El número de clientes nuevos",
+          "El presupuesto anual"
+        ],
+        "correct_option": 0,
+        "explanation": "Un ciclo largo sugiere fricciones dentro de la ejecución.",
+        "source_refs": []
+      },
+      {
+        "question_id": "cycle-time-3",
+        "question": "Un pedido se solicita el lunes, inicia el jueves y termina el viernes. ¿Cuál es aproximadamente su cycle time?",
+        "options": [
+          "Un día",
+          "Cuatro días",
+          "Cinco días",
+          "No puede calcularse"
+        ],
+        "correct_option": 0,
+        "explanation": "Desde el inicio del jueves hasta la finalización del viernes transcurre aproximadamente un día.",
+        "source_refs": []
+      },
+      {
+        "question_id": "cycle-time-4",
+        "question": "¿Cómo se diferencia cycle time de lead time?",
+        "options": [
+          "Cycle time mide desde el inicio; lead time desde la solicitud",
+          "Cycle time siempre es mayor",
+          "Lead time mide volumen",
+          "No hay diferencia"
+        ],
+        "correct_option": 0,
+        "explanation": "La diferencia clave es el punto de inicio de la medición.",
+        "source_refs": []
+      },
+      {
+        "question_id": "cycle-time-5",
+        "question": "¿Qué dimensión del proceso representa principalmente el cycle time?",
+        "options": [
+          "Velocidad de ejecución interna",
+          "Cantidad de trabajo pendiente",
+          "Volumen de trabajo terminado",
+          "Compromiso contractual"
+        ],
+        "correct_option": 0,
+        "explanation": "Mide la rapidez con la que el equipo completa trabajo una vez iniciado.",
+        "source_refs": []
+      },
+      {
+        "question_id": "cycle-time-6",
+        "question": "Si el cycle time cae y la calidad también cae, la lectura correcta es:",
+        "options": [
+          "La mejora de velocidad debe evaluarse junto con calidad",
+          "La operación mejoró sin dudas",
+          "El backlog dejó de importar",
+          "El SLA siempre aumentó"
+        ],
+        "correct_option": 0,
+        "explanation": "Una reducción de tiempo no es una mejora neta si viene acompañada de peor calidad.",
+        "source_refs": []
+      }
+    ]
+  },
+  {
+    "module": {
+      "module_id": "backlog",
+      "version": 1,
+      "area": "Operaciones",
+      "metric": "Backlog",
+      "title": "Backlog",
+      "definition": "El backlog es el conjunto o cantidad de ítems solicitados que aún no están terminados. Puede incluir trabajo sin iniciar y trabajo en curso.",
+      "business_value": "Hacé visible la carga acumulada que el proceso todavía debe resolver.",
+      "formula": "Backlog = ítems recibidos y no completados",
+      "interpretation": "Un backlog que crece de forma sostenida sugiere que la entrada supera la capacidad de salida. Segmentalo por antigüedad, prioridad y tipo de caso.",
+      "example": "Si hay 20 solicitudes recibidas y sin terminar, el backlog es 20, estén iniciadas o no.",
+      "common_mistake": "Dos backlogs del mismo tamaño pueden tener riesgos distintos. Uno con casos recién ingresados no equivale a otro con solicitudes críticas atrasadas.",
+      "sources": []
+    },
+    "questions": [
+      {
+        "question_id": "backlog-1",
+        "question": "¿Qué representa el backlog?",
+        "options": [
+          "Trabajo solicitado pero todavía no terminado",
+          "Solo trabajo ya cerrado",
+          "Tiempo de resolución",
+          "Porcentaje de cumplimiento"
+        ],
+        "correct_option": 0,
+        "explanation": "El backlog reúne los ítems pendientes, ya sea sin iniciar o en curso.",
+        "source_refs": []
+      },
+      {
+        "question_id": "backlog-2",
+        "question": "Un backlog creciente sostenidamente suele indicar que:",
+        "options": [
+          "Entra más trabajo del que se completa",
+          "Todos los SLA se cumplen",
+          "El cycle time es cero",
+          "No hay demanda"
+        ],
+        "correct_option": 0,
+        "explanation": "Si la llegada excede la salida, el trabajo pendiente se acumula.",
+        "source_refs": []
+      },
+      {
+        "question_id": "backlog-3",
+        "question": "¿Qué segmentación aporta más valor al analizar backlog?",
+        "options": [
+          "Antigüedad y prioridad",
+          "Color de la tarjeta",
+          "Nombre del reporte",
+          "Iniciales del equipo"
+        ],
+        "correct_option": 0,
+        "explanation": "La edad y la criticidad permiten detectar dónde está el riesgo real.",
+        "source_refs": []
+      },
+      {
+        "question_id": "backlog-4",
+        "question": "Dos equipos tienen 50 ítems de backlog. ¿Qué dato puede hacer que sus riesgos sean muy distintos?",
+        "options": [
+          "La antigüedad de los ítems",
+          "Que ambos usen el mismo gráfico",
+          "La hora de actualización",
+          "La longitud del nombre del equipo"
+        ],
+        "correct_option": 0,
+        "explanation": "Un backlog de casos recientes no tiene el mismo riesgo que uno de casos críticos muy atrasados.",
+        "source_refs": []
+      },
+      {
+        "question_id": "backlog-5",
+        "question": "¿Qué combinación ayuda a entender la evolución del backlog?",
+        "options": [
+          "Trabajo entrante y throughput",
+          "SLA y color de marca",
+          "Lead time y nombre del cliente",
+          "Solo cantidad de personas"
+        ],
+        "correct_option": 0,
+        "explanation": "Comparar entrada con salida explica si el stock pendiente crece o se reduce.",
+        "source_refs": []
+      },
+      {
+        "question_id": "backlog-6",
+        "question": "¿Cuál es una lectura incompleta del backlog?",
+        "options": [
+          "Mirar únicamente el total agregado",
+          "Analizar ítems por prioridad",
+          "Analizar la antigüedad",
+          "Observar su tendencia"
+        ],
+        "correct_option": 0,
+        "explanation": "El total puede ocultar casos críticos o muy antiguos que requieren atención.",
+        "source_refs": []
+      }
+    ]
+  },
+  {
+    "module": {
+      "module_id": "sla",
+      "version": 1,
+      "area": "Operaciones",
+      "metric": "SLA",
+      "title": "SLA",
+      "definition": "Un SLA (Service Level Agreement) define un compromiso medible de servicio: por ejemplo, resolver el 90% de tickets críticos en menos de cuatro horas.",
+      "business_value": "SeguÍ si la operación cumple los plazos o estándares prometidos.",
+      "formula": "% cumplimiento = ítems dentro de SLA / ítems elegibles × 100",
+      "interpretation": "No mide solo velocidad: compara el desempeño con una promesa o estándar explícito. Siempre especificá población, período y condición de cumplimiento.",
+      "example": "Si 90 de 100 casos elegibles cumplen el umbral acordado, el cumplimiento es 90%.",
+      "common_mistake": "Un tiempo promedio bajo no garantiza cumplimiento de SLA. Reportá el porcentaje de casos dentro del umbral y analizá los casos incumplidos.",
+      "sources": []
+    },
+    "questions": [
+      {
+        "question_id": "sla-1",
+        "question": "¿Qué define un SLA?",
+        "options": [
+          "Un compromiso medible de nivel de servicio",
+          "La cantidad total de trabajo pendiente",
+          "El tiempo desde una solicitud",
+          "El volumen de trabajo completado"
+        ],
+        "correct_option": 0,
+        "explanation": "Un SLA establece un estándar o promesa verificable de servicio.",
+        "source_refs": []
+      },
+      {
+        "question_id": "sla-2",
+        "question": "¿Cómo se calcula usualmente el porcentaje de cumplimiento de SLA?",
+        "options": [
+          "Ítems dentro de SLA / ítems elegibles × 100",
+          "Ítems abiertos / ítems cerrados × 100",
+          "Horas activas / personas × 100",
+          "Lead time / cycle time × 100"
+        ],
+        "correct_option": 0,
+        "explanation": "Se compara la cantidad de casos que cumplieron con el total al que aplicaba el acuerdo.",
+        "source_refs": []
+      },
+      {
+        "question_id": "sla-3",
+        "question": "¿Por qué un tiempo promedio bajo no garantiza cumplimiento de SLA?",
+        "options": [
+          "Puede ocultar algunos casos muy demorados",
+          "Porque SLA solo se calcula con throughput",
+          "Porque los promedios siempre son altos",
+          "Porque no se necesitan umbrales"
+        ],
+        "correct_option": 0,
+        "explanation": "El promedio puede ser bueno mientras una porción relevante incumple el umbral acordado.",
+        "source_refs": []
+      },
+      {
+        "question_id": "sla-4",
+        "question": "“Resolver 90% de tickets críticos en menos de 4 horas” es un ejemplo de:",
+        "options": [
+          "SLA",
+          "Backlog",
+          "Cycle time",
+          "Throughput"
+        ],
+        "correct_option": 0,
+        "explanation": "Expresa población, umbral y porcentaje objetivo: los componentes de un SLA.",
+        "source_refs": []
+      },
+      {
+        "question_id": "sla-5",
+        "question": "¿Qué debe indicarse al reportar cumplimiento de SLA?",
+        "options": [
+          "Período, población y condición de cumplimiento",
+          "Solo el color del indicador",
+          "Solo el promedio de tiempos",
+          "Solo el nombre del área"
+        ],
+        "correct_option": 0,
+        "explanation": "Sin población, período y regla no se puede interpretar correctamente el porcentaje.",
+        "source_refs": []
+      },
+      {
+        "question_id": "sla-6",
+        "question": "¿Qué análisis complementa mejor una caída en el cumplimiento de SLA?",
+        "options": [
+          "Revisar los casos incumplidos por prioridad o causa",
+          "Cambiar la visualización",
+          "Eliminar los casos demorados",
+          "Mirar solo el promedio"
+        ],
+        "correct_option": 0,
+        "explanation": "Analizar los incumplimientos permite identificar causas y priorizar acciones.",
+        "source_refs": []
+      }
+    ]
+  }
+]

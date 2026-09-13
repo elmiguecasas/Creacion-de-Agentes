@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-09-13T01:41:56.780Z",
+  "endpoint": "/api/learning/interpret",
+  "method": "POST",
+  "body": {
+    "intent": "Quiero aprender métricas de Recursos Humanos",
+    "mode": "area"
+  },
+  "status": 200,
+  "response": {
+    "data": {
+      "mode": "area",
+      "area": "Recursos Humanos",
+      "metric": null,
+      "intent": "Quiero aprender métricas de Recursos Humanos",
+      "clarification": null
+    },
+    "run_id": "4eb14963-eac0-48b2-ab59-b0a2e19c317f"
+  }
+}

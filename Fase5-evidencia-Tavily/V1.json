@@ -1,0 +1,20 @@
+{
+  "name": "models/gemini-3.5-flash-lite",
+  "displayName": "Gemini 3.5 Flash Lite",
+  "description": "Gemini 3.5 Flash Lite",
+  "version": "3.5-flash-lite-07-2026",
+  "tunedModelInfo": {},
+  "inputTokenLimit": 1048576,
+  "outputTokenLimit": 65536,
+  "supportedActions": [
+    "generateContent",
+    "countTokens",
+    "createCachedContent",
+    "batchGenerateContent"
+  ],
+  "temperature": 1,
+  "maxTemperature": 2,
+  "topP": 0.95,
+  "topK": 64,
+  "thinking": true
+}

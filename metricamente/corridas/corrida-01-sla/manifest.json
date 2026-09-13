@@ -1,0 +1,114 @@
+[
+  {
+    "file": "README.md",
+    "sha256": "b2ac21fbc446870d5fdf58ab45c21d656998193d1ecfb8a9460fbdf8a2aa3495"
+  },
+  {
+    "file": "answers.json",
+    "sha256": "fe4fd0390c29fede12ec4110d44fb1171f4d052fe7c5b15f8357640a3516859a"
+  },
+  {
+    "file": "attempt.json",
+    "sha256": "18e990bd6124a2bfcbc7fbf19af92e7fa9e3221edc36f1e679b728dcd90258f6"
+  },
+  {
+    "file": "feedback.json",
+    "sha256": "ca5363e17cd768fe48ecedd3813f46b92774e96d169c56232d9d010330ac28f7"
+  },
+  {
+    "file": "http-01.json",
+    "sha256": "1a00f88718403debc581a913a57f8bb992a2a3efb7147110e5ef33dc43fd84a1"
+  },
+  {
+    "file": "http-02.json",
+    "sha256": "7c9e0c136cab9fbe8823aa33b698eda4f8002c73f39e51fef8eb7a8fab1f23d8"
+  },
+  {
+    "file": "http-03.json",
+    "sha256": "4dc747b1a72cdfae260bfae44397ba85a8926714256a5b8b4fedd99435170a31"
+  },
+  {
+    "file": "http-04.json",
+    "sha256": "2d9bb6cc47d8f7cccd13839ba52a1e9647005eefeaa3e58a9d2410632960cbf4"
+  },
+  {
+    "file": "http-05.json",
+    "sha256": "42b62fd6b85ff71be2ec3e7d8859f9208a430ff8369d43141a397659ed10d5eb"
+  },
+  {
+    "file": "http-06.json",
+    "sha256": "23583ec403560d027436b1a217f02be95a9cfc5edc40dddd6004dbd14a1c48e2"
+  },
+  {
+    "file": "human_decision.json",
+    "sha256": "bbe7bccde9f9173e3867d02410f8426b592859e0197e7e939f29f857c41e8733"
+  },
+  {
+    "file": "input.json",
+    "sha256": "4df05feb52148ea40bfe3cb9cbfb1603af8ec6e440476161fa3832da7b9c9a88"
+  },
+  {
+    "file": "interpret.json",
+    "sha256": "db5feb17ab09a07dd37fd4a013a23c31c148455a085068484cf4f3d3caa685de"
+  },
+  {
+    "file": "metadata.json",
+    "sha256": "9236b3078a5d86a224919922882d8b8b8c44c84d959dc83a2d29981a54c3cd9a"
+  },
+  {
+    "file": "module.json",
+    "sha256": "666761740ee2c4e8b5388077a32408980e2c0ee569c3de655a8ee29d93e7763c"
+  },
+  {
+    "file": "pedagogical-review.json",
+    "sha256": "3fb652c64caef69e56cddb36faad07b1b2a46d90b0bf26d7bf4a34ff5455f706"
+  },
+  {
+    "file": "quiz.json",
+    "sha256": "dbf6236d7999a1b70aaa38943dcad6d37f4b8771cc470b1e9aae13112442e7ed"
+  },
+  {
+    "file": "snapshot-attempt-1789240114901.json",
+    "sha256": "010810b424c37e5729be0f5723045cdeaa492f7ca4ed37ea66b99aa09a24a0e8"
+  },
+  {
+    "file": "snapshot-decision-1789240148070.json",
+    "sha256": "d550c7ca9bb2bde50388dcdfca56923fb9ab44736293090a64f8990ac78d82d3"
+  },
+  {
+    "file": "snapshot-feedback-1789240119311.json",
+    "sha256": "1511c2963e35ce13fcc6496fe56c40cbe87d13365defb183748b3bde9e455b77"
+  },
+  {
+    "file": "snapshot-final.json",
+    "sha256": "c04d54ecf3afd553f459e4ba2daf8fe2d4b86397c37515971cb58d2212b4dc7a"
+  },
+  {
+    "file": "snapshot-init-1789240086662.json",
+    "sha256": "7f6ad3c787f00c88ffe6c71a6825d7ce681895c94ba5e7edd7d092e2330aa1aa"
+  },
+  {
+    "file": "snapshot-module-1789240097573.json",
+    "sha256": "8d5ab7f371a990a555e5c68f3c3f6a8a0e1449f4981d06a28c3e9477e50c2a92"
+  },
+  {
+    "file": "snapshot-quiz-1789240098099.json",
+    "sha256": "ebc8b024b2ccf9558602c4eccd10a5df7d8e76f9da121778c15f418ecb044cf3"
+  },
+  {
+    "file": "sources.json",
+    "sha256": "06927b0a66b8b543a7408ec5283ef68f7cb056014ae2099c8d925323d5d7516f"
+  },
+  {
+    "file": "tool_calls.json",
+    "sha256": "7f064ecc39a3621d1686304d3f2cb7557691276cefc309f752b3f5a484f3d825"
+  },
+  {
+    "file": "usage.json",
+    "sha256": "06be5e123d8692058a0f4d092d08255d4249a2d474fbaf743e687621bd32de22"
+  },
+  {
+    "file": "verification.json",
+    "sha256": "2e0fa85939ac9e3cb3affb1563c008d29e711af19c65ef3711e539ef1151816f"
+  }
+]

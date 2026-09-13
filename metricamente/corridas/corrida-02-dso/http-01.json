@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-09-12T19:08:51.229Z",
+  "endpoint": "/api/learning/interpret",
+  "method": "POST",
+  "body": {
+    "intent": "Quiero aprender DSO",
+    "mode": "metric"
+  },
+  "status": 200,
+  "response": {
+    "data": {
+      "mode": "metric",
+      "area": "Finanzas",
+      "metric": "DSO",
+      "intent": "Quiero aprender DSO",
+      "clarification": null
+    },
+    "run_id": "174e8ae2-dad9-4196-9ed2-40b46a00bb96"
+  }
+}

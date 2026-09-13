@@ -1,0 +1,67 @@
+FASE 8 — INFORME FINAL
+
+A. Estado
+PASS. FASE 8 COMPLETE. Auditoría/consolidación documental y única sustitución autorizada de la instrucción L0–L4. Sin Gemini, Tavily, nuevas corridas, tests funcionales completos, Fase 9, billing, commit/push/PR/merge. La carpeta excluida de Entrega 2 no se consultó.
+
+B. DECISIONES.md
+26 decisiones D01–D26 ordenadas por etapa/dependencia temporal. Cada decisión contiene fase/estado, contexto/alternativas, decisión/razón, evidencia y resultado/impacto/límites. Se cubren definición conceptual y reutilización del MVP, Segunda Misión, Fase 5 y reanudaciones, Fase 6 y cierre, Fase 7 y armonización Fase 8. Las fechas individuales no documentadas se identifican por fase; no se inventaron horas ni fechas de aprobación.
+La versión previa se preservó byte a byte en outputs/DECISIONES-antes-Fase8.md; SHA-256 1c71ef56652dd769b1d1a9ba24b9b426977854ce2f01c1560ba70bd684fab3e0, coincidente con el registro anterior al inicio.
+
+C. Historia reconstruida
+Frontend/seeds reutilizados → tutor abierto → separación IA/controles → backend SQLite/UUID → evidencia congelada → OpenAI inicialmente implementado, sin credencial para verificarlo → restricción de gasto → migración Gemini 2.5 → fallos de acceso → validación 3.5 Flash-Lite → descarte Grounding para la restricción free-tier evaluada → validación/adopción Tavily → integración final → CAC corregido mediante nuevo quiz → L2 operativo y SLA PASS → DSO fallida → regla general y segunda DSO fallida → decisión de no regenerar y conservar original académica → RRHH PASS y Fase 6 COMPLETE → discrepancia detectada en Fase 7 → armonización autorizada en Fase 8.
+L2 se sitúa desde Fase 6/SLA, no se inventa una adopción posterior a RRHH; RRHH y el cierre aportan evidencia adicional.
+
+D. Errores/fallos preservados
+- Gemini 2.5 Flash: HTTP 404 / NOT_FOUND, texto «This model models/gemini-2.5-flash is no longer available to new users.» enlazado a V2-error.json; no se interpreta como fallo de schema ni pago requerido.
+- Gemini 2.5 Flash-Lite: rechazo reportado en historia y confirmado por el usuario. No se localizó JSON independiente de la llamada aislada; se declara ese límite, sin atribuirle el mensaje exacto del otro modelo.
+- CAC: q4_cac_common_mistake tenía distractores que también eran errores; output inicial preservado sin intento, instrucción general y nuevo quiz aceptable.
+- DSO original: equivalencia no condicionada entre ventas totales/netas/a crédito y contradicción entre q2/q4; sin intento/score/feedback.
+- DSO reanudación: no explicitó promedio/netas y utilizó saldo final como distractor sin condiciones; segunda detención. Ninguna DSO aprobada pedagógicamente.
+- Incidencias adicionales: INVALID_ARGUMENT del harness, ruta insufficient_sources, placeholder SQLite y referencia mutable de log, con respaldo histórico y sin reproducirlas ahora.
+La primera DSO sigue como Corrida 2 académica REAL RUN — PEDAGOGICAL FAILURE PRESERVED; segunda como iteración. No se regeneró repetidamente hasta obtener un resultado favorable. JSON/AJV válido no garantiza exactitud pedagógica.
+
+E. Scope
+Flashcards, spaced repetition, simuladores, dashboard avanzado, autenticación completa, multiusuario corporativo, multiagente y RAG/vector DB quedan fuera del alcance implementado. Razón: mantener tamaño suficiente y priorizar funcionamiento, evidencia y reproducibilidad. Permanecen como posibilidades futuras, no descartes conceptuales definitivos. Fichas expositivas y tabla básica no se presentan como esas funcionalidades avanzadas.
+
+F. L2 — cambio exacto
+Archivo: outputs/metricamente/prompts/system_prompt.md.
+Anterior:
+No asignes una etiqueta L0–L4: sus definiciones oficiales están pendientes.
+Nuevo:
+Metricamente adopta L2 — Autonomía supervisada como convención operativa del proyecto ante ausencia de definiciones oficiales publicadas L0–L4. Esta etiqueta describe el flujo real de supervisión y no debe interpretarse como una definición normativa de la cátedra.
+
+SHA-256 anterior:
+193203d4dc0f8f7c8aaeb9e1908e2c26985e08936ca2137b87d1fafb66a1b860
+SHA-256 nuevo:
+2c84b8a045dd8951ba62faec0eb31f5e22718d345d8c2cb5badd76891b265a35
+
+Sustitución inversa comprobada: devuelve exactamente el archivo previo, sin otros cambios de instrucciones ni formato. Se conservan seis piezas. user_prompt.md intacto. No se recalcularon hashes históricos ni se editaron snapshots/manifests. La nueva versión no se ejecutó con proveedores; no se le atribuyen resultados de versiones anteriores.
+El agente interpreta/consulta/busca/genera/analiza/recomienda; el humano inicia/responde/revisa/acepta o rechaza/decide. SLA aporta ACCEPT sin avance autónomo, DSO detención antes de scoring, RRHH ACCEPT sin módulos. L2 es convención del proyecto, no norma oficial de cátedra.
+
+G. Consistencia y QA
+- Estados históricos de ausencia de clave, 404 y Fase 6 no ejecutada quedaron situados temporalmente, conservados en copia previa e informes.
+- Gemini 3.5 Flash-Lite + Tavily se distingue de OpenAI/Gemini 2.5/Google Search históricos.
+- README recibió únicamente ajustes de estado y referencias a D25, retirando la discrepancia pendiente ya resuelta y aclarando que los 21 tests preceden la armonización.
+- corridas/README.md y todos sus subdirectorios permanecen intactos. Su etiqueta «vigente» para el prompt entonces actual se contextualiza en DECISIONES como vigente en Fase 7, no como hash Fase 8.
+- 93 referencias internas revisadas; sin rutas rotas (el informe Fase 8 se creó como cierre). Ancla D25 comprobada contra el encabezado.
+- 85 entradas de cinco manifiestos académicos verificadas, cero fallos.
+- Comparación SHA-256 de 123 archivos del proyecto: sólo DECISIONES.md, README.md y system_prompt.md cambiaron; cero eliminaciones. Código, providers/tools, schemas, scoring, SQLite de implementación, user prompt y todas las corridas intactos. No se abrió ni modificó una base SQLite.
+- git diff --check de los tres archivos: PASS.
+No se repitieron tests funcionales ni se produjo consumo externo.
+
+H. Archivos modificados/creados
+outputs/metricamente/DECISIONES.md → 26 decisiones con fuentes y límites → traza temporal consolidada.
+outputs/metricamente/prompts/system_prompt.md → única frase L0–L4 reemplazada → armonización expresamente autorizada posterior a corridas.
+outputs/metricamente/README.md → referencias de estado/L2/auditoría/tests actualizadas → evitar documentación vigente contradictoria.
+outputs/DECISIONES-antes-Fase8.md → copia íntegra nueva → preservar narración previa sin pérdida retrospectiva.
+outputs/Informe-Fase8.txt → informe nuevo → cierre A–K.
+No se modificó archivo alguno bajo corridas/ ni informes de fases anteriores.
+
+I. Secretos
+Escaneo en memoria de las dos claves configuradas y patrones de credenciales sobre 95 archivos: README, DECISIONES, copia previa, prompts y corridas; cero coincidencias, sin imprimir valores. Informe final revisado sin claves. .env no se cambió ni se copió al entregable; permanece local/ignorado según comprobación anterior. No se invocaron APIs ni habilitó billing.
+
+J. Gaps posteriores
+Análisis económico final aún pendiente, con usage disponible pero sin valoración monetaria final. No hay log independiente localizado de la prueba aislada Flash-Lite 2.5; registro histórico no sustituye ese artefacto. La decisión Grounding/free-tier conserva la evaluación de aquella etapa, no una comprobación actual de tarifas. Persisten límites de calidad pedagógica, fuentes, UUID/autenticación y despliegue compartido. La nueva frase L2 no tiene inferencia real propia, por prohibición de ejecutar proveedores en esta fase. No se crean nuevas pruebas ni funcionalidades para subsanar estos gaps ahora.
+
+K. Conclusión
+FASE 8 COMPLETE. Historia consolidada con fallos y alternativas descartadas visibles; armonización mínima autorizada aplicada y versionada por hash. Evidencia académica intacta. No se ejecutó Fase 9 ni ninguna acción de publicación.

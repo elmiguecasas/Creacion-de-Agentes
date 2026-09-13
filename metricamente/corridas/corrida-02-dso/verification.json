@@ -1,0 +1,10 @@
+{
+  "run_type": "academic_final_run",
+  "provider_real": true,
+  "no_fixture": true,
+  "structured_ajv": true,
+  "persistence": true,
+  "secret_scan": "PASS",
+  "decision": "NOT_EXECUTED",
+  "pedagogy": "PEDAGOGICAL ISSUE"
+}

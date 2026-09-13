@@ -1,0 +1,22 @@
+{
+  "run_type":"academic_final_run",
+  "result":"PEDAGOGICAL ISSUE",
+  "material":true,
+  "module_id":"f102433b-eff7-4929-b294-5c5597fd9639",
+  "quiz_id":"cc908792-7e83-4f5b-8258-5d75a975775c",
+  "approved_primary_convention":"Cuentas por cobrar promedio / Ventas netas a crédito × días del período",
+  "observed_formula":"DSO = (Accounts Receivable / Total Credit Sales) * Number of Days",
+  "findings":[
+    "La fórmula y q_dso_02 no especifican cuentas por cobrar promedio ni ventas netas a crédito; no cumplen la convención principal solicitada por el usuario.",
+    "El ejemplo usa ventas netas anuales a crédito pero deja sin definir si los 150000 de cuentas por cobrar son saldo promedio o final. Su aritmética 150000/1200000*365=45.625, redondeada a 45.6, es correcta.",
+    "q_dso_04 presenta utilizar únicamente el saldo final como distractor no erróneo sin explicar condiciones. Según la convención promedio solicitada, esa sustitución puede ser otro error; la pregunta no queda contextualizada.",
+    "No se afirma que todo método con saldo final sea inválido: hay variantes en las fuentes. El defecto es no declarar ni mantener la convención solicitada y sus condiciones en módulo y evaluación."
+  ],
+  "other_checks":"Definición y dirección general de interpretación coherentes; cinco preguntas con cuatro opciones; source_refs válidos; JSON y AJV pasan. Eso no sustituye consistencia pedagógica.",
+  "sources_reviewed":[
+    {"url":"https://www.creditpulse.com/blog/days-sales-outstanding-dso-formula-and-calculation-guide","scope":"Content exacto recuperado por Tavily; contiene variantes net revenue/credit sales sin que el módulo explicite sus condiciones."},
+    {"url":"https://www.billtrust.com/resources/blog/how-to-calculate-days-sales-outstanding-on-accounts-receivables","scope":"Content exacto recuperado por Tavily para definición y finalidad; no aporta en el fragmento una convención explícita de promedio/netas."}
+  ],
+  "improvement":"El nuevo contenido ya distingue ventas al contado de ventas a crédito; la regla general no aseguró el método principal exigido.",
+  "action":"Detenerse: no responder ni puntuar; no feedback/decisión ni RRHH. Conservar outputs sin cambios y devolver problema a Chat. No se aplicó una segunda modificación al prompt."
+}

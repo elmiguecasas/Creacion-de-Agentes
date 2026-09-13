@@ -1,0 +1,21 @@
+{
+  "run_type": "academic_final_run",
+  "result": "PEDAGOGICAL ISSUE",
+  "material": true,
+  "module_id": "6d235f59-271d-49d4-ba1b-22e79cfd8e8f",
+  "quiz_id": "d5a44f5e-b18f-4b11-9efb-9e07a2cd98ec",
+  "checks": {
+    "definition": "Correcta para DSO: días de cobro de ventas a crédito.",
+    "formula": "Problema material: Ventas Totales a Crédito o Netas se presenta sin distinguir ventas netas a crédito de ingresos netos totales, ni indicar condiciones de la aproximación. También omite explicitar saldo final o promedio en la fórmula.",
+    "interpretation": "Dirección general consistente con fuentes; simplificada, no distingue términos pactados de atraso efectivo.",
+    "example": "La aritmética 50000/100000*30=15 es correcta, pero las ventas se denominan totales sin aclarar si incluyen contado o qué convención se utiliza.",
+    "questions_and_keys": "q2_dso_formula acepta ventas totales o a crédito como alternativa equivalente; q4_dso_mistake considera un error confundirlas y la explicación dice o viceversa sin condiciones. El aprendizaje y la evaluación son internamente inconsistentes.",
+    "source_refs": "IDs válidos y vinculados a URLs realmente recuperadas; validez referencial no equivale a respaldo de cada afirmación. Wall Street Prep describe net revenue/promedio, mientras CFI describe net credit sales: no justifican tratarlos como intercambiables sin contexto."
+  },
+  "review_basis": [
+    {"url":"https://corporatefinanceinstitute.com/resources/accounting/days-sales-outstanding","reviewed":"Content exacto recuperado por Tavily: net credit sales. Apertura web adicional no disponible; no se afirma lectura del documento completo."},
+    {"url":"https://www.wallstreetprep.com/knowledge/days-sales-outstanding-dso","reviewed":"Content exacto recuperado por Tavily: average accounts receivable/net revenue, 365 días. Apertura web adicional no disponible; no se afirma lectura del documento completo."}
+  ],
+  "action": "Preservar módulo y quiz sin modificación. No registrar respuestas, intento, score ni feedback sobre esta evaluación ambigua. No iniciar Corrida 3. Devolver problema a Chat antes de cualquier cambio de código o prompt.",
+  "proposed_next_step_not_implemented": "Decidir en Chat una corrección mínima que explicite convención, período y población para cada fórmula y mantenga ejemplos/preguntas/explicaciones consistentes. Si se autoriza, ejecutar nueva generación con IDs nuevos, conservando esta evidencia."
+}

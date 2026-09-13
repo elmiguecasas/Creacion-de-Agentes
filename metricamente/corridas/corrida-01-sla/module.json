@@ -1,0 +1,17 @@
+{
+  "data": {
+    "module_id": "sla",
+    "version": 1,
+    "area": "Operaciones",
+    "metric": "SLA",
+    "title": "SLA",
+    "definition": "Un SLA (Service Level Agreement) define un compromiso medible de servicio: por ejemplo, resolver el 90% de tickets críticos en menos de cuatro horas.",
+    "business_value": "SeguÍ si la operación cumple los plazos o estándares prometidos.",
+    "formula": "% cumplimiento = ítems dentro de SLA / ítems elegibles × 100",
+    "interpretation": "No mide solo velocidad: compara el desempeño con una promesa o estándar explícito. Siempre especificá población, período y condición de cumplimiento.",
+    "example": "Si 90 de 100 casos elegibles cumplen el umbral acordado, el cumplimiento es 90%.",
+    "common_mistake": "Un tiempo promedio bajo no garantiza cumplimiento de SLA. Reportá el porcentaje de casos dentro del umbral y analizá los casos incumplidos.",
+    "sources": []
+  },
+  "run_id": null
+}

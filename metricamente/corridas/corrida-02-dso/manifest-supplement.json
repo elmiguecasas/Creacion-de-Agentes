@@ -1,0 +1,14 @@
+[
+  {
+    "file": "manifest.json",
+    "sha256": "b95791be5f462cc7a226d68e6cee735fdad51b7a84b14d81c535dc92bef9d924"
+  },
+  {
+    "file": "usage-by-provider.json",
+    "sha256": "9dac4edc64069d8045ce46231c8270dba74dfe68aa1acb4a137b2913ab85e879"
+  },
+  {
+    "file": "evidence-note.md",
+    "sha256": "e0ee8a621c454324a2bdcbb8f2e24f1c7cea05a21c1fb7234fcefaf88ac5073e"
+  }
+]

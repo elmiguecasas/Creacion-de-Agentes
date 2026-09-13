@@ -1,0 +1,13 @@
+{
+  "provider_real": "PASS",
+  "function_calls": "PASS",
+  "tavily_http_status": 200,
+  "structured_output_ajv": "PASS",
+  "persisted": "PASS",
+  "human_decision": "ACCEPT",
+  "attempts": 0,
+  "quizzes": 0,
+  "dynamic_modules": 0,
+  "automatic_advancement": false,
+  "secret_scan": "PASS"
+}

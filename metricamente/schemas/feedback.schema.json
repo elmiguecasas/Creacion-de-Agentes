@@ -1,0 +1,59 @@
+{
+  "type": "object",
+  "properties": {
+    "diagnosis": {
+      "type": "string",
+      "minLength": 1
+    },
+    "strengths": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0,
+      "maxItems": 30
+    },
+    "weaknesses": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0,
+      "maxItems": 30
+    },
+    "recommended_action": {
+      "type": "string",
+      "enum": [
+        "review",
+        "retry",
+        "continue"
+      ]
+    },
+    "recommended_focus": {
+      "type": "string",
+      "minLength": 1
+    },
+    "next_metric": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "diagnosis",
+    "strengths",
+    "weaknesses",
+    "recommended_action",
+    "recommended_focus",
+    "next_metric",
+    "reason"
+  ],
+  "additionalProperties": false
+}

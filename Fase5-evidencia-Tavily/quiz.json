@@ -1,0 +1,90 @@
+{
+  "data": {
+    "quiz_id": "a0785d84-e862-41a0-a542-928bf017489c",
+    "version": 1,
+    "module_id": "e9daf3fe-2b02-4381-85de-ed807d26b5c7",
+    "questions": [
+      {
+        "question_id": "q4_cac_common_mistake_alt",
+        "question": "¿Cuál de las siguientes acciones representa una distorsión metodológica o error común al determinar el CAC?",
+        "options": [
+          "Separar adecuadamente los gastos de ventas y marketing de otros departamentos no relacionados.",
+          "Utilizar las fuentes de datos correctas correspondientes al mismo período temporal de análisis.",
+          "Delimitar claramente el número de clientes nuevos adquiridos mediante los canales comerciales evaluados.",
+          "Incluir en el cálculo costos operativos ajenos a la adquisición, tales como el soporte técnico o desarrollo de producto."
+        ],
+        "correct_option": 3,
+        "explanation": "Mezclar costos operativos no vinculados a la adquisición, como el soporte o desarrollo, distorsiona la realidad de la métrica.",
+        "source_refs": [
+          "src_diggrowth_cac",
+          "src_hyperbots_cac"
+        ]
+      },
+      {
+        "question_id": "q3_cac_business_value_alt",
+        "question": "¿De qué manera impacta el monitoreo constante del CAC en la estrategia de crecimiento de una organización?",
+        "options": [
+          "Define automáticamente el organigrama y las jerarquías internas del departamento de recursos humanos.",
+          "Establece de manera inflexible el salario mínimo garantizado para el personal operativo de soporte.",
+          "Calcula con precisión contable la depreciación anual de los equipos informáticos y maquinarias.",
+          "Permite evaluar si la asignación de capital y la estrategia de adquisición son financieramente sostenibles frente al valor del cliente."
+        ],
+        "correct_option": 3,
+        "explanation": "Monitorear el CAC permite evaluar si las inversiones en marketing y ventas generan un crecimiento sostenible en relación con el valor aportado por el cliente.",
+        "source_refs": [
+          "src_diggrowth_cac",
+          "src_hyperbots_cac"
+        ]
+      },
+      {
+        "question_id": "q5_cac_example_alt",
+        "question": "Si una empresa invierte $10,000 mensuales en esfuerzos comerciales y de marketing logrando incorporar 100 nuevos clientes, ¿cuál es el análisis financiero correcto?",
+        "options": [
+          "La inversión total indica que el costo por cliente incorporado asciende a $1,000.",
+          "Cada nuevo cliente adquirido representa un costo operativo e inversión de $100.",
+          "El costo unitario de adquisición por cada nuevo cliente es exactamente de $10.",
+          "El rendimiento obtenido arroja un costo de adquisición de $0.10 por cliente."
+        ],
+        "correct_option": 1,
+        "explanation": "Al dividir $10,000 entre 100 nuevos clientes se obtiene un costo de adquisición unitario de $100 por cada cliente.",
+        "source_refs": [
+          "src_diggrowth_cac",
+          "src_hyperbots_cac"
+        ]
+      },
+      {
+        "question_id": "q1_cac_definition_alt",
+        "question": "¿Qué componentes integran fundamentalmente el numerador al calcular el Costo de Adquisición de Clientes según las prácticas estándar?",
+        "options": [
+          "Los gastos totales de ventas, marketing, publicidad y costos indirectos asociados al periodo.",
+          "El sueldo exclusivo del equipo gerencial de la organización sin impacto en la comercialización.",
+          "Únicamente los gastos directos de pauta publicitaria en redes sociales sin personal comercial.",
+          "Los costos fijos totales de la compañía incluyendo alquileres corporativos y producción general."
+        ],
+        "correct_option": 0,
+        "explanation": "El numerador del CAC abarca el costo total invertido tanto en ventas como en marketing, publicidad y costos indirectos asociados para incorporar clientes.",
+        "source_refs": [
+          "src_diggrowth_cac",
+          "src_hyperbots_cac"
+        ]
+      },
+      {
+        "question_id": "q2_cac_formula_alt",
+        "question": "Desde una perspectiva de eficiencia financiera, ¿cómo se interpreta matemáticamente el cociente del CAC?",
+        "options": [
+          "Dividiendo los costos totales de ventas y marketing entre el número de nuevos clientes adquiridos.",
+          "Calculando el cociente entre los ingresos operativos netos y el presupuesto publicitario mensual.",
+          "Multiplicando los costos totales comerciales por el número de clientes que abandonaron la empresa.",
+          "Dividiendo la cantidad de nuevos clientes entre la inversión total realizada en ventas y marketing."
+        ],
+        "correct_option": 0,
+        "explanation": "La fórmula estándar divide la inversión total asignada a ventas y marketing entre el número exacto de nuevos clientes captados.",
+        "source_refs": [
+          "src_diggrowth_cac",
+          "src_hyperbots_cac"
+        ]
+      }
+    ]
+  },
+  "run_id": "2debe5bd-fa18-4a87-b45d-4d6f0b9ce2c8"
+}

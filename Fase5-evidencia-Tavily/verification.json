@@ -1,0 +1,408 @@
+{
+  "kind": "integration_test_NOT_academic",
+  "checked_at": "2026-09-12T18:21:15.264Z",
+  "model": "gemini-3.5-flash-lite",
+  "user_id": "fe56b74e-64db-4836-a13f-d05f8309bc43",
+  "completed_operations": [
+    {
+      "operation": "interpret",
+      "run_id": "23bee159-10a9-43ca-88c9-4bd76c95461b"
+    },
+    {
+      "operation": "module",
+      "run_id": "42e71c91-5e8c-47e1-8e50-c2a1ec9addea"
+    },
+    {
+      "operation": "quiz",
+      "run_id": "21a4a7b3-1bce-4e86-b876-7f6cdf8d77b1"
+    },
+    {
+      "operation": "quiz",
+      "run_id": "2debe5bd-fa18-4a87-b45d-4d6f0b9ce2c8"
+    },
+    {
+      "operation": "feedback",
+      "run_id": "5bf06b4e-59f1-4521-8d37-a7c4b587c9ff"
+    },
+    {
+      "operation": "route",
+      "run_id": "e4ba116e-492c-42af-8ddb-3bb3ef767374"
+    }
+  ],
+  "failed_runs": [
+    {
+      "operation": "route",
+      "run_id": "f8ef70aa-4db7-4144-8c93-dfcc1e6177de",
+      "error": "{\"code\":\"insufficient_sources\",\"message\":\"Faltan fuentes trazables de nivel 1 o 2. No se publicó contenido.\"}"
+    }
+  ],
+  "real_function_call_roundtrips": "PASS",
+  "real_structured_output_ajv": "PASS",
+  "quiz_frozen_and_keys_preserved": "PASS",
+  "shuffle_changed_order": true,
+  "score": {
+    "official": 60,
+    "correct_count": 3,
+    "reconstructed": 60,
+    "attempt_id": "93803e62-6156-4eec-b43c-54bfc9e28853"
+  },
+  "immutable": "PASS",
+  "feedback_real_history": "PASS",
+  "route_human_control": "PASS",
+  "tavily": [
+    {
+      "run_id": "42e71c91-5e8c-47e1-8e50-c2a1ec9addea",
+      "run_status": "completed",
+      "query": "Customer Acquisition Cost CAC formula definition marketing metrics",
+      "http_status": 200,
+      "result_count": 5,
+      "usage": {
+        "credits": 1
+      },
+      "response_time": 2.71,
+      "sources": [
+        {
+          "source_id": "src_diggrowth_cac",
+          "url": "https://diggrowth.com/kpi/customer-acquisition-cost-cac",
+          "title": "Customer Acquisition Cost (CAC): Definition, Formula & Benchmark | DiGGrowth",
+          "tier": 2,
+          "authority_reason": "Plataforma especializada en métricas SaaS y análisis de indicadores de crecimiento y eficiencia comercial."
+        },
+        {
+          "source_id": "src_hyperbots_cac",
+          "url": "https://www.hyperbots.com/glossary/customer-acquisition-cost-cac",
+          "title": "What is Customer Acquisition Cost (CAC)? Definition, Process & Key Metrics",
+          "tier": 2,
+          "authority_reason": "Glosario y recurso analítico especializado en métricas financieras y de negocio para organizaciones digitales."
+        }
+      ]
+    },
+    {
+      "run_id": "f8ef70aa-4db7-4144-8c93-dfcc1e6177de",
+      "run_status": "failed",
+      "query": "HR metrics human resources indicators SHRM analytics definition formula",
+      "http_status": 200,
+      "result_count": 5,
+      "usage": {
+        "credits": 1
+      },
+      "response_time": 2.88,
+      "sources": null
+    },
+    {
+      "run_id": "e4ba116e-492c-42af-8ddb-3bb3ef767374",
+      "run_status": "completed",
+      "query": "Human Resources metrics KPIs SHRM metrics and formulas",
+      "http_status": 200,
+      "result_count": 5,
+      "usage": {
+        "credits": 1
+      },
+      "response_time": 1.09,
+      "sources": [
+        {
+          "source_id": "shrm_extensis",
+          "url": "https://extensishr.com/resource/blogs/14-hr-metrics-and-how-to-calculate-them",
+          "title": "14 Key HR Metrics to Track: Definitions and Formulas",
+          "tier": 2,
+          "authority_reason": "Publicación especializada basada en marcos y benchmarks de la Society for Human Resource Management (SHRM)."
+        },
+        {
+          "source_id": "aihr_kpis",
+          "url": "https://www.aihr.com/blog/human-resources-key-performance-indicators-hr-kpis",
+          "title": "HR KPIs: Guide, 20 Examples & Free Template",
+          "tier": 2,
+          "authority_reason": "Fuente especializada en analítica de personas e indicadores estratégicos de gestión humana."
+        }
+      ]
+    }
+  ],
+  "gemini_usage": [
+    {
+      "run_id": "23bee159-10a9-43ca-88c9-4bd76c95461b",
+      "stage": "progress",
+      "usageMetadata": {
+        "promptTokenCount": 1544,
+        "candidatesTokenCount": 64,
+        "totalTokenCount": 1608,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1544
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "23bee159-10a9-43ca-88c9-4bd76c95461b",
+      "stage": "structured",
+      "usageMetadata": {
+        "promptTokenCount": 1595,
+        "candidatesTokenCount": 52,
+        "totalTokenCount": 1647,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1595
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "42e71c91-5e8c-47e1-8e50-c2a1ec9addea",
+      "stage": "progress",
+      "usageMetadata": {
+        "promptTokenCount": 1582,
+        "candidatesTokenCount": 64,
+        "totalTokenCount": 1646,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1582
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "42e71c91-5e8c-47e1-8e50-c2a1ec9addea",
+      "stage": "search",
+      "usageMetadata": {
+        "promptTokenCount": 1711,
+        "candidatesTokenCount": 25,
+        "totalTokenCount": 1736,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1711
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "42e71c91-5e8c-47e1-8e50-c2a1ec9addea",
+      "stage": "structured",
+      "usageMetadata": {
+        "promptTokenCount": 3474,
+        "candidatesTokenCount": 591,
+        "totalTokenCount": 4065,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 3474
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "21a4a7b3-1bce-4e86-b876-7f6cdf8d77b1",
+      "stage": "progress",
+      "usageMetadata": {
+        "promptTokenCount": 2049,
+        "candidatesTokenCount": 64,
+        "totalTokenCount": 2113,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 2049
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "21a4a7b3-1bce-4e86-b876-7f6cdf8d77b1",
+      "stage": "structured",
+      "usageMetadata": {
+        "promptTokenCount": 2100,
+        "candidatesTokenCount": 1125,
+        "totalTokenCount": 3225,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 2100
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "2debe5bd-fa18-4a87-b45d-4d6f0b9ce2c8",
+      "stage": "progress",
+      "usageMetadata": {
+        "promptTokenCount": 2957,
+        "candidatesTokenCount": 64,
+        "totalTokenCount": 3021,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 2957
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "2debe5bd-fa18-4a87-b45d-4d6f0b9ce2c8",
+      "stage": "structured",
+      "usageMetadata": {
+        "promptTokenCount": 3008,
+        "candidatesTokenCount": 975,
+        "totalTokenCount": 3983,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 3008
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "5bf06b4e-59f1-4521-8d37-a7c4b587c9ff",
+      "stage": "progress",
+      "usageMetadata": {
+        "promptTokenCount": 3359,
+        "candidatesTokenCount": 64,
+        "totalTokenCount": 3423,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 3359
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "5bf06b4e-59f1-4521-8d37-a7c4b587c9ff",
+      "stage": "structured",
+      "usageMetadata": {
+        "promptTokenCount": 4892,
+        "candidatesTokenCount": 379,
+        "totalTokenCount": 5271,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 4892
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "f8ef70aa-4db7-4144-8c93-dfcc1e6177de",
+      "stage": "progress",
+      "usageMetadata": {
+        "promptTokenCount": 1649,
+        "candidatesTokenCount": 64,
+        "totalTokenCount": 1713,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1649
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "f8ef70aa-4db7-4144-8c93-dfcc1e6177de",
+      "stage": "search",
+      "usageMetadata": {
+        "promptTokenCount": 1774,
+        "candidatesTokenCount": 27,
+        "totalTokenCount": 1801,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1774
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "f8ef70aa-4db7-4144-8c93-dfcc1e6177de",
+      "stage": "structured",
+      "usageMetadata": {
+        "promptTokenCount": 3377,
+        "candidatesTokenCount": 765,
+        "totalTokenCount": 4142,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 3377
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "e4ba116e-492c-42af-8ddb-3bb3ef767374",
+      "stage": "progress",
+      "usageMetadata": {
+        "promptTokenCount": 1649,
+        "candidatesTokenCount": 66,
+        "totalTokenCount": 1715,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1649
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "e4ba116e-492c-42af-8ddb-3bb3ef767374",
+      "stage": "search",
+      "usageMetadata": {
+        "promptTokenCount": 1780,
+        "candidatesTokenCount": 26,
+        "totalTokenCount": 1806,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1780
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "e4ba116e-492c-42af-8ddb-3bb3ef767374",
+      "stage": "structured",
+      "usageMetadata": {
+        "promptTokenCount": 3461,
+        "candidatesTokenCount": 556,
+        "totalTokenCount": 4017,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 3461
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "gemini_minimal_usage": {
+    "promptTokenCount": 6,
+    "candidatesTokenCount": 1,
+    "totalTokenCount": 7,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 6
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "quota_or_billing_errors": [],
+  "secret_scan": "PASS"
+}

@@ -1,0 +1,49 @@
+{
+  "data": {
+    "attempt_id": "93803e62-6156-4eec-b43c-54bfc9e28853",
+    "user_id": "fe56b74e-64db-4836-a13f-d05f8309bc43",
+    "quiz_id": "a0785d84-e862-41a0-a542-928bf017489c",
+    "answers": [
+      3,
+      3,
+      0,
+      0,
+      1
+    ],
+    "results": [
+      {
+        "question_id": "q4_cac_common_mistake_alt",
+        "answer": 3,
+        "correct_option": 3,
+        "correct": true
+      },
+      {
+        "question_id": "q3_cac_business_value_alt",
+        "answer": 3,
+        "correct_option": 3,
+        "correct": true
+      },
+      {
+        "question_id": "q5_cac_example_alt",
+        "answer": 0,
+        "correct_option": 1,
+        "correct": false
+      },
+      {
+        "question_id": "q1_cac_definition_alt",
+        "answer": 0,
+        "correct_option": 0,
+        "correct": true
+      },
+      {
+        "question_id": "q2_cac_formula_alt",
+        "answer": 1,
+        "correct_option": 0,
+        "correct": false
+      }
+    ],
+    "score": 60,
+    "correct_count": 3,
+    "created_at": "2026-09-12T18:17:30.335Z"
+  }
+}

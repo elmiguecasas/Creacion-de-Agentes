@@ -1,0 +1,112 @@
+FASE 6 — TRES CORRIDAS REALES ACADÉMICAS
+Metricamente — informe del 12 de septiembre de 2026
+
+A. ESTADO
+
+BLOCKED. Se completó SLA y se preservó DSO hasta módulo/quiz. La revisión pedagógica detectó un problema material que requiere decisión de Chat antes de cambiar código o prompt. RRHH no fue iniciada, conforme a la regla explícita de detención de la misión.
+
+Todas las solicitudes son nuevas y academic_final_run. No se reutilizaron corridas técnicas, fixtures ni artefactos generados de Fase 5. SLA usa el contenido seed histórico por el objetivo expreso de continuidad con Entrega 1; su quiz congelado e intento son nuevos.
+No se ejecutó Fase 7 ni ninguna fase posterior. No se cambió arquitectura, lógica, scoring, SQLite, configuración o prompts.
+
+B. CORRIDA 1 — SLA
+
+Estado: PASS.
+Input exacto: "Quiero aprender SLA".
+Flujo: interpretación Gemini → get_learning_progress real → selección expresa de módulo seed SLA → quiz nuevo congelado/mezclado → respuestas deliberadas → intento oficial → feedback Gemini sobre el intento y progreso SQLite → ACCEPT del usuario.
+Interpret run: b5f9cfc0-293b-4aa1-acdc-f9706ee30e1f.
+Feedback run: 12c0b6ec-5c35-4001-bbfc-2697013e40fb.
+Quiz: 8959972e-016f-48a6-ac53-7750b559da46.
+Respuestas base cero: [0,3,0,3,3]. Score oficial: 60/100, tres respuestas correctas. Se reconstruyó el mismo resultado mediante shared/scoring.js contra el quiz y las respuestas persistidas.
+Feedback: reconoce dominio del concepto, ejemplos y análisis de incumplimientos; señala errores en fórmula y requisitos del reporte; recomienda review. No recalcula ni cambia score.
+Decisión humana: ACCEPT, respondido explícitamente por el usuario en esta conversación y registrado por endpoint. Se conservaron el resultado de la escritura y su registro SQLite. No se inició repaso ni otro intento; cantidad de intentos y módulos sin cambios tras decidir.
+Fuentes/tools: get_learning_progress real; no Tavily porque el módulo era seed. Fuentes y source_refs vacíos se preservan como limitación histórica, no se inventan referencias.
+Usage: cuatro respuestas Gemini; promptTokenCount 9425, candidatesTokenCount 473, totalTokenCount 9898. Tavily no invocado, sin uso informado.
+Evidencia: outputs/metricamente/corridas/corrida-01-sla/.
+
+Las respuestas fueron seleccionadas para ejercitar el mecanismo de feedback adaptativo; no constituyen una evaluación académica del autor.
+
+C. CORRIDA 2 — DSO
+
+Estado: BLOCKED_PEDAGOGICAL_ISSUE (avance parcial preservado).
+Input exacto: "Quiero aprender DSO".
+Interpret run: 174e8ae2-dad9-4196-9ed2-40b46a00bb96.
+Module run: 532bd536-dbbc-432a-b7d3-07e3a8b00485.
+Quiz run: 554b5e17-1185-4cc6-9949-782ee07c5840.
+Módulo: 6d235f59-271d-49d4-ba1b-22e79cfd8e8f, versión 1, área Finanzas Operativas.
+Quiz: d5a44f5e-b18f-4b11-9efb-9e07a2cd98ec, cinco preguntas/cuatro opciones, congelado e intacto.
+Se observaron function calls reales de progreso y búsqueda; Tavily HTTP 200, cinco resultados; Structured Outputs Gemini y AJV PASS para interpretación/módulo/quiz. Los registros agent_runs están completed técnicamente: eso no implica aprobación pedagógica de la corrida.
+
+Query real: DSO Days Sales Outstanding definition formula finance operations.
+Fuentes utilizadas:
+- https://corporatefinanceinstitute.com/resources/accounting/days-sales-outstanding
+- https://www.wallstreetprep.com/knowledge/days-sales-outstanding-dso
+Ambas clasificadas nivel 2 por el modelo. URLs, títulos, snippets y respuestas de búsqueda completos permanecen en tool_calls/sources/snapshot. La revisión comparó los content recuperados; la apertura web adicional de ambas páginas no estuvo disponible, por lo que no se afirma lectura del documento completo.
+
+Validación pedagógica: PEDAGOGICAL ISSUE material.
+1. CFI describe denominador de ventas netas a crédito; Wall Street Prep describe ingresos netos y cuentas por cobrar promedio. Son convenciones que requieren explicitar supuestos, no alternativas intercambiables sin condiciones.
+2. La fórmula generada mezcla "Ventas Totales a Crédito o Netas" y no precisa saldo final/promedio. El ejemplo usa "ventas totales" sin aclarar proporción a crédito; la aritmética 50000/100000*30=15 sí es correcta.
+3. q2_dso_formula acepta "ventas totales o a crédito", pero q4_dso_mistake considera un error confundir ambas y su explicación agrega "o viceversa" sin condiciones. La evaluación enseña y penaliza criterios inconsistentes.
+4. source_refs son estructuralmente válidos, pero eso no valida la mezcla metodológica. La definición general es correcta; la interpretación está simplificada y no distingue plazos pactados de mora efectiva.
+
+No se registraron respuestas, attempt, score, feedback ni decisión humana para DSO. No se crearon archivos ficticios para esas etapas. No se editaron módulo, quiz, fuentes ni claves. No hubo reintento destinado a ocultar el problema.
+Usage: siete respuestas Gemini; promptTokenCount 14496, candidatesTokenCount 2166, totalTokenCount 16662. Tavily: una búsqueda, usage {"credits":1}, response_time 1.39.
+Evidencia: outputs/metricamente/corridas/corrida-02-dso/.
+
+D. CORRIDA 3 — RRHH
+
+Input previsto, NO enviado: "Quiero aprender métricas de Recursos Humanos".
+Estado: NO EJECUTADA por detención obligatoria ante el defecto DSO. No existen route, fuentes, usage ni decisión ACCEPT ejecutada. La autorización previa de ACCEPT se conserva como instrucción para cuando pueda realizarse esta corrida, no como una decisión persistida ficticia.
+No se creó una carpeta vacía para aparentar una tercera corrida. No se generaron intentos ni módulos de RRHH.
+
+E. SUPERVISIÓN
+
+L2 — Autonomía supervisada. Convención adoptada por el proyecto ante ausencia de definiciones oficiales publicadas L0–L4, según instrucción del usuario.
+El agente consulta/busca/genera/interpreta/recomienda; el humano inicia, responde, acepta/rechaza y decide el siguiente paso. SLA demuestra aceptación humana explícita sin avance automático. DSO demuestra revisión y detención del operador antes de puntuar un quiz inconsistente; el problema vuelve a Chat.
+La convención L2 está documentada en corridas/README.md y metadata de ambas corridas. Los prompts realmente ejecutados se conservan exactamente como estaban; no se reescribió su historia.
+
+F. REPRODUCIBILIDAD
+
+Cada carpeta conserva input, interpretación, respuestas HTTP, tool_calls, módulo, quiz, fuentes, usage, revisión pedagógica, metadata, snapshots y manifest SHA-256. SLA incluye además respuestas, intento, feedback y decisión. Los snapshots contienen el catálogo seed de contexto y registros SQLite reales de cada usuario técnico nuevo, separado de Fase 5.
+Hashes de prompts ejecutados:
+system_prompt SHA-256: 35b8bf813106a2f44823f11caf7f526152617d043d8f87ec995ebd947bcf5d15.
+user_prompt template SHA-256: 179cfda9ca16b01832e80ebec7e1c04c6e9d36343eee3bd2445a8ff5d1f4852a.
+prompt_version combinado existente: 1e30aab865469c93826f08bcabf4384e919d61dc52e682a303a5323adcc8da14.
+Los metadata relacionan todos los run_ids con estos hashes. Las solicitudes preservan el template, los datos efectivos, el schema y las respuestas originales del modelo.
+
+$136ab40800cee48a23b61efb6665d4756d9b1b5b8be2151938dca1dc9d6fbc1ec.
+manifest.json DSO: 18 archivos iniciales; SHA-256 b95791be5f462cc7a226d68e6cee735fdad51b7a84b14d81c535dc92bef9d924. El suplemento sella el índice corregido de uso por proveedor sin sobrescribir el original.
+Los README explican cómo verificar los manifiestos y seguir las relaciones. Replay significa reconstruir lo almacenado, incluyendo el score SLA; rerun es una nueva generación con IDs nuevos y no garantiza texto idéntico.
+
+G. INCIDENCIAS
+
+No se observaron errores de acceso/cuota/billing en las llamadas realizadas. El defecto es pedagógico y se encuentra en el output DSO, no en una falla de AJV.
+Se detectó una clasificación auxiliar del extractor de usage: incluía el evento Tavily con usageMetadata null dentro del listado Gemini. Se preservó el índice inicial; usage-by-provider.json separa los eventos correctamente desde el snapshot, con nota y manifest-supplement.json. No se alteró consumo, output ni log de proveedores. El consolidado usa únicamente respuestas Gemini reales.
+
+H. VALIDACIÓN DE SECRETOS
+
+Escaneo de las dos credenciales exactas en memoria: PASS en artefactos y paquete. No se muestran sus valores. No se incluyen .env, bases SQLite ni node_modules. No se habilitó billing ni se consultó/modificó configuración de facturación.
+No se hizo push, PR ni merge. Código y prompts permanecen sin cambios de Fase 6; los documentos de corridas y herramientas de captura están preparados solo localmente.
+
+I. USAGE CONSOLIDADO
+
+Corrida | Respuestas Gemini | promptTokenCount | candidatesTokenCount | totalTokenCount | Tavily
+SLA | 4 | 9425 | 473 | 9898 | No invocado
+DSO parcial | 7 | 14496 | 2166 | 16662 | 1 búsqueda, 1 crédito, response_time 1.39
+RRHH | No ejecutada | No aplica | No aplica | No aplica | No ejecutada
+Total observado | 11 | 23921 | 2639 | 26560 | 1 búsqueda, 1 crédito
+
+Se preservaron promptTokensDetails y serviceTier standard. Los campos thinking/tool-related no entregados no se convierten en cero. No se calculó costo monetario ni se certifica el plan de facturación a partir del consumo.
+
+J. GAPS RESTANTES
+
+- DSO requiere decisión sobre corrección mínima de consistencia entre convenciones, fórmula, ejemplo y quiz. No fue implementada.
+- DSO no demuestra aún intento/score/feedback/decisión.
+- RRHH no fue ejecutada por la regla de detención.
+- Una validación estructural correcta no garantiza exactitud pedagógica; el caso queda preservado como evidencia de ese límite.
+
+K. CONCLUSIÓN
+
+FASE 6 BLOCKED.
+SLA completa; DSO parcial preservada por problema pedagógico material; RRHH pendiente. No corresponde declarar tres corridas completas ni iniciar fases posteriores.
+Volver a Chat para decidir una corrección mínima autorizada. Cualquier ejecución posterior deberá conservar esta evidencia y utilizar nuevos IDs y archivos sin sobrescribir la corrida actual.
+

@@ -1,0 +1,90 @@
+{
+  "data": {
+    "quiz_id": "8a1a9539-eab3-41c0-a710-c15b8d303b72",
+    "version": 1,
+    "module_id": "e9daf3fe-2b02-4381-85de-ed807d26b5c7",
+    "questions": [
+      {
+        "question_id": "q2_cac_formula",
+        "question": "¿Cuál es la fórmula estándar para calcular el Costo de Adquisición de Clientes (CAC)?",
+        "options": [
+          "CAC = Marketing Budget / Total Returning Customers",
+          "CAC = Total Cost of Goods Sold / Number of New Customers Acquired",
+          "CAC = Total Sales and Marketing Costs / Number of New Customers Acquired",
+          "CAC = Total Operating Revenue / Total New Customers Acquired"
+        ],
+        "correct_option": 2,
+        "explanation": "La fórmula divide los costos totales de ventas y marketing entre el número de nuevos clientes adquiridos durante el período.",
+        "source_refs": [
+          "src_diggrowth_cac",
+          "src_hyperbots_cac"
+        ]
+      },
+      {
+        "question_id": "q5_cac_example",
+        "question": "Si una empresa destina $10,000 en un mes a marketing y ventas y consigue 100 nuevos clientes, ¿cuál es el CAC?",
+        "options": [
+          "$10 por cliente",
+          "$100 por cliente",
+          "$0.10 por cliente",
+          "$1,000 por cliente"
+        ],
+        "correct_option": 1,
+        "explanation": "Dividiendo $10,000 entre 100 nuevos clientes se obtiene un costo de adquisición de $100 por cada cliente.",
+        "source_refs": [
+          "src_diggrowth_cac",
+          "src_hyperbots_cac"
+        ]
+      },
+      {
+        "question_id": "q4_cac_common_mistake",
+        "question": "¿Cuál se considera un error común al calcular el CAC?",
+        "options": [
+          "Dividir la inversión total de marketing entre el número total de conversiones logradas.",
+          "Mezclar costos operativos ajenos a la adquisición, como soporte técnico o desarrollo de producto.",
+          "Utilizar exclusivamente los gastos del equipo de ventas y publicidad digital.",
+          "Medir la cantidad de clientes nuevos obtenidos en un período de tiempo definido."
+        ],
+        "correct_option": 1,
+        "explanation": "Incluir costos ajenos a la adquisición o utilizar ventanas temporales incongruentes distorsiona la métrica real.",
+        "source_refs": [
+          "src_diggrowth_cac",
+          "src_hyperbots_cac"
+        ]
+      },
+      {
+        "question_id": "q3_cac_business_value",
+        "question": "¿Cuál es el principal valor de negocio al monitorear el CAC?",
+        "options": [
+          "Calcular la depreciación contable de los activos fijos de la compañía a largo plazo.",
+          "Establecer de forma obligatoria los precios finales que pagarán los consumidores por los productos.",
+          "Evaluar la eficiencia de las inversiones en marketing y ventas para determinar si la estrategia de crecimiento es financieramente sostenible.",
+          "Medir la satisfacción laboral y el rendimiento individual de los agentes de soporte técnico."
+        ],
+        "correct_option": 2,
+        "explanation": "Permite analizar la eficiencia comercial y de marketing, evaluando si el capital invertido genera retornos sostenibles en función del valor del cliente.",
+        "source_refs": [
+          "src_diggrowth_cac",
+          "src_hyperbots_cac"
+        ]
+      },
+      {
+        "question_id": "q1_cac_definition",
+        "question": "¿Qué mide exactamente el Costo de Adquisición de Clientes (CAC)?",
+        "options": [
+          "Los gastos fijos de estructura y alquiler de oficinas divididos entre los empleados del área comercial.",
+          "El costo recurrente de mantenimiento técnico y soporte posterior a la venta por cliente activo.",
+          "El costo total incurrido por una organización para adquirir un nuevo cliente en un período determinado.",
+          "La inversión exclusiva en pauta digital publicitaria sin incluir los costos de personal de ventas."
+        ],
+        "correct_option": 2,
+        "explanation": "El CAC abarca el costo total invertido tanto en ventas como en marketing, publicidad y costos indirectos asociados para incorporar nuevos clientes.",
+        "source_refs": [
+          "src_diggrowth_cac",
+          "src_hyperbots_cac"
+        ]
+      }
+    ]
+  },
+  "run_id": "21a4a7b3-1bce-4e86-b876-7f6cdf8d77b1"
+}

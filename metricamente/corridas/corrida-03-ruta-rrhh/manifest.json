@@ -1,0 +1,74 @@
+[
+  {
+    "file": "README.md",
+    "sha256": "01948a2df9cf0c0a21c96dc08863ba3f387001c5ea746858136116960bb774ef"
+  },
+  {
+    "file": "http-01.json",
+    "sha256": "f65407d78000e538d4323a4bec0bfd5785fefed0ff345b4e7c08ef2062dfd9a1"
+  },
+  {
+    "file": "http-02.json",
+    "sha256": "0c6dfb1a5540a003c7bafb35727ad1627a52298e2cf2582a44cf9cfe5e4ce948"
+  },
+  {
+    "file": "http-03.json",
+    "sha256": "72cbd8b78d3ff6e55927f2b84d9c3fa4686b92c1815795cae81bfc4707038d55"
+  },
+  {
+    "file": "human_decision.json",
+    "sha256": "4b2819164f2bab208c2cc1ccb026ef9849cd93687c00882c136e23a7fb400b6a"
+  },
+  {
+    "file": "input.json",
+    "sha256": "af27851ac2bf7fe27a70b231489719f2f2b27056a2873128b73964dad611347e"
+  },
+  {
+    "file": "interpret.json",
+    "sha256": "edf577017308fd96fc3c4549b73ae7abe09b9b32b7bf1fdcc2d866c04dd8d043"
+  },
+  {
+    "file": "metadata.json",
+    "sha256": "e283f6b2f0dffec39b2a7acd62c877a8ffab791d8caa0f4b4744a272c47d7bcf"
+  },
+  {
+    "file": "pedagogical-review.json",
+    "sha256": "5ab7e74600845d50886a916b317d2ebb975d6900f1d30e3a318cce4926ff09af"
+  },
+  {
+    "file": "route.json",
+    "sha256": "267f358a1b696802cfbcc1158cad06ea1c9d26ad79af060d8f5f0b5b052db35a"
+  },
+  {
+    "file": "snapshot-decision-1789263839463.json",
+    "sha256": "1d93a695499e2778ad088bba5c6b672f7cbfa7c010effe1deb8b8c0f7ad3e368"
+  },
+  {
+    "file": "snapshot-final.json",
+    "sha256": "33eb61bde403171f79286216aa3ce216f0ccd4625022d98b6f355cd336c8462d"
+  },
+  {
+    "file": "snapshot-init-1789263718663.json",
+    "sha256": "9236bf88d3d9584a4e5e0ef33f6c8ce7352524805cbd36d18615b188d8dc6268"
+  },
+  {
+    "file": "snapshot-route-1789263727153.json",
+    "sha256": "d1e3ee47f87d07992952e72ab38fa88836b273b4d208afd1408d52755eee7aad"
+  },
+  {
+    "file": "sources.json",
+    "sha256": "005c1f26794adaaadd52c11a091fd97165ac72ab4f0f860091386dcde0979c38"
+  },
+  {
+    "file": "tool_calls.json",
+    "sha256": "e4f64dd837c010f652ac31d93c7e946fb3f854cce516139946dc90ae48476ca0"
+  },
+  {
+    "file": "usage.json",
+    "sha256": "32e8ca045dae1976d44b0782b87f8ba7ef8e8ab54a57044939233dcf2abc19b0"
+  },
+  {
+    "file": "verification.json",
+    "sha256": "a482bfa152bdbe441e40433bde83730081ec90882c37de7f81ba60d746e7ea59"
+  }
+]

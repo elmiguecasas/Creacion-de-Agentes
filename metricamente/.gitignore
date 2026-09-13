@@ -1,0 +1,10 @@
+node_modules/
+.env
+.env.*
+!.env.example
+db/*.db*
+db/*.sqlite*
+coverage/
+*.log
+corridas/*.json
+!corridas/README.md

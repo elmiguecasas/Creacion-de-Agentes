@@ -1,0 +1,32 @@
+{
+  "data": {
+    "module_id": "e9daf3fe-2b02-4381-85de-ed807d26b5c7",
+    "version": 1,
+    "area": "Marketing",
+    "metric": "CAC",
+    "title": "Customer Acquisition Cost (CAC)",
+    "definition": "El Costo de Adquisición de Clientes (CAC) es el costo total incurrido por una organización para adquirir un nuevo cliente, considerando los gastos de ventas, marketing, publicidad y costos indirectos asociados durante un período determinado.",
+    "business_value": "Permite evaluar la eficiencia de las inversiones en marketing y ventas, determinando si la estrategia de crecimiento y la asignación de capital son financieramente sostenibles en relación con el valor que aporta el cliente.",
+    "formula": "CAC = Total Sales and Marketing Costs / Number of New Customers Acquired",
+    "interpretation": "Un CAC más bajo indica mayor eficiencia en la conversión de prospectos y optimización de canales. Un CAC elevado, en cambio, puede reflejar ineficiencias en las estrategias comerciales o de marketing que erosionan el retorno de inversión (ROI).",
+    "example": "Si una empresa destina $10,000 en un mes a esfuerzos de marketing y ventas y consigue 100 nuevos clientes en ese mismo período, el CAC es de $100 por cliente.",
+    "common_mistake": "Mezclar costos operativos ajenos a la adquisición, como soporte técnico o desarrollo de producto, o calcular numerador y denominador con ventanas temporales o fuentes de datos incongruentes.",
+    "sources": [
+      {
+        "source_id": "src_diggrowth_cac",
+        "url": "https://diggrowth.com/kpi/customer-acquisition-cost-cac",
+        "title": "Customer Acquisition Cost (CAC): Definition, Formula & Benchmark | DiGGrowth",
+        "tier": 2,
+        "authority_reason": "Plataforma especializada en métricas SaaS y análisis de indicadores de crecimiento y eficiencia comercial."
+      },
+      {
+        "source_id": "src_hyperbots_cac",
+        "url": "https://www.hyperbots.com/glossary/customer-acquisition-cost-cac",
+        "title": "What is Customer Acquisition Cost (CAC)? Definition, Process & Key Metrics",
+        "tier": 2,
+        "authority_reason": "Glosario y recurso analítico especializado en métricas financieras y de negocio para organizaciones digitales."
+      }
+    ]
+  },
+  "run_id": "42e71c91-5e8c-47e1-8e50-c2a1ec9addea"
+}

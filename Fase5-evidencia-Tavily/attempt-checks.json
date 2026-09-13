@@ -1,0 +1,4 @@
+{
+  "idempotent": true,
+  "immutable": true
+}

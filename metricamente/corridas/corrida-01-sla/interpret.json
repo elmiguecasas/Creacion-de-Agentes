@@ -1,0 +1,10 @@
+{
+  "data": {
+    "mode": "metric",
+    "area": "Operaciones",
+    "metric": "SLA",
+    "intent": "Quiero aprender SLA",
+    "clarification": null
+  },
+  "run_id": "b5f9cfc0-293b-4aa1-acdc-f9706ee30e1f"
+}

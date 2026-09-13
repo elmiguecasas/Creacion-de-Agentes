@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Aprendé métricas e indicadores de distintas áreas con práctica y progreso real." />
+    <title>metricamente · Aprendizaje de métricas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="site-header">
+        <button class="brand" id="home-button" type="button" aria-label="Ir al inicio">
+          <span class="brand-mark">M</span>
+          <span>metricamente</span>
+        </button>
+        <p class="header-context">Tu tutor de métricas e indicadores</p>
+      </header>
+
+      <p id="app-status" role="status" aria-live="polite"></p>
+      <section id="view-home" class="view active" aria-labelledby="home-title">
+        <div class="hero">
+          <p class="eyebrow">Aprendizaje adaptativo</p>
+          <h1 id="home-title">Entendé qué medir y por qué.</h1>
+          <p class="hero-copy">Estudiá un concepto, comprobá lo aprendido y recibí una recomendación concreta para continuar.</p>
+        </div>
+        <form id="intent-form" class="intent-card">
+          <label for="learning-mode">¿Cómo querés aprender?</label>
+          <select id="learning-mode"><option value="metric">Una métrica o concepto</option><option value="area">Una ruta por área</option></select>
+          <label for="learning-intent">¿Qué querés comprender?</label>
+          <textarea id="learning-intent" required maxlength="2000" rows="3" placeholder="Por ejemplo: CAC en Marketing, o métricas de Recursos Humanos"></textarea>
+          <button class="button primary" type="submit">Preparar aprendizaje</button>
+        </form>
+        <section class="overview-card" aria-label="Tu avance">
+          <div>
+            <p class="section-label">Tu ruta</p>
+            <h2 id="route-progress">Cargando progreso…</h2>
+          </div>
+          <div class="progress-track" aria-hidden="true"><span id="route-progress-bar"></span></div>
+        </section>
+        <section aria-labelledby="concepts-title">
+          <div class="section-heading">
+            <div>
+              <p class="section-label">Conceptos</p>
+              <h2 id="concepts-title">Elegí por dónde empezar</h2>
+            </div>
+            <span class="topic-count" id="topic-count"></span>
+          </div>
+          <div id="topic-grid" class="topic-grid"></div>
+        </section>
+        <section class="progress-section" aria-labelledby="progress-title">
+          <h2 id="progress-title">Tu evolución</h2>
+          <p>Resultados de evaluaciones guardadas. Estudiar fichas no cuenta como un intento.</p>
+          <div class="table-scroll"><table><thead><tr><th>Área</th><th>Métrica</th><th>Intentos</th><th>Último score</th><th>Mejor score</th></tr></thead><tbody id="progress-rows"></tbody></table></div>
+          <p id="legacy-notice"></p>
+        </section>
+      </section>
+
+      <section id="view-route" class="view" aria-labelledby="route-title">
+        <p class="eyebrow">Ruta propuesta · Vos elegís por dónde comenzar</p>
+        <h1 id="route-title"></h1><p id="route-rationale"></p>
+        <div id="route-modules" class="answer-review"></div><div id="route-sources"></div>
+        <button id="reject-route" class="button secondary" type="button">Volver sin iniciar</button>
+      </section>
+
+      <section id="view-study" class="view" aria-labelledby="study-title">
+        <button class="back-link" data-go-home type="button">← Volver a conceptos</button>
+        <div class="study-heading">
+          <p class="eyebrow" id="study-category"></p>
+          <h1 id="study-title"></h1>
+          <p id="study-intro"></p>
+        </div>
+        <div id="card-progress" class="step-indicator"></div>
+        <article id="study-card" class="study-card"></article>
+        <div id="study-sources"></div>
+        <div class="study-actions">
+          <button id="previous-card" class="button secondary" type="button">Anterior</button>
+          <button id="next-card" class="button primary" type="button">Siguiente</button>
+        </div>
+      </section>
+
+      <section id="view-quiz" class="view" aria-labelledby="quiz-title">
+        <button class="back-link" id="back-to-study" type="button">← Repasar fichas</button>
+        <div class="quiz-heading">
+          <p class="eyebrow">Comprobación de conocimiento</p>
+          <h1 id="quiz-title"></h1>
+          <p>Elegí la respuesta más adecuada. Verás la explicación al terminar.</p>
+        </div>
+        <div class="quiz-meta"><span id="question-counter"></span><div class="mini-progress"><span id="quiz-progress"></span></div></div>
+        <form id="quiz-form" class="question-card"></form>
+      </section>
+
+      <section id="view-result" class="view" aria-labelledby="result-title">
+        <p class="eyebrow">Resultado del quiz</p>
+        <div class="result-hero">
+          <div class="score-ring" id="score-ring"><span id="score-value">0%</span></div>
+          <div>
+            <h1 id="result-title">Tu resultado</h1>
+            <p id="result-summary"></p>
+            <span id="level-badge" class="level-badge"></span>
+          </div>
+        </div>
+        <section class="feedback-card" aria-labelledby="feedback-title">
+          <p class="section-label">Feedback adaptativo</p>
+          <h2 id="feedback-title">Tu próximo mejor paso</h2>
+          <div id="feedback-content"></div>
+          <div id="recommendation-actions" class="result-actions"></div>
+        </section>
+        <section class="review-section" aria-labelledby="review-title">
+          <div class="section-heading"><div><p class="section-label">Corrección</p><h2 id="review-title">Revisá tus respuestas</h2></div></div>
+          <div id="answer-review" class="answer-review"></div>
+        </section>
+        <div class="result-actions">
+          <button id="retry-quiz" class="button secondary" type="button">Intentar otro quiz</button>
+          <button id="continue-route" class="button primary" type="button">Ver conceptos</button>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

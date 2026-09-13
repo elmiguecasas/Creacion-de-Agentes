@@ -1,0 +1,81 @@
+{
+  "timestamp": "2026-09-12T19:08:17.533Z",
+  "endpoint": "/api/modules",
+  "method": "GET",
+  "body": null,
+  "status": 200,
+  "response": {
+    "modules": [
+      {
+        "module_id": "throughput",
+        "version": 1,
+        "area": "Operaciones",
+        "metric": "Throughput",
+        "title": "Throughput",
+        "definition": "El throughput es la cantidad de unidades de trabajo que un proceso completa durante un período. Las unidades pueden ser pedidos, casos, productos o tareas.",
+        "business_value": "Medí la capacidad real de salida de un proceso.",
+        "formula": "Throughput = unidades terminadas / período",
+        "interpretation": "Sirve para saber cuánto entrega el proceso, no cuánto trabajo está en curso. Comparalo con períodos equivalentes y mantené constante la definición de “terminado”.",
+        "example": "Si se terminan 120 solicitudes en una semana, el throughput es 120 solicitudes por semana.",
+        "common_mistake": "Un throughput alto no siempre implica mayor productividad: puede deberse a más personas, casos más simples o menor calidad. Leélo junto con capacidad y calidad.",
+        "sources": []
+      },
+      {
+        "module_id": "lead-time",
+        "version": 1,
+        "area": "Operaciones",
+        "metric": "Lead time",
+        "title": "Lead time",
+        "definition": "El lead time es el tiempo total desde que se solicita un trabajo hasta que se entrega. Incluye las esperas antes de que el equipo comience a trabajar.",
+        "business_value": "Entendé cuánto espera un cliente para obtener una respuesta o entrega.",
+        "formula": "Lead time = fecha de entrega − fecha de solicitud",
+        "interpretation": "Representa la experiencia de espera de quien hace la solicitud. Si aumenta, conviene investigar colas, prioridades, dependencias o capacidad.",
+        "example": "Una solicitud recibida el lunes y entregada el viernes tiene aproximadamente cuatro días de lead time.",
+        "common_mistake": "Excluir el tiempo en cola produce una visión incompleta. El lead time incluye todo el recorrido, incluso cuando nadie trabaja activamente en el pedido.",
+        "sources": []
+      },
+      {
+        "module_id": "cycle-time",
+        "version": 1,
+        "area": "Operaciones",
+        "metric": "Cycle time",
+        "title": "Cycle time",
+        "definition": "El cycle time es el tiempo que transcurre desde que el equipo empieza a trabajar una unidad hasta que la completa.",
+        "business_value": "Aislá la velocidad de ejecución del equipo una vez iniciado el trabajo.",
+        "formula": "Cycle time = fecha de fin − fecha de inicio de trabajo",
+        "interpretation": "Ayuda a detectar fricciones dentro del proceso: retrabajos, aprobaciones, bloqueos o pasos innecesarios. Es una métrica de flujo interno.",
+        "example": "Si el trabajo comienza el jueves y termina el viernes, el cycle time es aproximadamente un día, incluyendo las esperas dentro de ese intervalo.",
+        "common_mistake": "Si el cliente espera tres días antes del inicio y el equipo tarda uno en resolver, el cycle time es un día; el lead time es cuatro días.",
+        "sources": []
+      },
+      {
+        "module_id": "backlog",
+        "version": 1,
+        "area": "Operaciones",
+        "metric": "Backlog",
+        "title": "Backlog",
+        "definition": "El backlog es el conjunto o cantidad de ítems solicitados que aún no están terminados. Puede incluir trabajo sin iniciar y trabajo en curso.",
+        "business_value": "Hacé visible la carga acumulada que el proceso todavía debe resolver.",
+        "formula": "Backlog = ítems recibidos y no completados",
+        "interpretation": "Un backlog que crece de forma sostenida sugiere que la entrada supera la capacidad de salida. Segmentalo por antigüedad, prioridad y tipo de caso.",
+        "example": "Si hay 20 solicitudes recibidas y sin terminar, el backlog es 20, estén iniciadas o no.",
+        "common_mistake": "Dos backlogs del mismo tamaño pueden tener riesgos distintos. Uno con casos recién ingresados no equivale a otro con solicitudes críticas atrasadas.",
+        "sources": []
+      },
+      {
+        "module_id": "sla",
+        "version": 1,
+        "area": "Operaciones",
+        "metric": "SLA",
+        "title": "SLA",
+        "definition": "Un SLA (Service Level Agreement) define un compromiso medible de servicio: por ejemplo, resolver el 90% de tickets críticos en menos de cuatro horas.",
+        "business_value": "SeguÍ si la operación cumple los plazos o estándares prometidos.",
+        "formula": "% cumplimiento = ítems dentro de SLA / ítems elegibles × 100",
+        "interpretation": "No mide solo velocidad: compara el desempeño con una promesa o estándar explícito. Siempre especificá población, período y condición de cumplimiento.",
+        "example": "Si 90 de 100 casos elegibles cumplen el umbral acordado, el cumplimiento es 90%.",
+        "common_mistake": "Un tiempo promedio bajo no garantiza cumplimiento de SLA. Reportá el porcentaje de casos dentro del umbral y analizá los casos incumplidos.",
+        "sources": []
+      }
+    ]
+  }
+}

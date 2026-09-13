@@ -1,0 +1,98 @@
+{
+  "timestamp": "2026-09-12T19:09:14.332Z",
+  "endpoint": "/api/learning/quiz",
+  "method": "POST",
+  "body": {
+    "module_id": "6d235f59-271d-49d4-ba1b-22e79cfd8e8f",
+    "version": 1
+  },
+  "status": 201,
+  "response": {
+    "data": {
+      "quiz_id": "d5a44f5e-b18f-4b11-9efb-9e07a2cd98ec",
+      "version": 1,
+      "module_id": "6d235f59-271d-49d4-ba1b-22e79cfd8e8f",
+      "questions": [
+        {
+          "question_id": "q3_dso_interpretation",
+          "question": "¿Cuál es la interpretación financiera de un indicador DSO significativamente bajo para una empresa que opera con ventas a crédito?",
+          "options": [
+            "Una política de cobros excesivamente estricta que reduce de forma permanente la base de clientes",
+            "Un riesgo elevado de incobrabilidad y restricciones severas en el flujo de caja operativo",
+            "Una conversión rápida de las ventas a crédito en efectivo y una alta liquidez en el capital de trabajo",
+            "Una ineficiencia operativa generalizada en la gestión del ciclo de conversión del efectivo"
+          ],
+          "correct_option": 2,
+          "explanation": "Un DSO bajo refleja que la entidad recauda el dinero de sus clientes con rapidez, lo que se traduce en una mayor liquidez y liberación de capital de trabajo.",
+          "source_refs": [
+            "cfi_dso"
+          ]
+        },
+        {
+          "question_id": "q1_dso_definition",
+          "question": "¿Qué mide principalmente el indicador Days Sales Outstanding (DSO) en una organización?",
+          "options": [
+            "El número promedio de días que le toma a una empresa cobrar los pagos de sus clientes después de una venta a crédito",
+            "El tiempo transcurrido desde que se adquiere inventario hasta que se vende al consumidor final",
+            "El plazo promedio en que la empresa liquida sus obligaciones con proveedores y acreedores comerciales",
+            "El porcentaje de ventas netas que se convierte en utilidad neta operativa al finalizar el ejercicio fiscal"
+          ],
+          "correct_option": 0,
+          "explanation": "El DSO mide el número promedio de días que requiere la empresa para convertir sus cuentas por cobrar en efectivo tras realizar ventas a crédito, de acuerdo con la definición técnica establecida.",
+          "source_refs": [
+            "cfi_dso",
+            "wallstreetprep_dso"
+          ]
+        },
+        {
+          "question_id": "q4_dso_mistake",
+          "question": "Al calcular el indicador DSO, ¿cuál de los siguientes escenarios representa un error metodológico común según los estándares financieros?",
+          "options": [
+            "Multiplicar el resultado del cociente de cuentas por cobrar entre ventas por el número de días",
+            "Distinguir claramente entre el saldo final de cuentas por cobrar y el promedio cuando se evalúan varios periodos",
+            "Confundir el uso de las ventas totales con las ventas exclusivamente a crédito al calcular el ratio",
+            "Utilizar el número exacto de días del periodo evaluado para multiplicar el cociente"
+          ],
+          "correct_option": 2,
+          "explanation": "Uno de los errores más frecuentes es utilizar las ventas totales en lugar de las ventas a crédito, o viceversa, distorsionando la precisión del indicador.",
+          "source_refs": [
+            "wallstreetprep_dso"
+          ]
+        },
+        {
+          "question_id": "q2_dso_formula",
+          "question": "De acuerdo con la fórmula estándar del DSO, ¿cuáles son los componentes fundamentales que se relacionan en el cociente inicial?",
+          "options": [
+            "Las cuentas por cobrar divididas entre las ventas totales o a crédito del periodo",
+            "Las cuentas por pagar divididas entre las compras totales a crédito",
+            "El costo de ventas dividido entre el inventario promedio del periodo",
+            "El pasivo corriente dividido entre el activo corriente disponible"
+          ],
+          "correct_option": 0,
+          "explanation": "La fórmula estándar divide el saldo de cuentas por cobrar entre las ventas totales a crédito o netas del periodo, multiplicando dicho resultado por el número de días del periodo.",
+          "source_refs": [
+            "cfi_dso",
+            "wallstreetprep_dso"
+          ]
+        },
+        {
+          "question_id": "q5_dso_business_value",
+          "question": "¿Cómo impacta directamente una reducción sostenida del DSO en la estructura financiera de una empresa?",
+          "options": [
+            "Reduce la necesidad de realizar ventas a crédito en los siguientes ejercicios fiscales",
+            "Aumenta automáticamente el pasivo corriente debido a la aceleración de las cobranzas",
+            "Libera capital de trabajo para la reinversión y disminuye los riesgos asociados a la morosidad",
+            "Incrementa de manera directa el costo de ventas por el manejo administrativo de las facturas"
+          ],
+          "correct_option": 2,
+          "explanation": "Un ciclo de cobro más corto y eficiente libera recursos financieros (capital de trabajo) que pueden ser reinvertidos, a la vez que mitiga el riesgo de insolvencia o morosidad de los clientes.",
+          "source_refs": [
+            "cfi_dso",
+            "wallstreetprep_dso"
+          ]
+        }
+      ]
+    },
+    "run_id": "554b5e17-1185-4cc6-9949-782ee07c5840"
+  }
+}

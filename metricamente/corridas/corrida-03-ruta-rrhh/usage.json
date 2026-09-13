@@ -1,0 +1,94 @@
+{
+  "gemini": [
+    {
+      "run_id": "4eb14963-eac0-48b2-ab59-b0a2e19c317f",
+      "stage": "progress",
+      "usageMetadata": {
+        "promptTokenCount": 1706,
+        "candidatesTokenCount": 65,
+        "totalTokenCount": 1771,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1706
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "4eb14963-eac0-48b2-ab59-b0a2e19c317f",
+      "stage": "structured",
+      "usageMetadata": {
+        "promptTokenCount": 1757,
+        "candidatesTokenCount": 73,
+        "totalTokenCount": 1830,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1757
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "105ad5af-188e-485a-959a-13dce7b4e4ce",
+      "stage": "progress",
+      "usageMetadata": {
+        "promptTokenCount": 1736,
+        "candidatesTokenCount": 63,
+        "totalTokenCount": 1799,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1736
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "105ad5af-188e-485a-959a-13dce7b4e4ce",
+      "stage": "search",
+      "usageMetadata": {
+        "promptTokenCount": 1859,
+        "candidatesTokenCount": 28,
+        "totalTokenCount": 1887,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1859
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "run_id": "105ad5af-188e-485a-959a-13dce7b4e4ce",
+      "stage": "structured",
+      "usageMetadata": {
+        "promptTokenCount": 3461,
+        "candidatesTokenCount": 660,
+        "totalTokenCount": 4121,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 3461
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "tavily": [
+    {
+      "run_id": "105ad5af-188e-485a-959a-13dce7b4e4ce",
+      "query": "HR metrics human resources key performance indicators workforce analytics formulas standard",
+      "usage": {
+        "credits": 1
+      },
+      "response_time": 1.02
+    }
+  ]
+}

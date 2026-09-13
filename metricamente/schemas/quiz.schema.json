@@ -1,0 +1,78 @@
+{
+  "type": "object",
+  "properties": {
+    "quiz_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "module_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "question_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "question": {
+            "type": "string",
+            "minLength": 1
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 4,
+            "maxItems": 4
+          },
+          "correct_option": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 3
+          },
+          "explanation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0,
+            "maxItems": 30
+          }
+        },
+        "required": [
+          "question_id",
+          "question",
+          "options",
+          "correct_option",
+          "explanation",
+          "source_refs"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 5,
+      "maxItems": 5
+    }
+  },
+  "required": [
+    "quiz_id",
+    "version",
+    "module_id",
+    "questions"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,10 @@
+{
+  "data": {
+    "mode": "area",
+    "area": "Recursos Humanos",
+    "metric": null,
+    "intent": "Quiero aprender métricas de Recursos Humanos",
+    "clarification": null
+  },
+  "run_id": "4eb14963-eac0-48b2-ab59-b0a2e19c317f"
+}
